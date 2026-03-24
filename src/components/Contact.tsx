@@ -110,7 +110,7 @@ const Contact = () => {
 
             <div className="mt-8 text-center">
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5537998263766"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-light transition-colors"
