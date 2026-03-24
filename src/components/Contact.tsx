@@ -13,7 +13,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Olá Ana Júlia! Me chamo ${formData.nome}. Meu casamento será em ${formData.data}, na cidade de ${formData.cidade}, com aproximadamente ${formData.convidados} convidados. ${formData.mensagem}`;
-    const whatsappUrl = `https://wa.me/5500000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5537998263766?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
