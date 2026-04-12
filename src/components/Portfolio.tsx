@@ -1,5 +1,5 @@
 import weddingKiss from "@/assets/wedding-kiss.jpg";
-import weddingCeremony from "@/assets/wedding-ceremony.jpg";
+import weddingCeremony from "@/assets/casamento-2.jpg";
 import weddingVeil from "@/assets/wedding-veil.jpg";
 import weddingHug from "@/assets/wedding-hug.jpg";
 import weddingSunset from "@/assets/wedding-sunset.jpg";
