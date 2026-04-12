@@ -19,12 +19,15 @@ const Portfolio = () => {
     <section id="portfolio" className="py-24 md:py-32 bg-background">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
+          <p className="heading-ornament text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
             Portfólio
           </p>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground">
             Casamentos Reais
           </h2>
+          <div className="premium-divider mt-6">
+            <div className="ornament" />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -33,7 +36,7 @@ const Portfolio = () => {
               key={i}
               className={`relative overflow-hidden group cursor-pointer ${img.span}`}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden border border-gold-light/10">
                 <img
                   src={img.src}
                   alt={img.label}
@@ -46,6 +49,9 @@ const Portfolio = () => {
                   {img.label}
                 </span>
               </div>
+              {/* Premium corner accents on hover */}
+              <div className="absolute top-2 left-2 w-6 h-6 border-t border-l border-champagne/0 group-hover:border-champagne/40 transition-all duration-500 pointer-events-none" />
+              <div className="absolute bottom-2 right-2 w-6 h-6 border-b border-r border-champagne/0 group-hover:border-champagne/40 transition-all duration-500 pointer-events-none" />
             </div>
           ))}
         </div>
