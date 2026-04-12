@@ -91,3 +91,295 @@ html {
   background: hsl(var(--gold-light));
   border-radius: 3px;
 }
+
+/* ========= PREMIUM DESIGN SYSTEM ========= */
+
+/* Gold shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes draw-line {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes fade-up-stagger {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Premium gold divider */
+.premium-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.premium-divider::before,
+.premium-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--gold-light)), transparent);
+}
+.premium-divider .ornament {
+  width: 8px;
+  height: 8px;
+  border: 1px solid hsl(var(--gold-light));
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Corner ornaments for premium frames */
+.premium-frame {
+  position: relative;
+}
+.premium-frame::before,
+.premium-frame::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: hsl(var(--gold) / 0.4);
+  pointer-events: none;
+  z-index: 10;
+}
+.premium-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.premium-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Additional corners via child pseudo-elements */
+.premium-frame-inner {
+  position: relative;
+}
+.premium-frame-inner::before,
+.premium-frame-inner::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: hsl(var(--gold) / 0.4);
+  pointer-events: none;
+  z-index: 10;
+}
+.premium-frame-inner::before {
+  top: -1px;
+  right: -1px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+.premium-frame-inner::after {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+/* Gold shimmer text effect */
+.text-shimmer {
+  background: linear-gradient(
+    120deg,
+    hsl(var(--gold)) 0%,
+    hsl(var(--champagne)) 25%,
+    hsl(var(--gold)) 50%,
+    hsl(var(--champagne)) 75%,
+    hsl(var(--gold)) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: hsl(var(--background) / 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--gold-light) / 0.15);
+}
+
+.glass-dark {
+  background: hsl(var(--warm-dark) / 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--champagne) / 0.1);
+}
+
+/* Premium card with elegant shadow and border */
+.premium-card {
+  position: relative;
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--gold-light) / 0.25);
+  box-shadow:
+    0 4px 24px -4px hsl(var(--gold) / 0.08),
+    0 0 0 1px hsl(var(--gold-light) / 0.05);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.premium-card:hover {
+  border-color: hsl(var(--gold-light) / 0.5);
+  box-shadow:
+    0 8px 40px -8px hsl(var(--gold) / 0.15),
+    0 0 0 1px hsl(var(--gold-light) / 0.1),
+    inset 0 1px 0 hsl(var(--champagne) / 0.1);
+  transform: translateY(-2px);
+}
+
+/* Outer border for entire page */
+.page-border {
+  position: relative;
+}
+.page-border::before {
+  content: '';
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid hsl(var(--gold-light) / 0.25);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Inner corner accents on page border */
+.page-border-accent {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 10000;
+}
+.page-border-accent.top-left {
+  top: 12px;
+  left: 12px;
+  border-top: 2px solid hsl(var(--gold) / 0.5);
+  border-left: 2px solid hsl(var(--gold) / 0.5);
+}
+.page-border-accent.top-right {
+  top: 12px;
+  right: 12px;
+  border-top: 2px solid hsl(var(--gold) / 0.5);
+  border-right: 2px solid hsl(var(--gold) / 0.5);
+}
+.page-border-accent.bottom-left {
+  bottom: 12px;
+  left: 12px;
+  border-bottom: 2px solid hsl(var(--gold) / 0.5);
+  border-left: 2px solid hsl(var(--gold) / 0.5);
+}
+.page-border-accent.bottom-right {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 2px solid hsl(var(--gold) / 0.5);
+  border-right: 2px solid hsl(var(--gold) / 0.5);
+}
+
+/* Section elegant separator */
+.section-separator {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--gold-light) / 0.4), transparent);
+  margin: 0 auto;
+  max-width: 80%;
+}
+.section-separator::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8px;
+  color: hsl(var(--gold-light));
+  background: hsl(var(--background));
+  padding: 0 12px;
+}
+.section-separator.on-dark::after {
+  background: hsl(var(--secondary));
+}
+
+/* Premium button style */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid hsl(var(--gold) / 0.5);
+  transition: all 0.5s ease;
+}
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsl(var(--champagne) / 0.1), transparent);
+  transition: left 0.7s ease;
+}
+.btn-premium:hover::before {
+  left: 100%;
+}
+.btn-premium:hover {
+  border-color: hsl(var(--gold) / 0.8);
+  box-shadow: 0 0 30px hsl(var(--gold) / 0.1);
+}
+
+/* Floating decorative elements */
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Premium image frame */
+.premium-img-frame {
+  position: relative;
+  padding: 6px;
+  border: 1px solid hsl(var(--gold-light) / 0.3);
+}
+.premium-img-frame::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px solid hsl(var(--gold-light) / 0.15);
+  pointer-events: none;
+}
+
+/* Elegant line-through heading */
+.heading-ornament {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+.heading-ornament::before,
+.heading-ornament::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: hsl(var(--gold-light) / 0.5);
+}

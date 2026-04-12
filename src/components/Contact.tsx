@@ -21,30 +21,38 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const inputClasses =
+    "w-full bg-background border border-gold-light/20 px-5 py-4 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold-light/60 focus:shadow-[0_0_15px_-3px_hsl(var(--gold)/0.1)] transition-all duration-500";
+
   return (
     <section id="contato" className="py-24 md:py-32 bg-secondary">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image */}
+          {/* Image with premium frame */}
           <div className="hidden md:block">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src={anjuImage}
-                alt="Ana Júlia"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+            <div className="premium-img-frame">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={anjuImage}
+                  alt="Ana Júlia"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
           {/* Form */}
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
+            <p className="heading-ornament text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
               Contato
             </p>
             <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
               Vamos Conversar
             </h2>
+            <div className="premium-divider mb-6">
+              <div className="ornament" />
+            </div>
             <p className="text-muted-foreground text-sm font-light leading-relaxed mb-10">
               Conte-me sobre o casamento dos seus sonhos. Terei prazer em ajudar a torná-lo realidade.
             </p>
@@ -58,7 +66,7 @@ const Contact = () => {
                 maxLength={100}
                 value={formData.nome}
                 onChange={handleChange}
-                className="w-full bg-background border border-border px-5 py-4 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold-light transition-colors"
+                className={inputClasses}
               />
               <div className="grid grid-cols-2 gap-4">
                 <input
@@ -69,7 +77,7 @@ const Contact = () => {
                   maxLength={50}
                   value={formData.data}
                   onChange={handleChange}
-                  className="w-full bg-background border border-border px-5 py-4 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold-light transition-colors"
+                  className={inputClasses}
                 />
                 <input
                   type="text"
@@ -79,7 +87,7 @@ const Contact = () => {
                   maxLength={100}
                   value={formData.cidade}
                   onChange={handleChange}
-                  className="w-full bg-background border border-border px-5 py-4 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold-light transition-colors"
+                  className={inputClasses}
                 />
               </div>
               <input
@@ -89,7 +97,7 @@ const Contact = () => {
                 maxLength={20}
                 value={formData.convidados}
                 onChange={handleChange}
-                className="w-full bg-background border border-border px-5 py-4 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold-light transition-colors"
+                className={inputClasses}
               />
               <textarea
                 name="mensagem"
@@ -98,11 +106,11 @@ const Contact = () => {
                 maxLength={1000}
                 value={formData.mensagem}
                 onChange={handleChange}
-                className="w-full bg-background border border-border px-5 py-4 text-sm font-light text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold-light transition-colors resize-none"
+                className={`${inputClasses} resize-none`}
               />
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground py-4 text-xs tracking-[0.25em] uppercase font-sans hover:opacity-90 transition-opacity duration-300"
+                className="btn-premium w-full bg-primary text-primary-foreground py-4 text-xs tracking-[0.25em] uppercase font-sans"
               >
                 Solicitar Orçamento
               </button>

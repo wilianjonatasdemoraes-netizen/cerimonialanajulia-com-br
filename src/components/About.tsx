@@ -5,26 +5,31 @@ const About = () => {
     <section id="sobre" className="py-24 md:py-32 bg-background">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image */}
+          {/* Image with premium frame */}
           <div className="relative">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src={anjuImage}
-                alt="Ana Júlia - Cerimonialista"
-                className="w-full h-full object-cover"
-              />
+            <div className="premium-img-frame">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={anjuImage}
+                  alt="Ana Júlia - Cerimonialista"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-gold-light/30" />
+            {/* Floating decorative element */}
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-gold-light/20 float-element" />
+            <div className="absolute -top-4 -left-4 w-16 h-16 border border-gold-light/15 float-element" style={{ animationDelay: '2s' }} />
           </div>
 
           {/* Text */}
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
+            <p className="heading-ornament text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
               Sobre
             </p>
             <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-8 leading-tight">
               Ana Júlia
             </h2>
+            <div className="w-16 h-px bg-gradient-to-r from-gold-light/60 to-transparent mb-8" />
             <div className="space-y-5 text-muted-foreground font-light leading-relaxed text-[15px]">
               <p>
                 Cada casamento é uma história única. E a minha missão é garantir que você viva 

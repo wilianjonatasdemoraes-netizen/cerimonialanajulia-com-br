@@ -11,15 +11,27 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-border">
+      {/* Page border corner accents */}
+      <div className="page-border-accent top-left" />
+      <div className="page-border-accent top-right" />
+      <div className="page-border-accent bottom-left" />
+      <div className="page-border-accent bottom-right" />
+
       <Navbar />
       <Hero />
+      <div className="section-separator" />
       <About />
+      <div className="section-separator on-dark" />
       <HowItWorks />
+      <div className="section-separator" />
       <Portfolio />
       <Storytelling />
+      <div className="section-separator on-dark" />
       <Testimonials />
+      <div className="section-separator" />
       <Services />
+      <div className="section-separator on-dark" />
       <Contact />
       <Footer />
     </div>
