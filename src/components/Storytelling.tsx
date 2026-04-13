@@ -1,4 +1,4 @@
-import weddingGroom from "@/assets/wedding-groom.jpg";
+import storyImage from "@/assets/anju-3.jpg";
 import anjuImage from "@/assets/anju-1.jpg";
 
 const Storytelling = () => {
@@ -7,7 +7,7 @@ const Storytelling = () => {
       {/* Full-width image with quote */}
       <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <img
-          src={weddingGroom}
+          src={storyImage}
           alt="Momento do casamento"
           className="w-full h-full object-cover"
           loading="lazy"
