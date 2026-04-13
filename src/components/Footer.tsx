@@ -15,18 +15,25 @@ const Footer = () => {
           <div className="ornament" style={{ borderColor: 'hsl(var(--champagne) / 0.3)' }} />
         </div>
         <div className="flex justify-center gap-8 mb-8">
-          {["Instagram", "WhatsApp"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-champagne/40 text-[11px] tracking-[0.15em] uppercase font-sans hover:text-champagne/80 transition-colors"
-            >
-              {item}
-            </a>
-          ))}
+          <a
+            href="https://www.instagram.com/Anajuliacerimonialista"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-champagne/40 text-[11px] tracking-[0.15em] uppercase font-sans hover:text-champagne/80 transition-colors"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://wa.me/5537999265472"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-champagne/40 text-[11px] tracking-[0.15em] uppercase font-sans hover:text-champagne/80 transition-colors"
+          >
+            WhatsApp
+          </a>
         </div>
         <p className="text-champagne/30 text-[10px] tracking-wider uppercase font-sans">
-          © 2025 Ana Júlia. Todos os direitos reservados.
+          © 2026 Ana Júlia. Todos os direitos reservados.
         </p>
       </div>
     </footer>
