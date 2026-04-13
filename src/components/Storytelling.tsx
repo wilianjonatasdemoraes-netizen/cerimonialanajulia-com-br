@@ -1,4 +1,4 @@
-import weddingGroom from "@/assets/wedding-groom.jpg";
+import storyImage from "@/assets/anju-3.jpg";
 import anjuImage from "@/assets/anju-1.jpg";
 
 const Storytelling = () => {
