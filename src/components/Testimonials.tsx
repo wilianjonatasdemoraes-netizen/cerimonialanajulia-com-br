@@ -2,32 +2,32 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    text: "Ana é daquelas presenças que a gente confia de olhos fechados. Desde o primeiro momento, ela nos transmitiu segurança e tranquilidade. No dia do casamento, pudemos viver cada segundo sabendo que tudo estava em boas mãos.",
+    text: "Ela cuidou de tudo com muita atenção. Pudemos viver cada momento sem precisar nos preocupar com nada — tudo estava nas mãos certas.",
     author: "Camila & Thiago",
-    role: "Noivos 2024",
+    role: "Casamento 2024",
   },
   {
-    text: "Não tenho palavras para descrever o cuidado que Ana teve com cada detalhe. Ela transformou nossos sonhos em realidade, com muito amor e profissionalismo.",
+    text: "Nos sentimos seguros do início ao fim. Cada detalhe foi pensado, cada fornecedor alinhado. Um trabalho de altíssimo nível.",
     author: "Fernanda & Lucas",
-    role: "Noivos 2024",
+    role: "Casamento 2024",
   },
   {
-    text: "Contratar a Ana foi a melhor decisão que tomamos para o nosso casamento. Ela cuidou de absolutamente tudo e nos permitiu aproveitar cada momento.",
+    text: "O evento fluiu com leveza e organização. Foi exatamente como sonhávamos — só que ainda melhor. Recomendo de olhos fechados.",
     author: "Juliana & Rafael",
-    role: "Noivos 2023",
+    role: "Casamento 2023",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary">
+    <section id="depoimentos" className="py-24 md:py-32 bg-secondary">
       <div className="container max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="heading-ornament text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
             Depoimentos
           </p>
           <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground">
-            O Que Dizem os Noivos
+            O Que Dizem os Clientes
           </h2>
           <div className="premium-divider mt-6">
             <div className="ornament" />

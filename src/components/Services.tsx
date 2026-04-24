@@ -1,34 +1,49 @@
-import { Crown, Gem, Sparkles } from "lucide-react";
+import { Crown, Sparkles, CalendarHeart, ClipboardCheck, ScanLine, Gift } from "lucide-react";
 
 const services = [
   {
     icon: Crown,
-    title: "Cerimonial do Dia",
+    title: "Cerimonial de Casamento",
     description:
-      "Coordenação completa no dia do evento. Gerencio todos os fornecedores, resolvo imprevistos e garanto que tudo aconteça no tempo certo.",
-    features: ["Coordenação de fornecedores", "Gestão do cronograma", "Supervisão completa"],
-  },
-  {
-    icon: Gem,
-    title: "Assessoria Completa",
-    description:
-      "Acompanhamento desde os primeiros passos do planejamento até a execução final. Estou ao seu lado em cada decisão.",
-    features: ["Planejamento integral", "Curadoria de fornecedores", "Cerimonial do dia incluso"],
-    featured: true,
+      "Direção completa do seu grande dia. Coordenação de fornecedores, cronograma e supervisão para que tudo aconteça com elegância.",
   },
   {
     icon: Sparkles,
-    title: "Planejamento Personalizado",
+    title: "Cerimonial de 15 Anos",
     description:
-      "Para casais que desejam um casamento único e sob medida. Criamos juntos cada detalhe da celebração dos seus sonhos.",
-    features: ["Design exclusivo", "Experiência personalizada", "Gestão completa do evento"],
+      "Uma celebração única para a debutante. Organização e cuidado em cada detalhe para uma noite inesquecível.",
+    featured: true,
+  },
+  {
+    icon: CalendarHeart,
+    title: "Organização de Eventos",
+    description:
+      "Eventos sociais e corporativos com planejamento estratégico, fornecedores selecionados e execução impecável.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Assessoria no Dia",
+    description:
+      "Para quem já organizou tudo e precisa de uma profissional preparada para conduzir o evento com tranquilidade.",
+  },
+  {
+    icon: Gift,
+    title: "Lista de Presença Digital",
+    description:
+      "Sistema moderno para envio de convites, confirmação de presença (RSVP) e gestão dos convidados em um só lugar.",
+  },
+  {
+    icon: ScanLine,
+    title: "Check-in de Convidados",
+    description:
+      "Recepção organizada com check-in digital, controle de mesas e atendimento atencioso desde a chegada.",
   },
 ];
 
 const Services = () => {
   return (
     <section id="servicos" className="py-24 md:py-32 bg-background">
-      <div className="container max-w-5xl mx-auto px-6">
+      <div className="container max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="heading-ornament text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 font-sans">
             Serviços
@@ -39,20 +54,23 @@ const Services = () => {
           <div className="premium-divider mt-6">
             <div className="ornament" />
           </div>
+          <p className="text-muted-foreground text-sm md:text-base font-light max-w-2xl mx-auto mt-6">
+            Cada evento merece atenção exclusiva. Escolha o serviço ideal para a sua celebração.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((s, i) => (
             <div
               key={i}
               className={`premium-card p-8 md:p-10 premium-frame text-center ${
-                s.featured ? 'ring-1 ring-gold-light/30 scale-[1.02]' : ''
+                s.featured ? 'ring-1 ring-gold-light/30' : ''
               }`}
             >
               <div className="premium-frame-inner h-full flex flex-col items-center">
                 {s.featured && (
                   <span className="text-[9px] tracking-[0.3em] uppercase text-gold font-sans mb-4 px-4 py-1 border border-gold-light/30">
-                    Mais Popular
+                    Destaque
                   </span>
                 )}
                 <div className="w-14 h-14 flex items-center justify-center border border-gold-light/30 mb-6">
@@ -62,20 +80,15 @@ const Services = () => {
                   {s.title}
                 </h3>
                 <div className="w-8 h-px bg-gold-light/40 mb-4" />
-                <p className="text-muted-foreground text-sm font-light leading-relaxed mb-6 flex-1">
+                <p className="text-muted-foreground text-sm font-light leading-relaxed flex-1">
                   {s.description}
                 </p>
-                <ul className="space-y-2">
-                  {s.features.map((f, j) => (
-                    <li
-                      key={j}
-                      className="text-xs tracking-[0.1em] text-muted-foreground uppercase flex items-center justify-center gap-2"
-                    >
-                      <span className="w-1 h-1 bg-gold-light/60 rotate-45 inline-block" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                <a
+                  href="#contato"
+                  className="mt-6 text-[10px] tracking-[0.25em] uppercase text-gold hover:text-foreground transition-colors font-sans"
+                >
+                  Solicitar orçamento →
+                </a>
               </div>
             </div>
           ))}

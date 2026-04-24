@@ -6,6 +6,9 @@ import Portfolio from "@/components/Portfolio";
 import Storytelling from "@/components/Storytelling";
 import Testimonials from "@/components/Testimonials";
 import Services from "@/components/Services";
+import PainDesire from "@/components/PainDesire";
+import FAQ from "@/components/FAQ";
+import FinalCTA from "@/components/FinalCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -21,17 +24,21 @@ const Index = () => {
       <Navbar />
       <Hero />
       <div className="section-separator" />
+      <Services />
+      <div className="section-separator" />
       <About />
       <div className="section-separator on-dark" />
       <HowItWorks />
+      <PainDesire />
       <div className="section-separator" />
       <Portfolio />
       <Storytelling />
       <div className="section-separator on-dark" />
       <Testimonials />
+      <FinalCTA />
       <div className="section-separator" />
-      <Services />
-      <div className="section-separator on-dark" />
+      <FAQ />
+      <div className="section-separator" />
       <Contact />
       <Footer />
     </div>
