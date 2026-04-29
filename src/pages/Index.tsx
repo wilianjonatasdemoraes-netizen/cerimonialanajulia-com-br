@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import VideoShowcase from "@/components/VideoShowcase";
 import About from "@/components/About";
 import HowItWorks from "@/components/HowItWorks";
 import Portfolio from "@/components/Portfolio";
@@ -23,6 +24,7 @@ const Index = () => {
 
       <Navbar />
       <Hero />
+      <VideoShowcase />
       <div className="section-separator" />
       <Services />
       <div className="section-separator" />
