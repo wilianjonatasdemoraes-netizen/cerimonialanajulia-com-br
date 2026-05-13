@@ -17,6 +17,10 @@ const Hero = () => {
           src={heroImage}
           alt="Casamento elegante com sparklers — cerimonial Ana Júlia"
           className="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-warm-dark/70 via-warm-dark/55 to-warm-dark/80" />
       </div>
