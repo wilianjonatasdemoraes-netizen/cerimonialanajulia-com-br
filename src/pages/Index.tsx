@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import VideoShowcase from "@/components/VideoShowcase";
@@ -16,6 +17,14 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen page-border">
+      <Helmet>
+        <title>Cerimonial e Organização de Eventos | Ana Júlia</title>
+        <meta name="description" content="Cerimonial profissional para casamentos, 15 anos e eventos especiais. Organização, elegância e cuidado em cada detalhe." />
+        <link rel="canonical" href="https://ana.wjmlook.com.br/" />
+        <meta property="og:title" content="Cerimonial e Organização de Eventos | Ana Júlia" />
+        <meta property="og:description" content="Cerimonial profissional para casamentos, 15 anos e eventos especiais." />
+        <meta property="og:url" content="https://ana.wjmlook.com.br/" />
+      </Helmet>
       {/* Page border corner accents */}
       <div className="page-border-accent top-left" />
       <div className="page-border-accent top-right" />
