@@ -38,19 +38,19 @@ const Hero = () => {
           <div className="ornament" />
         </div>
         <p className="font-sans text-champagne text-[10px] md:text-xs tracking-[0.35em] uppercase mb-6 md:mb-8 opacity-90">
-          Cerimonial & Assessoria de Eventos
+          Cerimonial Premium · Pará de Minas & Região
         </p>
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-cream leading-[1.1] mb-6">
-          Transforme seu evento em uma experiência <span className="text-shimmer italic">inesquecível</span>
+          Transformamos sonhos em <span className="text-shimmer italic">momentos inesquecíveis</span>
         </h1>
         <p className="font-sans text-champagne/90 text-sm md:text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-          Organização, cuidado, elegância e direção profissional para que cada detalhe do seu evento
-          aconteça com segurança, beleza e tranquilidade.
+          Assessoria premium para casamentos, debutantes e eventos sofisticados.
+          Direção profissional, elegância editorial e cuidado em cada detalhe.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <a
-            href="https://wa.me/5537999265472?text=Olá%20Ana%20Júlia!%20Gostaria%20de%20falar%20sobre%20o%20meu%20evento."
+            href="https://wa.me/5537999265472?text=Olá%20Ana%20Júlia!%20Quero%20realizar%20o%20meu%20sonho%20—%20vamos%20conversar?"
             target="_blank"
             rel="noopener noreferrer"
             data-event="hero_whatsapp_click"
@@ -59,14 +59,14 @@ const Hero = () => {
             <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
               <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/>
             </svg>
-            Quero falar no WhatsApp
+            Quero realizar meu sonho
           </a>
           <a
-            href="#servicos"
-            data-event="hero_services_click"
+            href="#portfolio"
+            data-event="hero_portfolio_click"
             className="btn-premium inline-block text-champagne px-8 py-4 text-[11px] tracking-[0.25em] uppercase font-sans w-full sm:w-auto"
           >
-            Conhecer os serviços
+            Ver eventos
           </a>
         </div>
 
