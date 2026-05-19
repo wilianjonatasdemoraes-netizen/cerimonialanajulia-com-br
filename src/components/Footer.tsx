@@ -1,22 +1,22 @@
-import { Instagram, MessageCircle, Phone } from "lucide-react";
+import { Instagram, MessageCircle, Phone, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-warm-dark py-16 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-champagne/20 to-transparent" />
 
-      <div className="container max-w-5xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 md:gap-12 mb-12 text-center md:text-left">
+      <div className="container max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-4 gap-10 md:gap-12 mb-12 text-center md:text-left">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-1">
             <p className="font-serif text-2xl tracking-wider mb-3">
               <span className="text-shimmer">Ana Júlia</span>
             </p>
             <p className="text-champagne/60 text-[11px] tracking-[0.2em] uppercase font-sans mb-4">
-              Cerimonial & Eventos
+              Cerimonial Premium
             </p>
             <p className="text-champagne/50 text-sm font-light leading-relaxed">
-              Organização de eventos, casamentos, 15 anos e experiências especiais.
+              Assessoria sofisticada para casamentos, debutantes e eventos especiais em Pará de Minas e região.
             </p>
           </div>
 
@@ -85,13 +85,30 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Atendimento */}
+          <div>
+            <p className="text-champagne/80 text-[11px] tracking-[0.25em] uppercase font-sans mb-4">
+              Atendimento
+            </p>
+            <ul className="space-y-3">
+              <li className="inline-flex items-start gap-2 text-champagne/60 text-sm font-light">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.2} />
+                <span>Pará de Minas — MG<br/><span className="text-champagne/40 text-xs">e toda a região</span></span>
+              </li>
+              <li className="inline-flex items-start gap-2 text-champagne/60 text-sm font-light">
+                <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.2} />
+                <span>Seg. a Sáb.<br/><span className="text-champagne/40 text-xs">09h às 19h</span></span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="premium-divider mb-6">
           <div className="ornament" style={{ borderColor: 'hsl(var(--champagne) / 0.3)' }} />
         </div>
         <p className="text-champagne/30 text-[10px] tracking-wider uppercase font-sans text-center">
-          © 2026 Ana Júlia Cerimonial. Todos os direitos reservados.
+          © 2026 Ana Júlia Cerimonial · Cerimonialista em Pará de Minas · Todos os direitos reservados
         </p>
       </div>
     </footer>

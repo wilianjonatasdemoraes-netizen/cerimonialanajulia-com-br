@@ -7,6 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Portfolio from "@/components/Portfolio";
 import Storytelling from "@/components/Storytelling";
 import Testimonials from "@/components/Testimonials";
+import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import PainDesire from "@/components/PainDesire";
 import FAQ from "@/components/FAQ";
@@ -44,6 +45,7 @@ const Index = () => {
       <div className="section-separator" />
       <Portfolio />
       <Storytelling />
+      <Stats />
       <div className="section-separator on-dark" />
       <Testimonials />
       <FinalCTA />
