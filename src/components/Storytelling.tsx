@@ -50,11 +50,40 @@ const Storytelling = () => {
           <div className="premium-divider mb-6">
             <div className="ornament" />
           </div>
-          <p className="text-muted-foreground text-sm font-light leading-relaxed max-w-2xl mx-auto">
-            Com anos de experiência em cerimonial e assessoria, já ajudei dezenas de casais 
-            a realizarem o casamento dos seus sonhos. Cada evento é tratado com dedicação 
+          <p className="text-muted-foreground text-sm font-light leading-relaxed max-w-2xl mx-auto mb-12">
+            Com anos de experiência em cerimonial e assessoria, já ajudei dezenas de noivas
+            a realizarem o casamento dos seus sonhos. Cada evento é tratado com dedicação
             exclusiva, atenção aos detalhes e muito amor pelo que faço.
           </p>
+
+          {/* Vídeo emocional — noivas & casamentos */}
+          <div className="relative max-w-3xl mx-auto mt-10">
+            <div className="absolute -inset-3 md:-inset-4 border border-gold-light/25 rounded-3xl pointer-events-none" />
+            <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-8 h-8 border-t-2 border-l-2 border-gold/50 rounded-tl-3xl pointer-events-none" />
+            <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-8 h-8 border-t-2 border-r-2 border-gold/50 rounded-tr-3xl pointer-events-none" />
+            <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 w-8 h-8 border-b-2 border-l-2 border-gold/50 rounded-bl-3xl pointer-events-none" />
+            <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-8 h-8 border-b-2 border-r-2 border-gold/50 rounded-br-3xl pointer-events-none" />
+            <div
+              className="relative rounded-2xl overflow-hidden bg-warm-dark"
+              style={{
+                boxShadow:
+                  "0 30px 80px -20px hsl(var(--gold) / 0.25), 0 10px 40px -10px hsl(var(--warm-dark) / 0.4), 0 0 0 1px hsl(var(--gold-light) / 0.2)",
+              }}
+            >
+              <video
+                src="/videos/apresentacao.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full h-auto block"
+              >
+                Seu navegador não suporta a reprodução de vídeo.
+              </video>
+            </div>
+            <p className="text-muted-foreground/80 text-[11px] tracking-[0.25em] uppercase mt-6 font-sans">
+              Bastidores · Noivas & Casamentos
+            </p>
+          </div>
         </div>
       </div>
     </section>

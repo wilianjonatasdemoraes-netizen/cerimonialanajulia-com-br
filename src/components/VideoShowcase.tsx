@@ -39,7 +39,7 @@ const VideoShowcase = () => {
             }}
           >
             <video
-              src="/videos/apresentacao.mp4"
+              src="/videos/apresentacao-geral.mp4"
               controls
               playsInline
               preload="metadata"
