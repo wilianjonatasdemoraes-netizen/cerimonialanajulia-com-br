@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Raleway", "sans-serif"],
+        sans: ["Jost", "system-ui", "sans-serif"],
+        script: ["Great Vibes", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
