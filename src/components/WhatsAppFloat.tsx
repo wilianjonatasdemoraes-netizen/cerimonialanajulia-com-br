@@ -3,11 +3,18 @@ import { X } from "lucide-react";
 
 const PHONE = "5537999265472";
 
-const buildUrl = (cidade: string, data: string) => {
+const buildUrl = (
+  noivos: string,
+  cidade: string,
+  data: string,
+  convidados: string,
+) => {
   const partes = [
     "Olá Ana Júlia! Gostaria de saber mais sobre o cerimonial.",
+    noivos.trim() ? `Noivos: ${noivos.trim()}.` : "",
     cidade.trim() ? `Cidade do evento: ${cidade.trim()}.` : "",
     data.trim() ? `Data prevista: ${formatDate(data)}.` : "",
+    convidados.trim() ? `Convidados estimados: ${convidados.trim()}.` : "",
   ].filter(Boolean);
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(partes.join(" "))}`;
 };
@@ -20,8 +27,10 @@ const formatDate = (iso: string) => {
 
 const WhatsAppFloat = () => {
   const [open, setOpen] = useState(false);
+  const [noivos, setNoivos] = useState("");
   const [cidade, setCidade] = useState("");
   const [data, setData] = useState("");
+  const [convidados, setConvidados] = useState("");
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,7 +51,7 @@ const WhatsAppFloat = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(buildUrl(cidade, data), "_blank", "noopener,noreferrer");
+    window.open(buildUrl(noivos, cidade, data, convidados), "_blank", "noopener,noreferrer");
     setOpen(false);
   };
 
@@ -74,6 +83,18 @@ const WhatsAppFloat = () => {
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
+                Nome dos noivos
+              </label>
+              <input
+                type="text"
+                value={noivos}
+                onChange={(e) => setNoivos(e.target.value)}
+                placeholder="Ex: Ana & Lucas"
+                className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+              />
+            </div>
+            <div>
+              <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
                 Cidade do evento
               </label>
               <input
@@ -84,16 +105,31 @@ const WhatsAppFloat = () => {
                 className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
               />
             </div>
-            <div>
-              <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
-                Data prevista
-              </label>
-              <input
-                type="date"
-                value={data}
-                onChange={(e) => setData(e.target.value)}
-                className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors [color-scheme:dark]"
-              />
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
+                  Data
+                </label>
+                <input
+                  type="date"
+                  value={data}
+                  onChange={(e) => setData(e.target.value)}
+                  className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors [color-scheme:dark]"
+                />
+              </div>
+              <div>
+                <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
+                  Convidados
+                </label>
+                <input
+                  type="number"
+                  min={0}
+                  value={convidados}
+                  onChange={(e) => setConvidados(e.target.value)}
+                  placeholder="Ex: 150"
+                  className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+                />
+              </div>
             </div>
             <button
               type="submit"
@@ -104,7 +140,7 @@ const WhatsAppFloat = () => {
             <button
               type="button"
               onClick={() => {
-                window.open(buildUrl("", ""), "_blank", "noopener,noreferrer");
+                window.open(buildUrl("", "", "", ""), "_blank", "noopener,noreferrer");
                 setOpen(false);
               }}
               className="w-full text-champagne/50 hover:text-champagne text-[10px] tracking-[0.2em] uppercase font-sans py-1 transition-colors"
