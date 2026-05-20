@@ -32,6 +32,28 @@ type FormErrors = Partial<Record<"noivos" | "cidade" | "data" | "convidados", st
 
 const PHONE = "5537999265472";
 
+const LOWER_WORDS = new Set(["de", "da", "do", "das", "dos", "e", "di", "du"]);
+
+// Allow only letters (incl. acentos), espaço, hífen, apóstrofo e &.
+const maskName = (raw: string) =>
+  raw.replace(/[^\p{L}\s\-'&]/gu, "").replace(/\s{2,}/g, " ").replace(/^\s+/, "");
+
+const titleCase = (raw: string) =>
+  raw
+    .toLocaleLowerCase("pt-BR")
+    .split(" ")
+    .map((w, i) => {
+      if (!w) return w;
+      if (i > 0 && LOWER_WORDS.has(w)) return w;
+      // preserva hífens: ex. "são-josé"
+      return w
+        .split("-")
+        .map((p) => (p ? p[0].toLocaleUpperCase("pt-BR") + p.slice(1) : p))
+        .join("-");
+    })
+    .join(" ")
+    .trim();
+
 const buildUrl = (
   noivos: string,
   cidade: string,
