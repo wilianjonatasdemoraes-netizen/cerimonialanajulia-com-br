@@ -55,8 +55,10 @@ export default {
         champagne: "hsl(var(--champagne))",
         gold: "hsl(var(--gold))",
         "gold-light": "hsl(var(--gold-light))",
+        bronze: "hsl(var(--bronze))",
         cream: "hsl(var(--cream))",
         "warm-dark": "hsl(var(--warm-dark))",
+        "body-text": "hsl(var(--body-text))",
       },
       borderRadius: {
         lg: "var(--radius)",
