@@ -3,11 +3,18 @@ import { X } from "lucide-react";
 
 const PHONE = "5537999265472";
 
-const buildUrl = (cidade: string, data: string) => {
+const buildUrl = (
+  noivos: string,
+  cidade: string,
+  data: string,
+  convidados: string,
+) => {
   const partes = [
     "Olá Ana Júlia! Gostaria de saber mais sobre o cerimonial.",
+    noivos.trim() ? `Noivos: ${noivos.trim()}.` : "",
     cidade.trim() ? `Cidade do evento: ${cidade.trim()}.` : "",
     data.trim() ? `Data prevista: ${formatDate(data)}.` : "",
+    convidados.trim() ? `Convidados estimados: ${convidados.trim()}.` : "",
   ].filter(Boolean);
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(partes.join(" "))}`;
 };
