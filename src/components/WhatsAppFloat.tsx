@@ -134,7 +134,7 @@ const WhatsAppFloat = () => {
             Vamos falar sobre o seu evento
           </h4>
 
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} noValidate className="space-y-3">
             <div>
               <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
                 Nome dos noivos
