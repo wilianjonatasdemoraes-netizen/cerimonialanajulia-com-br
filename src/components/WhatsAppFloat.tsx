@@ -83,6 +83,18 @@ const WhatsAppFloat = () => {
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
+                Nome dos noivos
+              </label>
+              <input
+                type="text"
+                value={noivos}
+                onChange={(e) => setNoivos(e.target.value)}
+                placeholder="Ex: Ana & Lucas"
+                className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+              />
+            </div>
+            <div>
+              <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
                 Cidade do evento
               </label>
               <input
@@ -93,16 +105,31 @@ const WhatsAppFloat = () => {
                 className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
               />
             </div>
-            <div>
-              <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
-                Data prevista
-              </label>
-              <input
-                type="date"
-                value={data}
-                onChange={(e) => setData(e.target.value)}
-                className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors [color-scheme:dark]"
-              />
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
+                  Data
+                </label>
+                <input
+                  type="date"
+                  value={data}
+                  onChange={(e) => setData(e.target.value)}
+                  className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors [color-scheme:dark]"
+                />
+              </div>
+              <div>
+                <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
+                  Convidados
+                </label>
+                <input
+                  type="number"
+                  min={0}
+                  value={convidados}
+                  onChange={(e) => setConvidados(e.target.value)}
+                  placeholder="Ex: 150"
+                  className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+                />
+              </div>
             </div>
             <button
               type="submit"
