@@ -1,44 +1,87 @@
+import storyImage from "@/assets/anju-3.jpg";
+
+const bullets = [
+  "Coordenação completa do dia — você só aparece linda",
+  "Gestão de fornecedores do início ao fim",
+  "Cronograma milimétrico para tudo sair como planejado",
+  "Suporte emocional antes, durante e depois do evento",
+  "Consultoria de estética e conceito do evento",
+];
+
 const PainDesire = () => {
   return (
-    <section className="py-24 md:py-32 bg-warm-dark relative overflow-hidden">
-      {/* Decorative ornaments */}
-      <div className="absolute top-10 left-10 w-24 h-24 border border-champagne/10 float-element pointer-events-none" />
-      <div
-        className="absolute bottom-10 right-10 w-32 h-32 border border-champagne/10 float-element pointer-events-none"
-        style={{ animationDelay: "2s" }}
-      />
-
-      <div className="container max-w-4xl mx-auto px-6 text-center relative z-10">
-        <p className="heading-ornament text-xs tracking-[0.3em] uppercase text-champagne/60 mb-6 font-sans">
-          Por que ter um cerimonial
-        </p>
-        <h2 className="font-serif text-3xl md:text-5xl font-light text-cream leading-tight mb-8">
-          Um evento bonito não depende
-          <br className="hidden md:block" /> apenas de <span className="text-shimmer italic">decoração</span>.
-        </h2>
-        <div className="premium-divider mb-8">
-          <div className="ornament" />
-        </div>
-        <p className="text-champagne/80 text-base md:text-lg font-light leading-relaxed font-serif italic max-w-2xl mx-auto">
-          Depende de organização, direção, controle de horários, fornecedores alinhados e uma pessoa
-          preparada para resolver problemas antes que eles cheguem até você.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 max-w-3xl mx-auto">
-          {[
-            "Sem preocupações no dia",
-            "Imprevistos resolvidos por nós",
-            "Você presente em cada momento",
-          ].map((t) => (
-            <div
-              key={t}
-              className="px-5 py-4 border border-champagne/15 bg-warm-dark/40 backdrop-blur-sm"
+    <section className="py-24 md:py-32" style={{ background: "hsl(var(--background))" }}>
+      <div className="container max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          {/* Text */}
+          <div>
+            <p
+              className="font-sans text-[11px] tracking-[0.3em] uppercase mb-6"
+              style={{ color: "hsl(var(--gold))" }}
             >
-              <span className="text-champagne text-[11px] tracking-[0.2em] uppercase font-sans">
-                {t}
-              </span>
+              ✦ Para noivas que merecem o melhor ✦
+            </p>
+            <h2
+              className="font-serif italic font-light leading-[1.1] mb-8 text-[36px] md:text-[52px]"
+              style={{ color: "hsl(var(--warm-dark))" }}
+            >
+              Você não precisa carregar
+              <br />
+              o peso do <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>seu grande dia</span>.
+            </h2>
+            <p className="font-sans font-light text-[17px] leading-[1.7] mb-8" style={{ color: "hsl(var(--body-text))" }}>
+              Sabemos como é: cada detalhe importa, cada fornecedor precisa
+              ser perfeito, a família tem opiniões, e você ainda quer aproveitar
+              cada segundo sem estresse. É exatamente para isso que existimos.
+            </p>
+
+            <ul className="space-y-4 mb-10">
+              {bullets.map((b) => (
+                <li key={b} className="flex items-start gap-4">
+                  <span className="text-lg leading-none mt-1" style={{ color: "hsl(var(--gold))" }}>
+                    ✦
+                  </span>
+                  <span className="font-sans font-light text-[15px] md:text-base" style={{ color: "hsl(var(--body-text))" }}>
+                    {b}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#como-funciona"
+              className="inline-block font-sans text-[13px] tracking-[0.15em] uppercase border-b transition-colors"
+              style={{ color: "hsl(var(--gold))", borderColor: "hsl(var(--gold))" }}
+            >
+              Quero conhecer como funciona →
+            </a>
+          </div>
+
+          {/* Image */}
+          <div className="relative">
+            <div
+              className="aspect-[3/4] overflow-hidden"
+              style={{
+                borderRadius: "2px",
+                boxShadow: "0 30px 60px -20px rgba(193,160,110,0.25)",
+              }}
+            >
+              <img
+                src={storyImage}
+                alt="Noiva em momento emocionado durante cerimônia"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
-          ))}
+            <div
+              className="absolute -bottom-4 -right-4 w-24 h-24 border-r border-b"
+              style={{ borderColor: "hsl(var(--gold) / 0.5)" }}
+            />
+            <div
+              className="absolute -top-4 -left-4 w-24 h-24 border-l border-t"
+              style={{ borderColor: "hsl(var(--gold) / 0.5)" }}
+            />
+          </div>
         </div>
       </div>
     </section>

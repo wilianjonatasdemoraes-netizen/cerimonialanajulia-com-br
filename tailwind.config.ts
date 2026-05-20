@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Raleway", "sans-serif"],
+        sans: ["Jost", "system-ui", "sans-serif"],
+        script: ["Great Vibes", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,8 +55,10 @@ export default {
         champagne: "hsl(var(--champagne))",
         gold: "hsl(var(--gold))",
         "gold-light": "hsl(var(--gold-light))",
+        bronze: "hsl(var(--bronze))",
         cream: "hsl(var(--cream))",
         "warm-dark": "hsl(var(--warm-dark))",
+        "body-text": "hsl(var(--body-text))",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,15 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import VideoShowcase from "@/components/VideoShowcase";
+import Stats from "@/components/Stats";
+import PainDesire from "@/components/PainDesire";
 import About from "@/components/About";
+import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import Portfolio from "@/components/Portfolio";
 import Storytelling from "@/components/Storytelling";
 import Testimonials from "@/components/Testimonials";
-import Stats from "@/components/Stats";
-import Services from "@/components/Services";
-import PainDesire from "@/components/PainDesire";
+import VideoShowcase from "@/components/VideoShowcase";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Contact from "@/components/Contact";
@@ -17,41 +17,32 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen page-border">
+    <div className="min-h-screen">
       <Helmet>
-        <title>Cerimonial e Organização de Eventos | Ana Júlia</title>
-        <meta name="description" content="Cerimonial profissional para casamentos, 15 anos e eventos especiais. Organização, elegância e cuidado em cada detalhe." />
+        <title>Ana Júlia Cerimonialista | Casamentos Premium em Pará de Minas</title>
+        <meta
+          name="description"
+          content="Assessoria e cerimonial premium para casamentos, debutantes e eventos em Pará de Minas e região. +127 casamentos realizados, 5★ no Google."
+        />
         <link rel="canonical" href="https://ana.wjmlook.com.br/" />
-        <meta property="og:title" content="Cerimonial e Organização de Eventos | Ana Júlia" />
-        <meta property="og:description" content="Cerimonial profissional para casamentos, 15 anos e eventos especiais." />
+        <meta property="og:title" content="Ana Júlia Cerimonialista | Casamentos Premium" />
+        <meta property="og:description" content="O dia mais lindo da sua vida, organizado com amor." />
         <meta property="og:url" content="https://ana.wjmlook.com.br/" />
       </Helmet>
-      {/* Page border corner accents */}
-      <div className="page-border-accent top-left" />
-      <div className="page-border-accent top-right" />
-      <div className="page-border-accent bottom-left" />
-      <div className="page-border-accent bottom-right" />
 
       <Navbar />
       <Hero />
-      <VideoShowcase />
-      <div className="section-separator" />
-      <Services />
-      <div className="section-separator" />
-      <About />
-      <div className="section-separator on-dark" />
-      <HowItWorks />
+      <Stats />
       <PainDesire />
-      <div className="section-separator" />
+      <About />
+      <Services />
+      <HowItWorks />
       <Portfolio />
       <Storytelling />
-      <Stats />
-      <div className="section-separator on-dark" />
+      <VideoShowcase />
       <Testimonials />
-      <FinalCTA />
-      <div className="section-separator" />
       <FAQ />
-      <div className="section-separator" />
+      <FinalCTA />
       <Contact />
       <Footer />
     </div>
