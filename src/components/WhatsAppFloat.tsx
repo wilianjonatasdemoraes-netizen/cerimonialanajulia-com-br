@@ -60,6 +60,7 @@ const WhatsAppFloat = () => {
   const [cidade, setCidade] = useState("");
   const [data, setData] = useState("");
   const [convidados, setConvidados] = useState("");
+  const [errors, setErrors] = useState<FormErrors>({});
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
