@@ -141,6 +141,7 @@ const WhatsAppFloat = () => {
               </label>
               <input
                 type="text"
+                ref={fieldRefs.noivos}
                 value={noivos}
                 onChange={(e) => setNoivos(e.target.value)}
                 placeholder="Ex: Ana & Lucas"
