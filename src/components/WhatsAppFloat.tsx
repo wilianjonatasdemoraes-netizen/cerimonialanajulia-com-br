@@ -81,6 +81,17 @@ const WhatsAppFloat = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const result = formSchema.safeParse({ noivos, cidade, data, convidados });
+    if (!result.success) {
+      const next: FormErrors = {};
+      for (const issue of result.error.issues) {
+        const key = issue.path[0] as keyof FormErrors;
+        if (key && !next[key]) next[key] = issue.message;
+      }
+      setErrors(next);
+      return;
+    }
+    setErrors({});
     window.open(buildUrl(noivos, cidade, data, convidados), "_blank", "noopener,noreferrer");
     setOpen(false);
   };
