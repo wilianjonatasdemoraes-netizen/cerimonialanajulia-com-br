@@ -62,6 +62,13 @@ const WhatsAppFloat = () => {
   const [convidados, setConvidados] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const panelRef = useRef<HTMLDivElement>(null);
+  const fieldRefs = {
+    noivos: useRef<HTMLInputElement>(null),
+    cidade: useRef<HTMLInputElement>(null),
+    data: useRef<HTMLInputElement>(null),
+    convidados: useRef<HTMLInputElement>(null),
+  };
+  const fieldOrder: (keyof FormErrors)[] = ["noivos", "cidade", "data", "convidados"];
 
   useEffect(() => {
     if (!open) return;
@@ -89,6 +96,12 @@ const WhatsAppFloat = () => {
         if (key && !next[key]) next[key] = issue.message;
       }
       setErrors(next);
+      const firstInvalid = fieldOrder.find((k) => next[k]);
+      if (firstInvalid) {
+        const el = fieldRefs[firstInvalid].current;
+        el?.focus({ preventScroll: true });
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
       return;
     }
     setErrors({});
@@ -121,13 +134,14 @@ const WhatsAppFloat = () => {
             Vamos falar sobre o seu evento
           </h4>
 
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} noValidate className="space-y-3">
             <div>
               <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
                 Nome dos noivos
               </label>
               <input
                 type="text"
+                ref={fieldRefs.noivos}
                 value={noivos}
                 onChange={(e) => setNoivos(e.target.value)}
                 placeholder="Ex: Ana & Lucas"
@@ -140,6 +154,7 @@ const WhatsAppFloat = () => {
               </label>
               <input
                 type="text"
+                ref={fieldRefs.cidade}
                 value={cidade}
                 onChange={(e) => setCidade(e.target.value)}
                 placeholder="Ex: Pará de Minas"
@@ -153,6 +168,7 @@ const WhatsAppFloat = () => {
                 </label>
                 <input
                   type="date"
+                  ref={fieldRefs.data}
                   value={data}
                   min={todayIso()}
                   onChange={(e) => {
@@ -178,6 +194,7 @@ const WhatsAppFloat = () => {
                   max={5000}
                   step={1}
                   inputMode="numeric"
+                  ref={fieldRefs.convidados}
                   value={convidados}
                   onChange={(e) => {
                     setConvidados(e.target.value);
