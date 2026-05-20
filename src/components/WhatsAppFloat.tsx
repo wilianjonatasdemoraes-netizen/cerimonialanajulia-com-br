@@ -194,6 +194,7 @@ const WhatsAppFloat = () => {
                   max={5000}
                   step={1}
                   inputMode="numeric"
+                  ref={fieldRefs.convidados}
                   value={convidados}
                   onChange={(e) => {
                     setConvidados(e.target.value);
