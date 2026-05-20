@@ -1,5 +1,36 @@
 import { Helmet } from "react-helmet-async";
-import { Instagram, MessageCircle, Phone, MapPin, Clock, Mail, Star } from "lucide-react";
+import { Instagram, MessageCircle, Phone, MapPin, Clock, Mail, Star, Facebook, MapPinned } from "lucide-react";
+
+const socialLinks = [
+  {
+    label: "WhatsApp",
+    handle: "(37) 99926-5472",
+    href: "https://wa.me/5537999265472?text=Ol%C3%A1%20Ana%20J%C3%BAlia%2C%20gostaria%20de%20um%20or%C3%A7amento.",
+    Icon: MessageCircle,
+    ariaLabel: "Falar no WhatsApp com Ana Júlia Cerimonialista",
+  },
+  {
+    label: "Instagram",
+    handle: "@anajuliacerimonialista",
+    href: "https://www.instagram.com/Anajuliacerimonialista",
+    Icon: Instagram,
+    ariaLabel: "Instagram da Ana Júlia Cerimonialista",
+  },
+  {
+    label: "Facebook",
+    handle: "/anajuliacerimonialista",
+    href: "https://www.facebook.com/anajuliacerimonialista",
+    Icon: Facebook,
+    ariaLabel: "Página no Facebook da Ana Júlia Cerimonialista",
+  },
+  {
+    label: "Google Business",
+    handle: "Avaliações 5★",
+    href: "https://www.google.com/search?q=Ana+J%C3%BAlia+Cerimonialista+Par%C3%A1+de+Minas",
+    Icon: MapPinned,
+    ariaLabel: "Perfil no Google Business da Ana Júlia Cerimonialista",
+  },
+];
 
 const cidades = [
   "Pará de Minas",
