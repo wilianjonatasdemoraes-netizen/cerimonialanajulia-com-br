@@ -51,9 +51,13 @@ const PHONE = "5537999265472";
 
 const LOWER_WORDS = new Set(["de", "da", "do", "das", "dos", "e", "di", "du"]);
 
-// Allow only letters (incl. acentos), espaço, hífen, apóstrofo e &.
+// Allow only letters (incl. acentos), espaço, hífen, apóstrofo e &, com limite.
 const maskName = (raw: string) =>
-  raw.replace(/[^\p{L}\s\-'&]/gu, "").replace(/\s{2,}/g, " ").replace(/^\s+/, "");
+  raw
+    .replace(/[^\p{L}\s\-'&]/gu, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/^\s+/, "")
+    .slice(0, NAME_MAX);
 
 const titleCase = (raw: string) =>
   raw
