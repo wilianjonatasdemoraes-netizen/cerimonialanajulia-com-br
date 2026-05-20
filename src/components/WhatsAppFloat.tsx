@@ -129,15 +129,33 @@ const WhatsAppFloat = () => {
     };
   }, [open]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = formSchema.safeParse({ noivos, cidade, data, convidados });
+  const runValidation = (values: {
+    noivos: string;
+    cidade: string;
+    data: string;
+    convidados: string;
+  }) => {
+    const result = formSchema.safeParse(values);
+    const next: FormErrors = {};
     if (!result.success) {
-      const next: FormErrors = {};
       for (const issue of result.error.issues) {
         const key = issue.path[0] as keyof FormErrors;
         if (key && !next[key]) next[key] = issue.message;
       }
+    }
+    return next;
+  };
+
+  const validateField = (key: keyof FormErrors, override?: string) => {
+    const values = { noivos, cidade, data, convidados, [key]: override ?? "" };
+    const next = runValidation(values);
+    setErrors((p) => ({ ...p, [key]: next[key] }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const next = runValidation({ noivos, cidade, data, convidados });
+    if (Object.keys(next).length > 0) {
       setErrors(next);
       const firstInvalid = fieldOrder.find((k) => next[k]);
       if (firstInvalid) {
