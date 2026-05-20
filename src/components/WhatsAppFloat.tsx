@@ -1,5 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
+import { z } from "zod";
+
+const todayIso = () => {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d.toISOString().slice(0, 10);
+};
+
+const formSchema = z.object({
+  noivos: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
+  cidade: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
+  data: z
+    .string()
+    .optional()
+    .refine((v) => !v || /^\d{4}-\d{2}-\d{2}$/.test(v), "Data inválida")
+    .refine((v) => {
+      if (!v) return true;
+      const d = new Date(v + "T00:00:00");
+      return !isNaN(d.getTime()) && v >= todayIso();
+    }, "A data deve ser hoje ou futura"),
+  convidados: z
+    .string()
+    .optional()
+    .refine((v) => !v || /^\d+$/.test(v), "Use apenas números")
+    .refine((v) => !v || parseInt(v, 10) > 0, "Deve ser maior que zero")
+    .refine((v) => !v || parseInt(v, 10) <= 5000, "Máximo 5000"),
+});
+
+type FormErrors = Partial<Record<"noivos" | "cidade" | "data" | "convidados", string>>;
 
 const PHONE = "5537999265472";
 
