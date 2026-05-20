@@ -96,6 +96,12 @@ const WhatsAppFloat = () => {
         if (key && !next[key]) next[key] = issue.message;
       }
       setErrors(next);
+      const firstInvalid = fieldOrder.find((k) => next[k]);
+      if (firstInvalid) {
+        const el = fieldRefs[firstInvalid].current;
+        el?.focus({ preventScroll: true });
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
       return;
     }
     setErrors({});
