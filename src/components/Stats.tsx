@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { useInView } from "@/hooks/use-in-view";
 
 const stats = [
-  { value: 150, suffix: "+", label: "Eventos realizados" },
-  { value: 98, suffix: "%", label: "Clientes satisfeitos" },
-  { value: 8, suffix: "+", label: "Anos de experiência" },
-  { value: 47, suffix: "", label: "Avaliações 5 estrelas" },
+  { value: 127, prefix: "+", suffix: "", label: "Casamentos realizados" },
+  { value: 5, prefix: "", suffix: ".0★", label: "Avaliação no Google" },
+  { value: 8, prefix: "", suffix: " anos", label: "Experiência no mercado" },
+  { value: 100, prefix: "", suffix: "%", label: "Dedicação exclusiva" },
 ];
 
-const Counter = ({ to, suffix }: { to: number; suffix: string }) => {
+const Counter = ({ to, prefix, suffix }: { to: number; prefix: string; suffix: string }) => {
   const { ref, inView } = useInView<HTMLSpanElement>();
   const [n, setN] = useState(0);
 
@@ -29,39 +29,25 @@ const Counter = ({ to, suffix }: { to: number; suffix: string }) => {
 
   return (
     <span ref={ref} className="tabular-nums">
-      {n}
-      {suffix}
+      {prefix}{n}{suffix}
     </span>
   );
 };
 
 const Stats = () => {
   return (
-    <section className="py-20 md:py-24 bg-warm-dark relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{ backgroundImage: "radial-gradient(circle at 20% 20%, hsl(var(--gold)) 0, transparent 40%), radial-gradient(circle at 80% 70%, hsl(var(--champagne)) 0, transparent 40%)" }}
-      />
-      <div className="container max-w-6xl mx-auto px-6 relative">
-        <div className="text-center mb-12">
-          <p className="text-champagne/70 text-[11px] tracking-[0.35em] uppercase font-sans mb-3">
-            Resultados que falam por si
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-cream">
-            Uma trajetória construída em <span className="text-shimmer italic">momentos únicos</span>
-          </h2>
-          <div className="premium-divider mt-6">
-            <div className="ornament" style={{ borderColor: "hsl(var(--champagne) / 0.5)" }} />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+    <section id="prova" className="py-20 md:py-28 bg-warm-dark">
+      <div className="container max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 text-center">
           {stats.map((s, i) => (
-            <div key={i} className="text-center px-4 py-6 border border-champagne/10">
-              <p className="font-serif text-4xl md:text-6xl font-light text-shimmer mb-3 leading-none">
-                <Counter to={s.value} suffix={s.suffix} />
+            <div key={i} className="px-2">
+              <p
+                className="font-serif font-light leading-none mb-4 text-[44px] md:text-[64px]"
+                style={{ color: "hsl(var(--gold))" }}
+              >
+                <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} />
               </p>
-              <div className="w-8 h-px bg-gold-light/40 mx-auto mb-3" />
-              <p className="text-champagne/70 text-[10px] md:text-[11px] tracking-[0.25em] uppercase font-sans leading-tight">
+              <p className="text-cream/60 text-[10px] md:text-[11px] tracking-[0.3em] uppercase font-sans font-light leading-snug">
                 {s.label}
               </p>
             </div>
