@@ -1,5 +1,36 @@
 import { Helmet } from "react-helmet-async";
-import { Instagram, MessageCircle, Phone, MapPin, Clock, Mail, Star } from "lucide-react";
+import { Instagram, MessageCircle, Phone, MapPin, Clock, Mail, Star, Facebook, MapPinned } from "lucide-react";
+
+const socialLinks = [
+  {
+    label: "WhatsApp",
+    handle: "(37) 99926-5472",
+    href: "https://wa.me/5537999265472?text=Ol%C3%A1%20Ana%20J%C3%BAlia%2C%20gostaria%20de%20um%20or%C3%A7amento.",
+    Icon: MessageCircle,
+    ariaLabel: "Falar no WhatsApp com Ana Júlia Cerimonialista",
+  },
+  {
+    label: "Instagram",
+    handle: "@anajuliacerimonialista",
+    href: "https://www.instagram.com/Anajuliacerimonialista",
+    Icon: Instagram,
+    ariaLabel: "Instagram da Ana Júlia Cerimonialista",
+  },
+  {
+    label: "Facebook",
+    handle: "/anajuliacerimonialista",
+    href: "https://www.facebook.com/anajuliacerimonialista",
+    Icon: Facebook,
+    ariaLabel: "Página no Facebook da Ana Júlia Cerimonialista",
+  },
+  {
+    label: "Google Business",
+    handle: "Avaliações 5★",
+    href: "https://www.google.com/search?q=Ana+J%C3%BAlia+Cerimonialista+Par%C3%A1+de+Minas",
+    Icon: MapPinned,
+    ariaLabel: "Perfil no Google Business da Ana Júlia Cerimonialista",
+  },
+];
 
 const cidades = [
   "Pará de Minas",
@@ -54,10 +85,7 @@ const Footer = () => {
         closes: "19:00",
       },
     ],
-    sameAs: [
-      "https://www.instagram.com/Anajuliacerimonialista",
-      "https://wa.me/5537999265472",
-    ],
+    sameAs: socialLinks.map((s) => s.href),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
@@ -93,6 +121,33 @@ const Footer = () => {
             <MessageCircle className="w-4 h-4" strokeWidth={1.2} />
             Falar no WhatsApp
           </a>
+
+          {/* Social authority row */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            {socialLinks.map(({ label, handle, href, Icon, ariaLabel }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={ariaLabel}
+                className="group inline-flex items-center gap-2.5 px-4 py-2.5 border border-gold/25 hover:border-gold/60 bg-warm-dark/40 hover:bg-warm-dark/70 backdrop-blur-sm transition-all duration-500"
+              >
+                <Icon
+                  className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors"
+                  strokeWidth={1.2}
+                />
+                <span className="text-left leading-tight">
+                  <span className="block text-cream text-[10px] tracking-[0.25em] uppercase font-sans">
+                    {label}
+                  </span>
+                  <span className="block text-cream/55 group-hover:text-cream/80 text-[11px] font-light transition-colors">
+                    {handle}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="section-separator on-dark mb-14" />
