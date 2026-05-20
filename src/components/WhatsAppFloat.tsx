@@ -27,8 +27,10 @@ const formatDate = (iso: string) => {
 
 const WhatsAppFloat = () => {
   const [open, setOpen] = useState(false);
+  const [noivos, setNoivos] = useState("");
   const [cidade, setCidade] = useState("");
   const [data, setData] = useState("");
+  const [convidados, setConvidados] = useState("");
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
