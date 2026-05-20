@@ -8,9 +8,26 @@ const todayIso = () => {
   return d.toISOString().slice(0, 10);
 };
 
+const NAME_MAX = 80;
+
+const nameField = (label: string) =>
+  z
+    .string()
+    .trim()
+    .max(NAME_MAX, `Máximo ${NAME_MAX} caracteres`)
+    .refine(
+      (v) => !v || /^[\p{L}\s\-'&]+$/u.test(v),
+      `${label} contém caracteres inválidos`,
+    )
+    .refine(
+      (v) => !v || /\p{L}/u.test(v),
+      `Informe um ${label.toLowerCase()} válido`,
+    )
+    .optional();
+
 const formSchema = z.object({
-  noivos: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
-  cidade: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
+  noivos: nameField("Nome"),
+  cidade: nameField("Cidade"),
   data: z
     .string()
     .optional()
