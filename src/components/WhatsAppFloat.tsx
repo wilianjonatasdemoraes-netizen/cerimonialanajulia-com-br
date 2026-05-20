@@ -143,10 +143,19 @@ const WhatsAppFloat = () => {
                 type="text"
                 ref={fieldRefs.noivos}
                 value={noivos}
-                onChange={(e) => setNoivos(e.target.value)}
+                onChange={(e) => {
+                  setNoivos(e.target.value);
+                  if (errors.noivos) setErrors((p) => ({ ...p, noivos: undefined }));
+                }}
                 placeholder="Ex: Ana & Lucas"
-                className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+                aria-invalid={!!errors.noivos}
+                className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
+                  errors.noivos ? "border-destructive/70" : "border-champagne/20 focus:border-gold/60"
+                }`}
               />
+              {errors.noivos && (
+                <p className="mt-1 text-destructive text-[10px] font-sans">{errors.noivos}</p>
+              )}
             </div>
             <div>
               <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
@@ -156,10 +165,19 @@ const WhatsAppFloat = () => {
                 type="text"
                 ref={fieldRefs.cidade}
                 value={cidade}
-                onChange={(e) => setCidade(e.target.value)}
+                onChange={(e) => {
+                  setCidade(e.target.value);
+                  if (errors.cidade) setErrors((p) => ({ ...p, cidade: undefined }));
+                }}
                 placeholder="Ex: Pará de Minas"
-                className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+                aria-invalid={!!errors.cidade}
+                className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
+                  errors.cidade ? "border-destructive/70" : "border-champagne/20 focus:border-gold/60"
+                }`}
               />
+              {errors.cidade && (
+                <p className="mt-1 text-destructive text-[10px] font-sans">{errors.cidade}</p>
+              )}
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
