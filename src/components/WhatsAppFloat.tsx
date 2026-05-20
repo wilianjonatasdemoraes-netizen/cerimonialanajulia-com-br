@@ -62,6 +62,13 @@ const WhatsAppFloat = () => {
   const [convidados, setConvidados] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const panelRef = useRef<HTMLDivElement>(null);
+  const fieldRefs = {
+    noivos: useRef<HTMLInputElement>(null),
+    cidade: useRef<HTMLInputElement>(null),
+    data: useRef<HTMLInputElement>(null),
+    convidados: useRef<HTMLInputElement>(null),
+  };
+  const fieldOrder: (keyof FormErrors)[] = ["noivos", "cidade", "data", "convidados"];
 
   useEffect(() => {
     if (!open) return;
