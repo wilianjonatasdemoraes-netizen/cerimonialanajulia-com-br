@@ -154,6 +154,7 @@ const WhatsAppFloat = () => {
               </label>
               <input
                 type="text"
+                ref={fieldRefs.cidade}
                 value={cidade}
                 onChange={(e) => setCidade(e.target.value)}
                 placeholder="Ex: Pará de Minas"
