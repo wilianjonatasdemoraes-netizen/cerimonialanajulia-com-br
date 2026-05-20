@@ -189,9 +189,10 @@ const WhatsAppFloat = () => {
                 ref={fieldRefs.cidade}
                 value={cidade}
                 onChange={(e) => {
-                  setCidade(e.target.value);
+                  setCidade(maskName(e.target.value));
                   if (errors.cidade) setErrors((p) => ({ ...p, cidade: undefined }));
                 }}
+                onBlur={() => setCidade((v) => titleCase(v))}
                 placeholder="Ex: Pará de Minas"
                 aria-invalid={!!errors.cidade}
                 className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
