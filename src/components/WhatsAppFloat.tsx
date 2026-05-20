@@ -166,9 +166,10 @@ const WhatsAppFloat = () => {
                 ref={fieldRefs.noivos}
                 value={noivos}
                 onChange={(e) => {
-                  setNoivos(e.target.value);
+                  setNoivos(maskName(e.target.value));
                   if (errors.noivos) setErrors((p) => ({ ...p, noivos: undefined }));
                 }}
+                onBlur={() => setNoivos((v) => titleCase(v))}
                 placeholder="Ex: Ana & Lucas"
                 aria-invalid={!!errors.noivos}
                 className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
