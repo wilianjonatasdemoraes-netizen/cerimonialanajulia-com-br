@@ -121,6 +121,33 @@ const Footer = () => {
             <MessageCircle className="w-4 h-4" strokeWidth={1.2} />
             Falar no WhatsApp
           </a>
+
+          {/* Social authority row */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            {socialLinks.map(({ label, handle, href, Icon, ariaLabel }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={ariaLabel}
+                className="group inline-flex items-center gap-2.5 px-4 py-2.5 border border-gold/25 hover:border-gold/60 bg-warm-dark/40 hover:bg-warm-dark/70 backdrop-blur-sm transition-all duration-500"
+              >
+                <Icon
+                  className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors"
+                  strokeWidth={1.2}
+                />
+                <span className="text-left leading-tight">
+                  <span className="block text-cream text-[10px] tracking-[0.25em] uppercase font-sans">
+                    {label}
+                  </span>
+                  <span className="block text-cream/55 group-hover:text-cream/80 text-[11px] font-light transition-colors">
+                    {handle}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="section-separator on-dark mb-14" />
