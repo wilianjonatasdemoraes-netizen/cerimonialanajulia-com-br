@@ -8,9 +8,26 @@ const todayIso = () => {
   return d.toISOString().slice(0, 10);
 };
 
+const NAME_MAX = 80;
+
+const nameField = (label: string) =>
+  z
+    .string()
+    .trim()
+    .max(NAME_MAX, `Máximo ${NAME_MAX} caracteres`)
+    .refine(
+      (v) => !v || /^[\p{L}\s\-'&]+$/u.test(v),
+      `${label} contém caracteres inválidos`,
+    )
+    .refine(
+      (v) => !v || /\p{L}/u.test(v),
+      `Informe um ${label.toLowerCase()} válido`,
+    )
+    .optional();
+
 const formSchema = z.object({
-  noivos: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
-  cidade: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
+  noivos: nameField("Nome"),
+  cidade: nameField("Cidade"),
   data: z
     .string()
     .optional()
@@ -34,9 +51,13 @@ const PHONE = "5537999265472";
 
 const LOWER_WORDS = new Set(["de", "da", "do", "das", "dos", "e", "di", "du"]);
 
-// Allow only letters (incl. acentos), espaço, hífen, apóstrofo e &.
+// Allow only letters (incl. acentos), espaço, hífen, apóstrofo e &, com limite.
 const maskName = (raw: string) =>
-  raw.replace(/[^\p{L}\s\-'&]/gu, "").replace(/\s{2,}/g, " ").replace(/^\s+/, "");
+  raw
+    .replace(/[^\p{L}\s\-'&]/gu, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/^\s+/, "")
+    .slice(0, NAME_MAX);
 
 const titleCase = (raw: string) =>
   raw
@@ -108,15 +129,33 @@ const WhatsAppFloat = () => {
     };
   }, [open]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = formSchema.safeParse({ noivos, cidade, data, convidados });
+  const runValidation = (values: {
+    noivos: string;
+    cidade: string;
+    data: string;
+    convidados: string;
+  }) => {
+    const result = formSchema.safeParse(values);
+    const next: FormErrors = {};
     if (!result.success) {
-      const next: FormErrors = {};
       for (const issue of result.error.issues) {
         const key = issue.path[0] as keyof FormErrors;
         if (key && !next[key]) next[key] = issue.message;
       }
+    }
+    return next;
+  };
+
+  const validateField = (key: keyof FormErrors, override?: string) => {
+    const values = { noivos, cidade, data, convidados, [key]: override ?? "" };
+    const next = runValidation(values);
+    setErrors((p) => ({ ...p, [key]: next[key] }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const next = runValidation({ noivos, cidade, data, convidados });
+    if (Object.keys(next).length > 0) {
       setErrors(next);
       const firstInvalid = fieldOrder.find((k) => next[k]);
       if (firstInvalid) {
@@ -165,11 +204,17 @@ const WhatsAppFloat = () => {
                 type="text"
                 ref={fieldRefs.noivos}
                 value={noivos}
+                maxLength={NAME_MAX}
                 onChange={(e) => {
-                  setNoivos(maskName(e.target.value));
-                  if (errors.noivos) setErrors((p) => ({ ...p, noivos: undefined }));
+                  const v = maskName(e.target.value);
+                  setNoivos(v);
+                  if (errors.noivos) validateField("noivos", v);
                 }}
-                onBlur={() => setNoivos((v) => titleCase(v))}
+                onBlur={() => {
+                  const v = titleCase(maskName(noivos)).slice(0, NAME_MAX);
+                  setNoivos(v);
+                  validateField("noivos", v);
+                }}
                 placeholder="Ex: Ana & Lucas"
                 aria-invalid={!!errors.noivos}
                 className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
@@ -188,11 +233,17 @@ const WhatsAppFloat = () => {
                 type="text"
                 ref={fieldRefs.cidade}
                 value={cidade}
+                maxLength={NAME_MAX}
                 onChange={(e) => {
-                  setCidade(maskName(e.target.value));
-                  if (errors.cidade) setErrors((p) => ({ ...p, cidade: undefined }));
+                  const v = maskName(e.target.value);
+                  setCidade(v);
+                  if (errors.cidade) validateField("cidade", v);
                 }}
-                onBlur={() => setCidade((v) => titleCase(v))}
+                onBlur={() => {
+                  const v = titleCase(maskName(cidade)).slice(0, NAME_MAX);
+                  setCidade(v);
+                  validateField("cidade", v);
+                }}
                 placeholder="Ex: Pará de Minas"
                 aria-invalid={!!errors.cidade}
                 className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
