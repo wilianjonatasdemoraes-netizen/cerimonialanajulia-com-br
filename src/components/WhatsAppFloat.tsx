@@ -51,7 +51,7 @@ const WhatsAppFloat = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(buildUrl(cidade, data), "_blank", "noopener,noreferrer");
+    window.open(buildUrl(noivos, cidade, data, convidados), "_blank", "noopener,noreferrer");
     setOpen(false);
   };
 
