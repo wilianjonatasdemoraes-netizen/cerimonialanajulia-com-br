@@ -204,11 +204,17 @@ const WhatsAppFloat = () => {
                 type="text"
                 ref={fieldRefs.noivos}
                 value={noivos}
+                maxLength={NAME_MAX}
                 onChange={(e) => {
-                  setNoivos(maskName(e.target.value));
-                  if (errors.noivos) setErrors((p) => ({ ...p, noivos: undefined }));
+                  const v = maskName(e.target.value);
+                  setNoivos(v);
+                  if (errors.noivos) validateField("noivos", v);
                 }}
-                onBlur={() => setNoivos((v) => titleCase(v))}
+                onBlur={() => {
+                  const v = titleCase(maskName(noivos)).slice(0, NAME_MAX);
+                  setNoivos(v);
+                  validateField("noivos", v);
+                }}
                 placeholder="Ex: Ana & Lucas"
                 aria-invalid={!!errors.noivos}
                 className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
