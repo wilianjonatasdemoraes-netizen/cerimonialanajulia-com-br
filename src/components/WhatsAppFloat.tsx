@@ -168,6 +168,7 @@ const WhatsAppFloat = () => {
                 </label>
                 <input
                   type="date"
+                  ref={fieldRefs.data}
                   value={data}
                   min={todayIso()}
                   onChange={(e) => {
