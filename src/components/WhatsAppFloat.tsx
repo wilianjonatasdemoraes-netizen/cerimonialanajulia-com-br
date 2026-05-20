@@ -1,5 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
+import { z } from "zod";
+
+const todayIso = () => {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d.toISOString().slice(0, 10);
+};
+
+const formSchema = z.object({
+  noivos: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
+  cidade: z.string().trim().max(80, "Máximo 80 caracteres").optional(),
+  data: z
+    .string()
+    .optional()
+    .refine((v) => !v || /^\d{4}-\d{2}-\d{2}$/.test(v), "Data inválida")
+    .refine((v) => {
+      if (!v) return true;
+      const d = new Date(v + "T00:00:00");
+      return !isNaN(d.getTime()) && v >= todayIso();
+    }, "A data deve ser hoje ou futura"),
+  convidados: z
+    .string()
+    .optional()
+    .refine((v) => !v || /^\d+$/.test(v), "Use apenas números")
+    .refine((v) => !v || parseInt(v, 10) > 0, "Deve ser maior que zero")
+    .refine((v) => !v || parseInt(v, 10) <= 5000, "Máximo 5000"),
+});
+
+type FormErrors = Partial<Record<"noivos" | "cidade" | "data" | "convidados", string>>;
 
 const PHONE = "5537999265472";
 
@@ -31,6 +60,7 @@ const WhatsAppFloat = () => {
   const [cidade, setCidade] = useState("");
   const [data, setData] = useState("");
   const [convidados, setConvidados] = useState("");
+  const [errors, setErrors] = useState<FormErrors>({});
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -51,6 +81,17 @@ const WhatsAppFloat = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const result = formSchema.safeParse({ noivos, cidade, data, convidados });
+    if (!result.success) {
+      const next: FormErrors = {};
+      for (const issue of result.error.issues) {
+        const key = issue.path[0] as keyof FormErrors;
+        if (key && !next[key]) next[key] = issue.message;
+      }
+      setErrors(next);
+      return;
+    }
+    setErrors({});
     window.open(buildUrl(noivos, cidade, data, convidados), "_blank", "noopener,noreferrer");
     setOpen(false);
   };
@@ -113,9 +154,19 @@ const WhatsAppFloat = () => {
                 <input
                   type="date"
                   value={data}
-                  onChange={(e) => setData(e.target.value)}
-                  className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors [color-scheme:dark]"
+                  min={todayIso()}
+                  onChange={(e) => {
+                    setData(e.target.value);
+                    if (errors.data) setErrors((p) => ({ ...p, data: undefined }));
+                  }}
+                  aria-invalid={!!errors.data}
+                  className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors [color-scheme:dark] ${
+                    errors.data ? "border-destructive/70" : "border-champagne/20 focus:border-gold/60"
+                  }`}
                 />
+                {errors.data && (
+                  <p className="mt-1 text-destructive text-[10px] font-sans">{errors.data}</p>
+                )}
               </div>
               <div>
                 <label className="block text-cream/60 text-[10px] tracking-[0.2em] uppercase font-sans mb-1.5">
@@ -123,12 +174,24 @@ const WhatsAppFloat = () => {
                 </label>
                 <input
                   type="number"
-                  min={0}
+                  min={1}
+                  max={5000}
+                  step={1}
+                  inputMode="numeric"
                   value={convidados}
-                  onChange={(e) => setConvidados(e.target.value)}
+                  onChange={(e) => {
+                    setConvidados(e.target.value);
+                    if (errors.convidados) setErrors((p) => ({ ...p, convidados: undefined }));
+                  }}
                   placeholder="Ex: 150"
-                  className="w-full bg-transparent border border-champagne/20 focus:border-gold/60 outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30"
+                  aria-invalid={!!errors.convidados}
+                  className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
+                    errors.convidados ? "border-destructive/70" : "border-champagne/20 focus:border-gold/60"
+                  }`}
                 />
+                {errors.convidados && (
+                  <p className="mt-1 text-destructive text-[10px] font-sans">{errors.convidados}</p>
+                )}
               </div>
             </div>
             <button
