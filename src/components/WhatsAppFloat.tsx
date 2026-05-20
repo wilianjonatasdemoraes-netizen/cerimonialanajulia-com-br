@@ -140,7 +140,7 @@ const WhatsAppFloat = () => {
             <button
               type="button"
               onClick={() => {
-                window.open(buildUrl("", ""), "_blank", "noopener,noreferrer");
+                window.open(buildUrl("", "", "", ""), "_blank", "noopener,noreferrer");
                 setOpen(false);
               }}
               className="w-full text-champagne/50 hover:text-champagne text-[10px] tracking-[0.2em] uppercase font-sans py-1 transition-colors"
