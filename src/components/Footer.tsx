@@ -85,10 +85,7 @@ const Footer = () => {
         closes: "19:00",
       },
     ],
-    sameAs: [
-      "https://www.instagram.com/Anajuliacerimonialista",
-      "https://wa.me/5537999265472",
-    ],
+    sameAs: socialLinks.map((s) => s.href),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
