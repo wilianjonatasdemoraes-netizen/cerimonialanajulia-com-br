@@ -233,11 +233,17 @@ const WhatsAppFloat = () => {
                 type="text"
                 ref={fieldRefs.cidade}
                 value={cidade}
+                maxLength={NAME_MAX}
                 onChange={(e) => {
-                  setCidade(maskName(e.target.value));
-                  if (errors.cidade) setErrors((p) => ({ ...p, cidade: undefined }));
+                  const v = maskName(e.target.value);
+                  setCidade(v);
+                  if (errors.cidade) validateField("cidade", v);
                 }}
-                onBlur={() => setCidade((v) => titleCase(v))}
+                onBlur={() => {
+                  const v = titleCase(maskName(cidade)).slice(0, NAME_MAX);
+                  setCidade(v);
+                  validateField("cidade", v);
+                }}
                 placeholder="Ex: Pará de Minas"
                 aria-invalid={!!errors.cidade}
                 className={`w-full bg-transparent border outline-none text-cream text-sm font-light px-3 py-2 transition-colors placeholder:text-cream/30 ${
