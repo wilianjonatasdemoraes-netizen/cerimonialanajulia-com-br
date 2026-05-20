@@ -1,35 +1,137 @@
-import { Instagram, MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { Instagram, MessageCircle, Phone, MapPin, Clock, Mail, Star } from "lucide-react";
+
+const cidades = [
+  "Pará de Minas",
+  "Divinópolis",
+  "Itaúna",
+  "Nova Serrana",
+  "Carmo do Cajuru",
+  "Pitangui",
+  "Belo Horizonte",
+  "São José da Varginha",
+  "Onça de Pitangui",
+  "Conceição do Pará",
+];
+
+const servicos = [
+  { label: "Cerimonial de Casamento", href: "#servicos" },
+  { label: "Assessoria Completa", href: "#servicos" },
+  { label: "Cerimonial 15 Anos", href: "#servicos" },
+  { label: "Day-Off Coordination", href: "#servicos" },
+  { label: "Eventos Corporativos", href: "#servicos" },
+  { label: "Bodas & Aniversários", href: "#servicos" },
+];
 
 const Footer = () => {
-  return (
-    <footer className="bg-warm-dark py-16 relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-champagne/20 to-transparent" />
+  const footerJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://ana.wjmlook.com.br/#footer-business",
+    name: "Ana Júlia Cerimonial",
+    image: "https://ana.wjmlook.com.br/og.jpg",
+    url: "https://ana.wjmlook.com.br/",
+    telephone: "+55-37-99926-5472",
+    priceRange: "$$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pará de Minas",
+      addressRegion: "MG",
+      postalCode: "35660-000",
+      addressCountry: "BR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -19.8606,
+      longitude: -44.6083,
+    },
+    areaServed: cidades.map((c) => ({ "@type": "City", name: c })),
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "09:00",
+        closes: "19:00",
+      },
+    ],
+    sameAs: [
+      "https://www.instagram.com/Anajuliacerimonialista",
+      "https://wa.me/5537999265472",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "47",
+    },
+  };
 
-      <div className="container max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-10 md:gap-12 mb-12 text-center md:text-left">
+  return (
+    <footer className="bg-warm-dark py-20 relative overflow-hidden">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(footerJsonLd)}</script>
+      </Helmet>
+
+      {/* decorative top line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rotate-45 border border-gold/60 bg-warm-dark" />
+
+      <div className="container max-w-6xl mx-auto px-6 relative">
+        {/* Top CTA strip */}
+        <div className="text-center mb-14">
+          <p className="text-gold/70 text-[10px] tracking-[0.35em] uppercase font-sans mb-3">
+            Cerimonial Premium em Pará de Minas e Região
+          </p>
+          <h3 className="font-serif text-3xl md:text-4xl text-cream font-light italic">
+            Vamos planejar o seu <span className="text-shimmer">grande dia</span>?
+          </h3>
+          <a
+            href="https://wa.me/5537999265472?text=Ol%C3%A1%20Ana%20J%C3%BAlia%2C%20gostaria%20de%20um%20or%C3%A7amento."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-premium inline-flex items-center gap-2 mt-6 px-8 py-3 text-cream text-[11px] tracking-[0.3em] uppercase font-sans"
+          >
+            <MessageCircle className="w-4 h-4" strokeWidth={1.2} />
+            Falar no WhatsApp
+          </a>
+        </div>
+
+        <div className="section-separator on-dark mb-14" />
+
+        <div className="grid md:grid-cols-12 gap-10 md:gap-8 mb-12 text-center md:text-left">
           {/* Brand */}
-          <div className="md:col-span-1">
-            <p className="font-serif text-2xl tracking-wider mb-3">
+          <div className="md:col-span-4">
+            <p className="font-serif text-3xl tracking-wider mb-2">
               <span className="text-shimmer">Ana Júlia</span>
             </p>
-            <p className="text-champagne/60 text-[11px] tracking-[0.2em] uppercase font-sans mb-4">
-              Cerimonial Premium
+            <p className="text-gold/60 text-[10px] tracking-[0.3em] uppercase font-sans mb-5">
+              Cerimonial · Casamentos · Eventos
             </p>
-            <p className="text-champagne/50 text-sm font-light leading-relaxed">
-              Assessoria sofisticada para casamentos, debutantes e eventos especiais em Pará de Minas e região.
+            <p className="text-cream/60 text-sm font-light leading-relaxed mb-5">
+              Cerimonialista referência em <strong className="text-cream/80 font-normal">Pará de Minas — MG</strong>,
+              especializada em casamentos sofisticados, debutantes e eventos premium em
+              toda a região centro-oeste de Minas Gerais.
             </p>
+            <div className="flex items-center justify-center md:justify-start gap-1 text-gold">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-current" strokeWidth={0} />
+              ))}
+              <span className="text-cream/60 text-xs ml-2 font-light">
+                5.0 · 47 avaliações no Google
+              </span>
+            </div>
           </div>
 
-          {/* Menu */}
-          <div>
-            <p className="text-champagne/80 text-[11px] tracking-[0.25em] uppercase font-sans mb-4">
+          {/* Navegação */}
+          <div className="md:col-span-2">
+            <p className="text-gold/80 text-[10px] tracking-[0.3em] uppercase font-sans mb-5">
               Navegação
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {[
                 { label: "Início", href: "#inicio" },
-                { label: "Serviços", href: "#servicos" },
                 { label: "Sobre", href: "#sobre" },
+                { label: "Serviços", href: "#servicos" },
+                { label: "Portfólio", href: "#portfolio" },
                 { label: "Depoimentos", href: "#depoimentos" },
                 { label: "Dúvidas", href: "#duvidas" },
                 { label: "Contato", href: "#contato" },
@@ -37,7 +139,7 @@ const Footer = () => {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    className="text-champagne/50 hover:text-champagne text-sm font-light transition-colors"
+                    className="text-cream/55 hover:text-gold text-sm font-light transition-colors"
                   >
                     {l.label}
                   </a>
@@ -46,29 +148,50 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <p className="text-champagne/80 text-[11px] tracking-[0.25em] uppercase font-sans mb-4">
+          {/* Serviços */}
+          <div className="md:col-span-3">
+            <p className="text-gold/80 text-[10px] tracking-[0.3em] uppercase font-sans mb-5">
+              Serviços
+            </p>
+            <ul className="space-y-2.5">
+              {servicos.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    className="text-cream/55 hover:text-gold text-sm font-light transition-colors"
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contato + Atendimento */}
+          <div className="md:col-span-3">
+            <p className="text-gold/80 text-[10px] tracking-[0.3em] uppercase font-sans mb-5">
               Contato
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-6">
               <li>
                 <a
                   href="https://wa.me/5537999265472"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-champagne/60 hover:text-champagne text-sm font-light transition-colors"
+                  aria-label="Falar no WhatsApp com Ana Júlia Cerimonialista"
+                  className="inline-flex items-center gap-2 text-cream/65 hover:text-gold text-sm font-light transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4" strokeWidth={1.2} />
+                  <MessageCircle className="w-4 h-4 text-gold/70" strokeWidth={1.2} />
                   (37) 99926-5472
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+5537999265472"
-                  className="inline-flex items-center gap-2 text-champagne/60 hover:text-champagne text-sm font-light transition-colors"
+                  aria-label="Ligar para Ana Júlia Cerimonialista"
+                  className="inline-flex items-center gap-2 text-cream/65 hover:text-gold text-sm font-light transition-colors"
                 >
-                  <Phone className="w-4 h-4" strokeWidth={1.2} />
+                  <Phone className="w-4 h-4 text-gold/70" strokeWidth={1.2} />
                   Ligar agora
                 </a>
               </li>
@@ -77,39 +200,62 @@ const Footer = () => {
                   href="https://www.instagram.com/Anajuliacerimonialista"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-champagne/60 hover:text-champagne text-sm font-light transition-colors"
+                  aria-label="Instagram da Ana Júlia Cerimonialista"
+                  className="inline-flex items-center gap-2 text-cream/65 hover:text-gold text-sm font-light transition-colors"
                 >
-                  <Instagram className="w-4 h-4" strokeWidth={1.2} />
-                  @anajulia.cerimonialista
+                  <Instagram className="w-4 h-4 text-gold/70" strokeWidth={1.2} />
+                  @anajuliacerimonialista
                 </a>
               </li>
+              <li className="inline-flex items-start gap-2 text-cream/65 text-sm font-light">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-gold/70" strokeWidth={1.2} />
+                <span>
+                  Pará de Minas — MG
+                  <br />
+                  <span className="text-cream/40 text-xs">e toda a região</span>
+                </span>
+              </li>
+              <li className="inline-flex items-start gap-2 text-cream/65 text-sm font-light">
+                <Clock className="w-4 h-4 mt-0.5 flex-shrink-0 text-gold/70" strokeWidth={1.2} />
+                <span>
+                  Seg. a Sáb. · 09h às 19h
+                  <br />
+                  <span className="text-cream/40 text-xs">Resposta em até 1h útil</span>
+                </span>
+              </li>
             </ul>
           </div>
+        </div>
 
-          {/* Atendimento */}
-          <div>
-            <p className="text-champagne/80 text-[11px] tracking-[0.25em] uppercase font-sans mb-4">
-              Atendimento
-            </p>
-            <ul className="space-y-3">
-              <li className="inline-flex items-start gap-2 text-champagne/60 text-sm font-light">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.2} />
-                <span>Pará de Minas — MG<br/><span className="text-champagne/40 text-xs">e toda a região</span></span>
-              </li>
-              <li className="inline-flex items-start gap-2 text-champagne/60 text-sm font-light">
-                <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={1.2} />
-                <span>Seg. a Sáb.<br/><span className="text-champagne/40 text-xs">09h às 19h</span></span>
-              </li>
-            </ul>
-          </div>
+        {/* SEO local — cidades atendidas */}
+        <div className="border-t border-gold/15 pt-8 mb-8">
+          <p className="text-gold/70 text-[10px] tracking-[0.3em] uppercase font-sans mb-4 text-center md:text-left">
+            Cidades atendidas
+          </p>
+          <p className="text-cream/45 text-xs md:text-sm font-light leading-relaxed text-center md:text-left">
+            Cerimonialista e assessoria de casamento em{" "}
+            {cidades.map((c, i) => (
+              <span key={c}>
+                <span className="text-cream/65">{c}</span>
+                {i < cidades.length - 1 ? " · " : " "}
+              </span>
+            ))}
+            e demais cidades do <span className="text-cream/65">Centro-Oeste de Minas Gerais</span>.
+          </p>
         </div>
 
         <div className="premium-divider mb-6">
-          <div className="ornament" style={{ borderColor: 'hsl(var(--champagne) / 0.3)' }} />
+          <div className="ornament" style={{ borderColor: "hsl(var(--gold) / 0.4)" }} />
         </div>
-        <p className="text-champagne/30 text-[10px] tracking-wider uppercase font-sans text-center">
-          © 2026 Ana Júlia Cerimonial · Cerimonialista em Pará de Minas · Todos os direitos reservados
-        </p>
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-center">
+          <p className="text-cream/30 text-[10px] tracking-[0.2em] uppercase font-sans">
+            © 2026 Ana Júlia Cerimonial · CNPJ sob consulta · Pará de Minas — MG
+          </p>
+          <p className="text-cream/30 text-[10px] tracking-[0.2em] uppercase font-sans">
+            Cerimonialista Premium · Todos os direitos reservados
+          </p>
+        </div>
       </div>
     </footer>
   );
