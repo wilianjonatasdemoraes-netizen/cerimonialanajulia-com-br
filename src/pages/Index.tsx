@@ -37,6 +37,7 @@ const Index = () => {
       <PainDesire />
       <About />
       <Services />
+      <Plans />
       <HowItWorks />
       <Portfolio />
       <Storytelling />
