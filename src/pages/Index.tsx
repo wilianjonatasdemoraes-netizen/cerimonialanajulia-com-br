@@ -6,6 +6,7 @@ import PainDesire from "@/components/PainDesire";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
+import Plans from "@/components/Plans";
 import Portfolio from "@/components/Portfolio";
 import Storytelling from "@/components/Storytelling";
 import Testimonials from "@/components/Testimonials";
