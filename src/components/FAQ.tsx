@@ -8,28 +8,28 @@ import {
 
 const faqs = [
   {
-    q: "Qual a diferença entre cerimonial e assessoria?",
-    a: "A assessoria acompanha você desde o planejamento, ajudando em decisões, fornecedores e cronograma. O cerimonial é a coordenação no dia do evento, garantindo que tudo aconteça conforme planejado.",
+    q: "Com quanto tempo de antecedência devo contratar o cerimonial?",
+    a: "O ideal é contratar entre 6 e 12 meses antes do evento, principalmente para datas concorridas. Também atendemos prazos menores conforme disponibilidade.",
   },
   {
-    q: "Com quanto tempo de antecedência devo contratar?",
-    a: "O ideal é entre 6 e 12 meses antes do evento, principalmente para datas concorridas. Mas também atendemos contratos com prazos menores conforme disponibilidade.",
+    q: "Qual a diferença entre assessoria do dia e organização completa?",
+    a: "A assessoria do dia coordena tudo na data do evento — fornecedores, cronograma e bastidores. A organização completa acompanha você desde o planejamento, com reuniões, escolhas e alinhamentos durante todo o processo.",
   },
   {
-    q: "Vocês atendem em quais cidades?",
-    a: "Atendemos em toda a região e também viajamos para destinos especiais. Entre em contato com a data e cidade do evento para confirmarmos disponibilidade.",
+    q: "Vocês acompanham os fornecedores?",
+    a: "Sim. Fazemos alinhamento prévio, conferência de contratos, briefings e coordenação dos fornecedores antes e durante o evento, garantindo que cada um cumpra o combinado.",
   },
   {
-    q: "Como funciona a lista de presença digital?",
-    a: "É uma plataforma onde os convidados confirmam presença online (RSVP), informam preferências e visualizam todas as informações do evento. Você acompanha tudo em tempo real.",
+    q: "Atendem fora de Pará de Minas?",
+    a: "Sim. Atendemos toda a região e também viajamos para casamentos e eventos em outras cidades de Minas Gerais. Entre em contato com a cidade e data para confirmarmos disponibilidade.",
   },
   {
-    q: "O que está incluso no cerimonial do dia?",
-    a: "Coordenação completa de fornecedores, gestão do cronograma, supervisão de cada etapa, resolução de imprevistos e acompanhamento integral do evento do início ao fim.",
+    q: "Como funciona o orçamento?",
+    a: "É personalizado. Após uma conversa inicial pelo WhatsApp para entender o tipo de evento, data, local e nível de assessoria desejado, enviamos uma proposta sob medida.",
   },
   {
-    q: "Como solicito um orçamento?",
-    a: "Você pode preencher o formulário de contato no site ou falar diretamente comigo pelo WhatsApp. Respondo o mais rápido possível com uma proposta personalizada.",
+    q: "O atendimento é personalizado?",
+    a: "Totalmente. Cada noiva, debutante ou família tem um perfil único, e o atendimento é desenhado para acolher o seu momento, com proximidade e cuidado em cada decisão.",
   },
 ];
 

@@ -11,6 +11,7 @@ import Portfolio from "@/components/Portfolio";
 import Storytelling from "@/components/Storytelling";
 import Testimonials from "@/components/Testimonials";
 import VideoShowcase from "@/components/VideoShowcase";
+import WhyChoose from "@/components/WhyChoose";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Contact from "@/components/Contact";
@@ -43,6 +44,7 @@ const Index = () => {
       <Storytelling />
       <VideoShowcase />
       <Testimonials />
+      <WhyChoose />
       <FAQ />
       <FinalCTA />
       <Contact />
