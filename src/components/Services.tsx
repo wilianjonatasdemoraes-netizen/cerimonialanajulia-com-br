@@ -64,13 +64,7 @@ const Services = () => {
           {services.map((s) => (
             <article
               key={s.title}
-              className="p-8 md:p-10 flex flex-col transition-all duration-500"
-              style={{
-                borderRadius: "2px",
-                background: "hsl(var(--warm-dark))",
-                border: "1px solid hsl(var(--gold) / 0.25)",
-                boxShadow: "0 20px 60px -25px rgba(201,169,110,0.15)",
-              }}
+              className="card-service on-dark p-8 md:p-10 flex flex-col"
             >
               <span
                 className="self-start text-[10px] tracking-[0.3em] uppercase font-sans mb-6 px-3 py-1"
@@ -94,15 +88,14 @@ const Services = () => {
                 href={WHATSAPP_BASE + encodeURIComponent(s.msg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full px-6 py-4 text-[11px] tracking-[0.22em] uppercase font-sans font-medium transition-all"
-                style={{
-                  background: "hsl(var(--gold))",
-                  color: "hsl(var(--warm-dark))",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "hsl(var(--bronze))")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "hsl(var(--gold))")}
+                className="btn-whatsapp w-full"
               >
-                {s.cta} →
+                <span className="wa-icon">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                    <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+                  </svg>
+                </span>
+                {s.cta}
               </a>
             </article>
           ))}

@@ -73,15 +73,14 @@ const Plans = () => {
           {plans.map((p) => (
             <article
               key={p.name}
-              className="p-8 md:p-10 flex flex-col transition-all duration-500 bg-card"
+              className="card-service p-8 md:p-10 flex flex-col"
               style={{
-                borderRadius: "4px",
-                border: p.highlight
-                  ? "1.5px solid hsl(var(--gold))"
-                  : "1px solid hsl(var(--gold) / 0.25)",
+                borderColor: p.highlight
+                  ? "hsl(var(--gold))"
+                  : "hsl(var(--gold) / 0.25)",
                 boxShadow: p.highlight
-                  ? "0 30px 70px -25px rgba(201,169,110,0.45)"
-                  : "0 20px 60px -25px rgba(201,169,110,0.15)",
+                  ? "0 30px 70px -25px rgba(201,169,110,0.55), 0 0 0 1px hsl(var(--gold) / 0.35)"
+                  : undefined,
                 transform: p.highlight ? "translateY(-6px)" : undefined,
               }}
             >
@@ -132,22 +131,16 @@ const Plans = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-event={`plan_${p.name.toLowerCase()}_click`}
-                className="inline-flex items-center justify-center w-full px-6 py-4 text-[11px] tracking-[0.22em] uppercase font-sans font-medium transition-all"
-                style={{
-                  background: p.highlight ? "hsl(var(--gold))" : "transparent",
-                  color: p.highlight ? "hsl(var(--warm-dark))" : "hsl(var(--gold))",
-                  border: "1px solid hsl(var(--gold))",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "hsl(var(--gold))";
-                  e.currentTarget.style.color = "hsl(var(--warm-dark))";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = p.highlight ? "hsl(var(--gold))" : "transparent";
-                  e.currentTarget.style.color = p.highlight ? "hsl(var(--warm-dark))" : "hsl(var(--gold))";
-                }}
+                className={p.highlight ? "btn-whatsapp w-full" : "btn-gold-premium w-full"}
               >
-                Solicitar proposta →
+                {p.highlight && (
+                  <span className="wa-icon">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+                    </svg>
+                  </span>
+                )}
+                Solicitar proposta
               </a>
             </article>
           ))}
