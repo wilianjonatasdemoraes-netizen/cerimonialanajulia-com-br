@@ -48,28 +48,25 @@ const Hero = () => {
         </div>
 
         {/* H1 */}
-        <h1 className="font-serif italic font-light text-cream leading-[1.05] mb-8 text-[40px] md:text-[64px] lg:text-[72px]">
-          O dia mais lindo
-          <br />
-          da sua vida,
-          <br />
-          organizado com <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>amor</span>.
+        <h1 className="font-serif italic font-light text-cream leading-[1.08] mb-8 text-[34px] md:text-[54px] lg:text-[60px]">
+          Cerimonial premium para casamentos
+          <br className="hidden md:block" />
+          {" "}e eventos <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>inesquecíveis</span>
+          <br className="hidden md:block" />
+          {" "}em Pará de Minas e região.
         </h1>
 
         {/* Subhead */}
         <p className="font-sans font-light text-cream/85 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          Assessoria completa para casamentos, debutantes e eventos únicos.
-          <br className="hidden md:block" />
-          Você curte cada momento. A gente cuida de tudo.
+          Organização, sensibilidade e presença estratégica para que você
+          viva o seu grande dia com tranquilidade, elegância e segurança.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-event="hero_whatsapp_click"
+            href="#planos"
+            data-event="hero_primary_click"
             className="inline-flex items-center justify-center px-8 py-4 text-[11px] md:text-xs tracking-[0.22em] uppercase font-sans font-medium w-full sm:w-auto transition-all duration-500"
             style={{
               background: "hsl(var(--gold))",
@@ -79,14 +76,16 @@ const Hero = () => {
             onMouseEnter={(e) => (e.currentTarget.style.background = "hsl(var(--bronze))")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "hsl(var(--gold))")}
           >
-            Agendar minha consultoria gratuita
+            Quero organizar meu evento
           </a>
           <a
-            href="#portfolio"
-            data-event="hero_portfolio_click"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-event="hero_whatsapp_click"
             className="inline-flex items-center justify-center px-8 py-4 text-[11px] md:text-xs tracking-[0.22em] uppercase font-sans border border-cream/70 text-cream w-full sm:w-auto hover:bg-cream/10 transition-colors"
           >
-            Ver casamentos realizados ↓
+            Falar com Ana Júlia no WhatsApp
           </a>
         </div>
 
