@@ -82,7 +82,7 @@ const buildUrl = (
   convidados: string,
 ) => {
   const partes = [
-    "Olá Ana Júlia! Gostaria de saber mais sobre o cerimonial.",
+    "Olá, Ana Júlia! Vi seu site e gostaria de receber uma proposta para cerimonial/organização do meu evento.",
     noivos.trim() ? `Noivos: ${noivos.trim()}.` : "",
     cidade.trim() ? `Cidade do evento: ${cidade.trim()}.` : "",
     data.trim() ? `Data prevista: ${formatDate(data)}.` : "",

@@ -1,25 +1,30 @@
-import { ClipboardList, Users, Calendar, Heart } from "lucide-react";
+import { MessageCircle, Search, FileText, ClipboardList, Heart } from "lucide-react";
 
 const steps = [
   {
+    icon: MessageCircle,
+    title: "Primeiro contato",
+    description: "Você fala com a Ana Júlia pelo WhatsApp e conta o sonho do seu evento.",
+  },
+  {
+    icon: Search,
+    title: "Diagnóstico do evento",
+    description: "Entendemos o estilo, a data, o número de convidados e o nível de assessoria ideal.",
+  },
+  {
+    icon: FileText,
+    title: "Proposta personalizada",
+    description: "Você recebe uma proposta clara, com escopo, etapas e investimento sob medida.",
+  },
+  {
     icon: ClipboardList,
-    title: "Planejamento",
-    description: "Entendemos os seus sonhos e criamos um plano detalhado para transformá-los em realidade.",
-  },
-  {
-    icon: Users,
-    title: "Coordenação de Fornecedores",
-    description: "Selecionamos e gerenciamos os melhores profissionais para o seu evento.",
-  },
-  {
-    icon: Calendar,
-    title: "Cronograma",
-    description: "Organizamos cada minuto do seu dia com precisão e fluidez.",
+    title: "Planejamento e alinhamento",
+    description: "Coordenamos fornecedores, cronograma e cada detalhe alinhado com você.",
   },
   {
     icon: Heart,
-    title: "Execução",
-    description: "No grande dia, cuidamos de tudo para que vocês vivam cada momento.",
+    title: "Execução no grande dia",
+    description: "Cuidamos de tudo nos bastidores para você viver cada momento sem preocupação.",
   },
 ];
 
@@ -39,7 +44,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
           {steps.map((step, index) => (
             <div key={index} className="text-center group">
               <div className="premium-frame w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-gold-light/40 group-hover:border-gold transition-colors duration-500">

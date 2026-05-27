@@ -6,6 +6,7 @@ import PainDesire from "@/components/PainDesire";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
+import Plans from "@/components/Plans";
 import Portfolio from "@/components/Portfolio";
 import Storytelling from "@/components/Storytelling";
 import Testimonials from "@/components/Testimonials";
@@ -19,14 +20,14 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Ana Júlia Cerimonialista | Casamentos Premium em Pará de Minas</title>
+        <title>Cerimonialista em Pará de Minas | Ana Júlia Cerimonial</title>
         <meta
           name="description"
-          content="Assessoria e cerimonial premium para casamentos, debutantes e eventos em Pará de Minas e região. +127 casamentos realizados, 5★ no Google."
+          content="Cerimonial e organização de casamentos, debutantes e eventos especiais em Pará de Minas e região. Planejamento, assessoria e execução com elegância, cuidado e profissionalismo."
         />
         <link rel="canonical" href="https://ana.wjmlook.com.br/" />
-        <meta property="og:title" content="Ana Júlia Cerimonialista | Casamentos Premium" />
-        <meta property="og:description" content="O dia mais lindo da sua vida, organizado com amor." />
+        <meta property="og:title" content="Cerimonialista em Pará de Minas | Ana Júlia Cerimonial" />
+        <meta property="og:description" content="Cerimonial e organização de casamentos, debutantes e eventos especiais em Pará de Minas e região." />
         <meta property="og:url" content="https://ana.wjmlook.com.br/" />
       </Helmet>
 
@@ -36,6 +37,7 @@ const Index = () => {
       <PainDesire />
       <About />
       <Services />
+      <Plans />
       <HowItWorks />
       <Portfolio />
       <Storytelling />
