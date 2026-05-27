@@ -44,7 +44,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
           {steps.map((step, index) => (
             <div key={index} className="text-center group">
               <div className="premium-frame w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-gold-light/40 group-hover:border-gold transition-colors duration-500">
