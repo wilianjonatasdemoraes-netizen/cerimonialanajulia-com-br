@@ -36,8 +36,13 @@ const Navbar = () => {
           target="_blank"
           rel="noopener noreferrer"
           data-event="navbar_whatsapp_click"
-          className="hidden lg:inline-block btn-premium text-champagne text-[10px] tracking-[0.2em] uppercase px-5 py-2 font-sans border-champagne/40"
+          className="hidden lg:inline-flex btn-whatsapp btn-sm"
         >
+          <span className="wa-icon">
+            <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+            </svg>
+          </span>
           WhatsApp
         </a>
         <button
@@ -72,8 +77,13 @@ const Navbar = () => {
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             data-event="navbar_mobile_whatsapp_click"
-            className="btn-premium text-champagne text-[10px] tracking-[0.2em] uppercase px-5 py-2 font-sans border-champagne/40 text-center mt-2"
+            className="btn-whatsapp btn-sm mt-2"
           >
+            <span className="wa-icon">
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+              </svg>
+            </span>
             Falar no WhatsApp
           </a>
         </div>

@@ -306,9 +306,14 @@ const WhatsAppFloat = () => {
             </div>
             <button
               type="submit"
-              className="w-full mt-2 bg-[#25D366] hover:bg-[#1ebe57] text-white text-[11px] tracking-[0.25em] uppercase font-sans py-3 transition-colors"
+              className="btn-whatsapp w-full mt-2"
             >
-              Enviar no WhatsApp →
+              <span className="wa-icon">
+                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                  <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+                </svg>
+              </span>
+              Enviar no WhatsApp
             </button>
             <button
               type="button"
@@ -328,18 +333,26 @@ const WhatsAppFloat = () => {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label="Falar no WhatsApp"
+        aria-label="Falar com Ana Júlia no WhatsApp"
         aria-expanded={open}
         data-event="whatsapp_float_click"
         className="relative group block"
       >
         {!open && (
-          <span
-            className="absolute inset-0 rounded-full bg-gold/40 animate-ping opacity-60"
-            aria-hidden="true"
-          />
+          <span className="hidden md:block wa-float-label group-hover:opacity-100 opacity-90 transition-opacity">
+            Fale com Ana Júlia
+          </span>
         )}
-        <span className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] shadow-[0_8px_30px_-4px_rgba(37,211,102,0.5)] border border-white/20 hover:scale-110 transition-transform duration-300">
+        {!open && <span className="wa-float-halo" aria-hidden="true" />}
+        <span
+          className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/30 transition-all duration-300 group-hover:scale-110 group-active:scale-95"
+          style={{
+            background: "linear-gradient(135deg, #2ee06b 0%, #25D366 50%, #1faa52 100%)",
+            boxShadow:
+              "0 14px 38px -8px rgba(37,211,102,0.65), 0 0 0 1px rgba(255,255,255,0.15) inset, 0 6px 14px -6px rgba(201,169,110,0.45)",
+            animation: open ? undefined : "wa-soft-pulse 3.6s ease-in-out infinite",
+          }}
+        >
           {open ? (
             <X className="w-6 h-6 md:w-7 md:h-7 text-white" strokeWidth={2} />
           ) : (

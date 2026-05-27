@@ -65,27 +65,26 @@ const Hero = () => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <a
-            href="#planos"
-            data-event="hero_primary_click"
-            className="inline-flex items-center justify-center px-8 py-4 text-[11px] md:text-xs tracking-[0.22em] uppercase font-sans font-medium w-full sm:w-auto transition-all duration-500"
-            style={{
-              background: "hsl(var(--gold))",
-              color: "hsl(var(--warm-dark))",
-              boxShadow: "0 10px 40px -10px rgba(201,169,110,0.5)",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "hsl(var(--bronze))")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "hsl(var(--gold))")}
-          >
-            Quero organizar meu evento
-          </a>
-          <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-event="hero_whatsapp_click"
-            className="inline-flex items-center justify-center px-8 py-4 text-[11px] md:text-xs tracking-[0.22em] uppercase font-sans border border-cream/70 text-cream w-full sm:w-auto hover:bg-cream/10 transition-colors"
+            className="btn-whatsapp btn-lg w-full sm:w-auto"
           >
-            Falar com Ana Júlia no WhatsApp
+            <span className="wa-icon">
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+              </svg>
+            </span>
+            Falar com Ana Júlia agora
+          </a>
+          <a
+            href="#planos"
+            data-event="hero_primary_click"
+            className="btn-outline-gold w-full sm:w-auto"
+            style={{ color: "hsl(var(--cream))", borderColor: "hsl(var(--cream) / 0.55)" }}
+          >
+            Ver planos
           </a>
         </div>
 
