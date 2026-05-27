@@ -308,7 +308,7 @@ const Footer = () => {
             © 2026 Ana Júlia Cerimonial · CNPJ sob consulta · Pará de Minas — MG
           </p>
           <p className="text-cream/30 text-[10px] tracking-[0.2em] uppercase font-sans">
-            Cerimonialista Premium · Todos os direitos reservados
+            Site desenvolvido por WJM Sites / WS Center
           </p>
         </div>
       </div>
