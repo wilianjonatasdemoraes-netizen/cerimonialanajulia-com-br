@@ -3,7 +3,7 @@ import heroImage from "@/assets/wedding-sparklers.jpg";
 const WHATSAPP_URL =
   "https://wa.me/5537999265472?text=" +
   encodeURIComponent(
-    "Olá Ana Júlia! Vi seu site e gostaria de saber mais sobre a assessoria para meu evento. Podemos conversar?"
+    "Olá, Ana Júlia! Vi seu site e gostaria de receber uma proposta para cerimonial/organização do meu evento."
   );
 
 const Hero = () => {
