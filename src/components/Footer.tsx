@@ -116,10 +116,12 @@ const Footer = () => {
             href="https://wa.me/5537999265472?text=Ol%C3%A1%20Ana%20J%C3%BAlia%2C%20gostaria%20de%20um%20or%C3%A7amento."
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-premium inline-flex items-center gap-2 mt-6 px-8 py-3 text-cream text-[11px] tracking-[0.3em] uppercase font-sans"
+            className="btn-whatsapp mt-6"
           >
-            <MessageCircle className="w-4 h-4" strokeWidth={1.2} />
-            Falar no WhatsApp
+            <span className="wa-icon">
+              <MessageCircle className="w-4 h-4" strokeWidth={1.6} />
+            </span>
+            Solicitar orçamento pelo WhatsApp
           </a>
 
           {/* Social authority row */}
