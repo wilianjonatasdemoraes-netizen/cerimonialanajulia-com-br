@@ -1,4 +1,5 @@
-import heroImage from "@/assets/wedding-sparklers.jpg";
+import heroImage from "@/assets/anaju-hero.jpg.asset.json";
+const heroImageUrl = heroImage.url;
 
 const WHATSAPP_URL =
   "https://wa.me/5537999265472?text=" +
@@ -20,12 +21,12 @@ const Hero = () => {
           muted
           loop
           playsInline
-          poster={heroImage}
+          poster={heroImageUrl}
           className="w-full h-full object-cover"
           aria-hidden="true"
         />
         <img
-          src={heroImage}
+          src={heroImageUrl}
           alt=""
           className="absolute inset-0 w-full h-full object-cover -z-10"
           aria-hidden="true"
