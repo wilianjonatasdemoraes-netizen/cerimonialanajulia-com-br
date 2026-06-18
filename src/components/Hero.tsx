@@ -1,4 +1,4 @@
-import heroImage from "@/assets/anaju-hero.jpg.asset.json";
+import heroImage from "@/assets/anaju-hero-v2.jpg.asset.json";
 const heroImageUrl = heroImage.url;
 
 const WHATSAPP_URL =
