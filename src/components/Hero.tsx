@@ -1,5 +1,5 @@
-import heroImage from "@/assets/anaju-hero-v3.jpg.asset.json";
-const heroImageUrl = heroImage.url;
+import logoImage from "@/assets/anaju-logo.jpg.asset.json";
+const logoUrl = logoImage.url;
 
 const WHATSAPP_URL =
   "https://wa.me/5537999265472?text=" +
@@ -11,23 +11,18 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black"
     >
-      {/* Background: image with dark overlay */}
-      <div className="absolute inset-0">
+      {/* Logo central — destaque principal */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-8">
         <img
-          src={heroImageUrl}
-          alt="Ana Júlia Cerimonialista"
-          className="w-full h-full object-cover"
-          aria-hidden="true"
+          src={logoUrl}
+          alt="Logo Ana Júlia Cerimonialista"
+          className="w-[220px] md:w-[320px] lg:w-[400px] h-auto object-contain mb-10"
         />
-        <div className="absolute inset-0" style={{ background: "rgba(26,20,16,0.55)" }} />
-      </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-up pt-24 pb-12">
         {/* Tag */}
-        <div className="flex items-center justify-center gap-3 mb-8">
+        <div className="flex items-center justify-center gap-3 mb-6">
           <span className="h-px w-10 bg-gold/70" />
           <p
             className="font-sans text-[10px] md:text-[11px] tracking-[0.35em] uppercase"
