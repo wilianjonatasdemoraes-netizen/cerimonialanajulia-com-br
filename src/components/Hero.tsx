@@ -13,22 +13,12 @@ const Hero = () => {
       id="inicio"
       className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden"
     >
-      {/* Background: video with image fallback */}
+      {/* Background: image with dark overlay */}
       <div className="absolute inset-0">
-        <video
-          src="/videos/apresentacao-geral.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={heroImageUrl}
-          className="w-full h-full object-cover"
-          aria-hidden="true"
-        />
         <img
           src={heroImageUrl}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover -z-10"
+          alt="Ana Júlia Cerimonialista"
+          className="w-full h-full object-cover"
           aria-hidden="true"
         />
         <div className="absolute inset-0" style={{ background: "rgba(26,20,16,0.55)" }} />
