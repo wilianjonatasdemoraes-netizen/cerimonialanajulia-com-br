@@ -1,4 +1,4 @@
-import logoImage from "@/assets/anaju-logo-transparent.png.asset.json";
+import logoImage from "@/assets/anaju-logo-black.png.asset.json";
 const logoUrl = logoImage.url;
 
 const WHATSAPP_URL =
