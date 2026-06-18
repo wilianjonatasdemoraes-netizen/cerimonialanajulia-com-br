@@ -1,4 +1,4 @@
-import logoImage from "@/assets/anaju-logo.jpg.asset.json";
+import logoImage from "@/assets/anaju-logo-transparent.png.asset.json";
 const logoUrl = logoImage.url;
 
 const WHATSAPP_URL =
@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-cream"
     >
       {/* Logo central — destaque principal */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-8">
@@ -34,7 +34,7 @@ const Hero = () => {
         </div>
 
         {/* H1 */}
-        <h1 className="font-serif italic font-light text-cream leading-[1.08] mb-8 text-[34px] md:text-[54px] lg:text-[60px]">
+        <h1 className="font-serif italic font-light text-warm-dark leading-[1.08] mb-8 text-[34px] md:text-[54px] lg:text-[60px]">
           Cerimonial premium para casamentos
           <br className="hidden md:block" />
           {" "}e eventos <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>inesquecíveis</span>
@@ -43,7 +43,7 @@ const Hero = () => {
         </h1>
 
         {/* Subhead */}
-        <p className="font-sans font-light text-cream/85 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="font-sans font-light text-body-text/85 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
           Organização, sensibilidade e presença estratégica para que você
           viva o seu grande dia com tranquilidade, elegância e segurança.
         </p>
@@ -68,14 +68,14 @@ const Hero = () => {
             href="#planos"
             data-event="hero_primary_click"
             className="btn-outline-gold w-full sm:w-auto"
-            style={{ color: "hsl(var(--cream))", borderColor: "hsl(var(--cream) / 0.55)" }}
+            style={{ color: "hsl(var(--warm-dark))", borderColor: "hsl(var(--warm-dark) / 0.55)" }}
           >
             Ver planos
           </a>
         </div>
 
         {/* Trust strip */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-cream/90 text-[11px] md:text-xs font-sans font-light">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-warm-dark/90 text-[11px] md:text-xs font-sans font-light">
           <span className="flex items-center gap-2">
             <span style={{ color: "hsl(var(--gold))" }}>♡</span> +127 casamentos
           </span>
@@ -96,8 +96,8 @@ const Hero = () => {
         className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition"
         aria-label="Rolar para baixo"
       >
-        <span className="text-cream text-[10px] tracking-[0.3em] uppercase font-sans">Descubra</span>
-        <span className="text-cream text-xl animate-bounce">↓</span>
+        <span className="text-warm-dark text-[10px] tracking-[0.3em] uppercase font-sans">Descubra</span>
+        <span className="text-warm-dark text-xl animate-bounce">↓</span>
       </a>
     </section>
   );
