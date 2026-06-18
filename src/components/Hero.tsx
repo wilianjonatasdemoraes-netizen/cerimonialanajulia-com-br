@@ -1,4 +1,5 @@
-import heroImage from "@/assets/wedding-sparklers.jpg";
+import heroImage from "@/assets/anaju-hero.jpg.asset.json";
+const heroImageUrl = heroImage.url;
 
 const WHATSAPP_URL =
   "https://wa.me/5537999265472?text=" +
