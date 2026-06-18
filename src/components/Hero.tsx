@@ -1,4 +1,4 @@
-import logoImage from "@/assets/anaju-logo-black.png.asset.json";
+import logoImage from "@/assets/anaju-logo-fundo-verde.png.asset.json";
 const logoUrl = logoImage.url;
 
 const WHATSAPP_URL =
@@ -11,7 +11,8 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-cream"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{ backgroundColor: "#1B3A2F" }}
     >
       {/* Logo central — destaque principal */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-8">
