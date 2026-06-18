@@ -21,12 +21,12 @@ const Hero = () => {
           muted
           loop
           playsInline
-          poster={heroImage}
+          poster={heroImageUrl}
           className="w-full h-full object-cover"
           aria-hidden="true"
         />
         <img
-          src={heroImage}
+          src={heroImageUrl}
           alt=""
           className="absolute inset-0 w-full h-full object-cover -z-10"
           aria-hidden="true"
