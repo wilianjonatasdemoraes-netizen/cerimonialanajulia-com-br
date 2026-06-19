@@ -81,23 +81,23 @@ const Plans = () => {
                 borderColor: p.highlight
                   ? "hsl(var(--gold))"
                   : "hsl(var(--gold) / 0.25)",
+                borderWidth: p.highlight ? "2px" : "1px",
+                background: p.highlight ? "hsl(36 47% 95%)" : undefined,
                 boxShadow: p.highlight
                   ? "0 30px 70px -25px rgba(201,169,110,0.55), 0 0 0 1px hsl(var(--gold) / 0.35)"
                   : undefined,
-                transform: p.highlight ? "translateY(-6px)" : undefined,
+                transform: p.highlight ? "translateY(-6px) scale(1.02)" : undefined,
               }}
             >
-              {p.highlight && (
-                <span
-                  className="self-start text-[10px] tracking-[0.3em] uppercase font-sans mb-5 px-3 py-1"
-                  style={{
-                    background: "hsl(var(--gold))",
-                    color: "hsl(var(--warm-dark))",
-                  }}
-                >
-                  Mais escolhido
-                </span>
-              )}
+              <span
+                className={`self-start text-[10px] tracking-[0.3em] uppercase font-sans mb-5 px-3 py-1 ${p.highlight ? "" : "border border-gold/40"}`}
+                style={{
+                  background: p.highlight ? "hsl(var(--gold))" : "transparent",
+                  color: p.highlight ? "hsl(var(--warm-dark))" : "hsl(var(--gold))",
+                }}
+              >
+                {p.tag}
+              </span>
               <p
                 className="font-sans text-[11px] tracking-[0.3em] uppercase mb-2"
                 style={{ color: "hsl(var(--gold))" }}
