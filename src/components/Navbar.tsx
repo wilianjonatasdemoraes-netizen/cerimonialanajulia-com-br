@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import UrgencyBar from "./UrgencyBar";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
@@ -15,7 +16,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-champagne/10">
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <UrgencyBar />
+      <nav className="glass-dark border-b border-champagne/10">
       <div className="container max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#inicio" className="font-serif text-xl md:text-2xl tracking-wider">
           <span className="text-shimmer">Ana Júlia</span>
