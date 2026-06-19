@@ -74,10 +74,15 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "pulse-soft": {
+          "0%, 100%": { transform: "scale(1)", boxShadow: "0 10px 28px -10px rgba(37,211,102,0.55)" },
+          "50%": { transform: "scale(1.03)", boxShadow: "0 18px 40px -8px rgba(37,211,102,0.75)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.8s ease-out forwards",
         "fade-in": "fade-in 1s ease-out forwards",
+        "pulse-soft": "pulse-soft 2.4s ease-in-out infinite",
       },
     },
   },

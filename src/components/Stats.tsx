@@ -8,13 +8,12 @@ const stats = [
   { value: 100, prefix: "", suffix: "%", label: "Dedicação exclusiva" },
 ];
 
-const Counter = ({ to, prefix, suffix }: { to: number; prefix: string; suffix: string }) => {
-  const { ref, inView } = useInView<HTMLSpanElement>();
+const Counter = ({ to, prefix, suffix, active }: { to: number; prefix: string; suffix: string; active: boolean }) => {
   const [n, setN] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
-    const duration = 1800;
+    if (!active) return;
+    const duration = 2000;
     const start = performance.now();
     let raf = 0;
     const step = (t: number) => {
@@ -25,19 +24,20 @@ const Counter = ({ to, prefix, suffix }: { to: number; prefix: string; suffix: s
     };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [inView, to]);
+  }, [active, to]);
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span className="tabular-nums">
       {prefix}{n}{suffix}
     </span>
   );
 };
 
 const Stats = () => {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2, rootMargin: "0px" });
   return (
     <section id="prova" className="py-20 md:py-28 bg-warm-dark">
-      <div className="container max-w-6xl mx-auto px-6">
+      <div ref={ref} className="container max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 text-center">
           {stats.map((s, i) => (
             <div key={i} className="px-2">
@@ -45,7 +45,7 @@ const Stats = () => {
                 className="font-serif font-light leading-none mb-4 text-[44px] md:text-[64px]"
                 style={{ color: "hsl(var(--gold))" }}
               >
-                <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} />
+                <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} active={inView} />
               </p>
               <p className="text-cream/60 text-[10px] md:text-[11px] tracking-[0.3em] uppercase font-sans font-light leading-snug">
                 {s.label}

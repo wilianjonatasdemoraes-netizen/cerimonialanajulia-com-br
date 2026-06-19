@@ -4,6 +4,7 @@ const plans = [
   {
     name: "Essencial",
     subtitle: "Assessoria do Dia",
+    tag: "Para cerimônias simples",
     description:
       "Para quem já organizou o evento, mas precisa de uma equipe profissional para coordenar tudo no grande dia.",
     features: [
@@ -19,6 +20,7 @@ const plans = [
   {
     name: "Completo",
     subtitle: "Organização + Cerimonial",
+    tag: "🏆 MAIS ESCOLHIDO",
     description:
       "Para quem deseja acompanhamento profissional desde o planejamento até a execução do evento.",
     features: [
@@ -34,6 +36,7 @@ const plans = [
   {
     name: "Premium",
     subtitle: "Experiência Exclusiva",
+    tag: "Para eventos de alto padrão",
     description:
       "Para eventos que exigem atenção especial, cronograma detalhado, fornecedores alinhados e atendimento personalizado.",
     features: [
@@ -78,23 +81,23 @@ const Plans = () => {
                 borderColor: p.highlight
                   ? "hsl(var(--gold))"
                   : "hsl(var(--gold) / 0.25)",
+                borderWidth: p.highlight ? "2px" : "1px",
+                background: p.highlight ? "hsl(36 47% 95%)" : undefined,
                 boxShadow: p.highlight
                   ? "0 30px 70px -25px rgba(201,169,110,0.55), 0 0 0 1px hsl(var(--gold) / 0.35)"
                   : undefined,
-                transform: p.highlight ? "translateY(-6px)" : undefined,
+                transform: p.highlight ? "translateY(-6px) scale(1.02)" : undefined,
               }}
             >
-              {p.highlight && (
-                <span
-                  className="self-start text-[10px] tracking-[0.3em] uppercase font-sans mb-5 px-3 py-1"
-                  style={{
-                    background: "hsl(var(--gold))",
-                    color: "hsl(var(--warm-dark))",
-                  }}
-                >
-                  Mais escolhido
-                </span>
-              )}
+              <span
+                className={`self-start text-[10px] tracking-[0.3em] uppercase font-sans mb-5 px-3 py-1 ${p.highlight ? "" : "border border-gold/40"}`}
+                style={{
+                  background: p.highlight ? "hsl(var(--gold))" : "transparent",
+                  color: p.highlight ? "hsl(var(--warm-dark))" : "hsl(var(--gold))",
+                }}
+              >
+                {p.tag}
+              </span>
               <p
                 className="font-sans text-[11px] tracking-[0.3em] uppercase mb-2"
                 style={{ color: "hsl(var(--gold))" }}
@@ -144,6 +147,17 @@ const Plans = () => {
               </a>
             </article>
           ))}
+        </div>
+
+        {/* Guarantees strip */}
+        <div className="mt-12 px-6 py-5 border border-gold/30 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-center font-sans text-[12px]" style={{ background: "hsl(var(--secondary) / 0.4)", color: "hsl(var(--warm-dark))" }}>
+          <span>🔒 Contrato garantido</span>
+          <span className="text-gold/40">|</span>
+          <span>💳 Parcelamento disponível</span>
+          <span className="text-gold/40">|</span>
+          <span>💬 Suporte até o dia do evento</span>
+          <span className="text-gold/40">|</span>
+          <span>✅ Sem surpresas no grande dia</span>
         </div>
       </div>
     </section>

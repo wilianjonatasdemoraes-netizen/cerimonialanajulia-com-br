@@ -56,14 +56,14 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-event="hero_whatsapp_click"
-            className="btn-whatsapp btn-lg w-full sm:w-auto"
+            className="btn-whatsapp btn-lg w-full sm:w-auto animate-pulse-soft"
           >
             <span className="wa-icon">
               <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
                 <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
               </svg>
             </span>
-            Falar com Ana Júlia agora
+            💬 Quero garantir minha data agora
           </a>
           <a
             href="#planos"
@@ -71,22 +71,31 @@ const Hero = () => {
             className="btn-outline-gold w-full sm:w-auto"
             style={{ color: "hsl(var(--cream))", borderColor: "hsl(var(--cream) / 0.55)" }}
           >
-            Ver planos
+            📋 Ver planos e disponibilidade
           </a>
         </div>
 
-        {/* Trust strip */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-cream/90 text-[11px] md:text-xs font-sans font-light">
-          <span className="flex items-center gap-2">
-            <span style={{ color: "hsl(var(--gold))" }}>♡</span> +127 casamentos
+        {/* Trust badges strip */}
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-cream/90 text-[11px] md:text-xs font-sans font-light max-w-3xl">
+          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
+            <span style={{ color: "hsl(var(--gold))" }}>♡</span> +127 Casamentos Realizados
           </span>
-          <span className="opacity-40">|</span>
-          <span className="flex items-center gap-2">
+          <a
+            href="https://www.google.com/search?q=Ana+J%C3%BAlia+Cerimonial+Par%C3%A1+de+Minas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full hover:border-gold/60 transition-colors"
+          >
             <span style={{ color: "hsl(var(--gold))" }}>★</span> 5.0 no Google
+          </a>
+          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
+            <span style={{ color: "hsl(var(--gold))" }}>✦</span> 8 Anos de Experiência
           </span>
-          <span className="opacity-40">|</span>
-          <span className="flex items-center gap-2">
-            <span style={{ color: "hsl(var(--gold))" }}>✦</span> 8 anos de experiência
+          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
+            <span style={{ color: "hsl(var(--gold))" }}>🏆</span> Cerimonialista Certificada
+          </span>
+          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
+            <span style={{ color: "hsl(var(--gold))" }}>💬</span> Atendimento Humanizado
           </span>
         </div>
       </div>
