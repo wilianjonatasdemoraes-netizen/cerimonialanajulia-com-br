@@ -340,7 +340,7 @@ const WhatsAppFloat = () => {
       >
         {!open && (
           <span className="hidden md:block wa-float-label group-hover:opacity-100 opacity-90 transition-opacity">
-            Fale com Ana Júlia
+            Fale agora — Resposta em minutos!
           </span>
         )}
         {!open && <span className="wa-float-halo" aria-hidden="true" />}
