@@ -148,6 +148,17 @@ const Plans = () => {
             </article>
           ))}
         </div>
+
+        {/* Guarantees strip */}
+        <div className="mt-12 px-6 py-5 border border-gold/30 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-center font-sans text-[12px]" style={{ background: "hsl(var(--secondary) / 0.4)", color: "hsl(var(--warm-dark))" }}>
+          <span>🔒 Contrato garantido</span>
+          <span className="text-gold/40">|</span>
+          <span>💳 Parcelamento disponível</span>
+          <span className="text-gold/40">|</span>
+          <span>💬 Suporte até o dia do evento</span>
+          <span className="text-gold/40">|</span>
+          <span>✅ Sem surpresas no grande dia</span>
+        </div>
       </div>
     </section>
   );
