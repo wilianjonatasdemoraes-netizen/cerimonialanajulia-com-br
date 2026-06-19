@@ -4,6 +4,7 @@ const plans = [
   {
     name: "Essencial",
     subtitle: "Assessoria do Dia",
+    tag: "Para cerimônias simples",
     description:
       "Para quem já organizou o evento, mas precisa de uma equipe profissional para coordenar tudo no grande dia.",
     features: [
@@ -19,6 +20,7 @@ const plans = [
   {
     name: "Completo",
     subtitle: "Organização + Cerimonial",
+    tag: "🏆 MAIS ESCOLHIDO",
     description:
       "Para quem deseja acompanhamento profissional desde o planejamento até a execução do evento.",
     features: [
@@ -34,6 +36,7 @@ const plans = [
   {
     name: "Premium",
     subtitle: "Experiência Exclusiva",
+    tag: "Para eventos de alto padrão",
     description:
       "Para eventos que exigem atenção especial, cronograma detalhado, fornecedores alinhados e atendimento personalizado.",
     features: [
