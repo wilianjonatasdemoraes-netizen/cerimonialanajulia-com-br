@@ -38,7 +38,10 @@ const Gallery = () => {
                 <img
                   src={p.src}
                   alt={p.caption}
+                  width={900}
+                  height={675}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>

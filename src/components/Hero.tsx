@@ -19,6 +19,11 @@ const Hero = () => {
         <img
           src={logoUrl}
           alt="Logo Ana Júlia Cerimonialista"
+          width={400}
+          height={400}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
           className="w-[220px] md:w-[320px] lg:w-[400px] h-auto object-contain mb-10"
         />
 
