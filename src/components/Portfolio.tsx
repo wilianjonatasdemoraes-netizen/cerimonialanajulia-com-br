@@ -45,8 +45,11 @@ const Portfolio = () => {
                 <img
                   src={img.src}
                   alt={img.label}
+                  width={600}
+                  height={450}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Hover overlay */}
