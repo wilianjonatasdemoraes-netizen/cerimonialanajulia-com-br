@@ -1,23 +1,26 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import PainDesire from "@/components/PainDesire";
-import About from "@/components/About";
-import Gallery from "@/components/Gallery";
-import Services from "@/components/Services";
-import HowItWorks from "@/components/HowItWorks";
-import Plans from "@/components/Plans";
-import Portfolio from "@/components/Portfolio";
-import Storytelling from "@/components/Storytelling";
-import Testimonials from "@/components/Testimonials";
-import VideoShowcase from "@/components/VideoShowcase";
-import WhyChoose from "@/components/WhyChoose";
-import FAQ from "@/components/FAQ";
-import FinalCTA from "@/components/FinalCTA";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
+
+// Below-the-fold: code-split to shrink initial JS payload
+const Stats = lazy(() => import("@/components/Stats"));
+const PainDesire = lazy(() => import("@/components/PainDesire"));
+const About = lazy(() => import("@/components/About"));
+const Gallery = lazy(() => import("@/components/Gallery"));
+const Services = lazy(() => import("@/components/Services"));
+const HowItWorks = lazy(() => import("@/components/HowItWorks"));
+const Plans = lazy(() => import("@/components/Plans"));
+const Portfolio = lazy(() => import("@/components/Portfolio"));
+const Storytelling = lazy(() => import("@/components/Storytelling"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const VideoShowcase = lazy(() => import("@/components/VideoShowcase"));
+const WhyChoose = lazy(() => import("@/components/WhyChoose"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const FinalCTA = lazy(() => import("@/components/FinalCTA"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 
 const Index = () => {
   return (
@@ -40,26 +43,28 @@ const Index = () => {
 
       <Navbar />
       <Hero />
-      <Stats />
-      <PainDesire />
-      <About />
-      <Gallery />
-      <Services />
-      <Plans />
-      <HowItWorks />
-      <Portfolio />
-      <Storytelling />
-      <VideoShowcase />
-      <Testimonials />
-      <div className="text-center pb-8 text-[11px] font-sans" style={{ color: "hsl(var(--body-text) / 0.6)" }}>
-        🟢 12 noivas visualizaram este site hoje
-      </div>
-      <WhyChoose />
-      <FAQ />
-      <FinalCTA />
-      <Contact />
-      <Footer />
-      <ExitIntentPopup />
+      <Suspense fallback={<div style={{ minHeight: 400 }} />}>
+        <Stats />
+        <PainDesire />
+        <About />
+        <Gallery />
+        <Services />
+        <Plans />
+        <HowItWorks />
+        <Portfolio />
+        <Storytelling />
+        <VideoShowcase />
+        <Testimonials />
+        <div className="text-center pb-8 text-[11px] font-sans" style={{ color: "hsl(var(--body-text) / 0.6)" }}>
+          🟢 12 noivas visualizaram este site hoje
+        </div>
+        <WhyChoose />
+        <FAQ />
+        <FinalCTA />
+        <Contact />
+        <Footer />
+        <ExitIntentPopup />
+      </Suspense>
     </div>
   );
 };
