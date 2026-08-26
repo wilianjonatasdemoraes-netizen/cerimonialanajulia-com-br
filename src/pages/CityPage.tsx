@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PageShell from "@/components/PageShell";
 import Seo, { breadcrumbJsonLd } from "@/components/Seo";
 import NotFound from "@/pages/NotFound";
@@ -6,8 +6,8 @@ import { cities, getCity } from "@/content/cities";
 import { PHONE_DISPLAY, SITE_NAME, SITE_URL, canonical } from "@/lib/site";
 
 const CityPage = () => {
-  const { slug } = useParams();
-  const city = getCity(slug);
+  const { pathname } = useLocation();
+  const city = getCity(pathname.replace(/^\/+|\/+$/g, ""));
 
   if (!city) return <NotFound />;
 
