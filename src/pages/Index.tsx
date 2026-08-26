@@ -58,6 +58,7 @@ const Index = () => {
           🟢 12 noivas visualizaram este site hoje
         </div>
         <WhyChoose />
+        <Regioes />
         <FAQ />
         <FinalCTA />
         <Contact />
