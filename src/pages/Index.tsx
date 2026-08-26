@@ -35,10 +35,10 @@ const Index = () => {
           name="keywords"
           content="cerimonialista Pará de Minas, assessoria de casamento MG, organização de casamento interior MG, cerimonial premium Pará de Minas, assessoria para debutante MG"
         />
-        <link rel="canonical" href="https://ana.wjmlook.com.br/" />
+        <link rel="canonical" href="https://ana.cerimonialcasamentos.com.br/" />
         <meta property="og:title" content="Ana Júlia Cerimonial — Casamentos Inesquecíveis em Pará de Minas" />
         <meta property="og:description" content="+127 casamentos realizados. Organização, elegância e tranquilidade para o seu grande dia." />
-        <meta property="og:url" content="https://ana.wjmlook.com.br/" />
+        <meta property="og:url" content="https://ana.cerimonialcasamentos.com.br/" />
       </Helmet>
 
       <Navbar />
