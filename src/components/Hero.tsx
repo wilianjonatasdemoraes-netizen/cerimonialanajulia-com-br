@@ -41,17 +41,16 @@ const Hero = () => {
 
         {/* H1 */}
         <h1 className="font-serif italic font-light text-cream leading-[1.08] mb-8 text-[34px] md:text-[54px] lg:text-[60px]">
-          Cerimonial premium para casamentos
+          Cerimonial de Casamento
           <br className="hidden md:block" />
-          {" "}e eventos <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>inesquecíveis</span>
-          <br className="hidden md:block" />
-          {" "}em Pará de Minas e região.
+          {" "}em <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>Pará de Minas</span>
         </h1>
 
         {/* Subhead */}
         <p className="font-sans font-light text-cream/85 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          Organização, sensibilidade e presença estratégica para que você
-          viva o seu grande dia com tranquilidade, elegância e segurança.
+          Cerimonialista em Pará de Minas e região: planejamento, organização e execução de
+          casamentos, festas de 15 anos e eventos — para que você viva o seu grande dia com
+          tranquilidade e segurança.
         </p>
 
         {/* CTAs */}
