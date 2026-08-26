@@ -306,6 +306,17 @@ const Footer = () => {
             ))}
             e demais cidades do <span className="text-cream/65">Centro-Oeste de Minas Gerais</span>.
           </p>
+          <div className="mt-5 flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
+            {cidadesLinks.map((c) => (
+              <a
+                key={c.href}
+                href={c.href}
+                className="text-cream/55 hover:text-gold text-xs font-light transition-colors"
+              >
+                {c.label}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="premium-divider mb-6">
