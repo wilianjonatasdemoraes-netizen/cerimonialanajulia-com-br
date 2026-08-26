@@ -1,19 +1,34 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import UrgencyBar from "./UrgencyBar";
 
-const navItems = [
+const sectionItems = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
   { label: "Planos", href: "#planos" },
-  { label: "Sobre", href: "#sobre" },
   { label: "Depoimentos", href: "#depoimentos" },
   { label: "Dúvidas", href: "#duvidas" },
   { label: "Contato", href: "#contato" },
 ];
 
+const pageItems = [
+  { label: "Casamento", href: "/cerimonial-de-casamento" },
+  { label: "15 Anos", href: "/festa-de-15-anos" },
+  { label: "Blog", href: "/blog" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const navItems = [
+    ...sectionItems.map((item) => ({
+      ...item,
+      href: isHome ? item.href : `/${item.href}`,
+    })),
+    ...pageItems,
+  ];
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
