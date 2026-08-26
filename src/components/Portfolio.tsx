@@ -8,16 +8,17 @@ import weddingKiss2 from "@/assets/wedding-kiss-2.jpg";
 import weddingNight from "@/assets/wedding-night.jpg";
 
 const images = [
-  { src: weddingCeremony, label: "Cerimônia" },
-  { src: weddingKiss, label: "Momentos" },
-  { src: weddingKiss2, label: "Emoção" },
-  { src: weddingVeil, label: "Detalhes" },
-  { src: weddingSunset, label: "Celebração" },
-  { src: weddingNight, label: "Noite" },
-  { src: weddingHug, label: "Recepção" },
-  { src: weddingCar, label: "Bastidores" },
-  { src: weddingCeremony, label: "Igreja" },
+  { src: weddingCeremony, label: "Cerimônia", alt: "Cerimônia de casamento organizada pela cerimonialista Ana Júlia em Pará de Minas" },
+  { src: weddingKiss, label: "Momentos", alt: "Noivos se beijando durante casamento com cerimonial Ana Júlia" },
+  { src: weddingKiss2, label: "Emoção", alt: "Momento de emoção dos noivos em casamento assessorado em Minas Gerais" },
+  { src: weddingVeil, label: "Detalhes", alt: "Detalhe do véu da noiva em casamento com assessoria completa" },
+  { src: weddingSunset, label: "Celebração", alt: "Celebração de casamento ao pôr do sol organizada pelo cerimonial" },
+  { src: weddingNight, label: "Noite", alt: "Festa de casamento à noite coordenada pela equipe de cerimonial" },
+  { src: weddingHug, label: "Recepção", alt: "Recepção de convidados em casamento em Pará de Minas" },
+  { src: weddingCar, label: "Bastidores", alt: "Bastidores da chegada dos noivos ao local do casamento" },
+  { src: weddingCeremony, label: "Igreja", alt: "Casamento na igreja com cerimonial e assessoria profissional" },
 ];
+
 
 const Portfolio = () => {
   return (
@@ -44,7 +45,7 @@ const Portfolio = () => {
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={img.src}
-                  alt={img.label}
+                  alt={img.alt}
                   width={600}
                   height={450}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

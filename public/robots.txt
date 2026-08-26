@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://ana.wjmlook.com.br/sitemap.xml
+Sitemap: https://ana.cerimonialcasamentos.com.br/sitemap.xml
