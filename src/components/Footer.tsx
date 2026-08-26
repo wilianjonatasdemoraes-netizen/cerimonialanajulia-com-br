@@ -46,12 +46,19 @@ const cidades = [
 ];
 
 const servicos = [
-  { label: "Cerimonial de Casamento", href: "#servicos" },
-  { label: "Assessoria Completa", href: "#servicos" },
-  { label: "Cerimonial 15 Anos", href: "#servicos" },
-  { label: "Day-Off Coordination", href: "#servicos" },
-  { label: "Eventos Corporativos", href: "#servicos" },
-  { label: "Bodas & Aniversários", href: "#servicos" },
+  { label: "Cerimonial de Casamento", href: "/cerimonial-de-casamento" },
+  { label: "Assessoria de Casamento", href: "/assessoria-de-casamento" },
+  { label: "Cerimonial de Debutantes", href: "/cerimonial-debutantes" },
+  { label: "Festa de 15 Anos", href: "/festa-de-15-anos" },
+  { label: "Casamentos Reais", href: "/casamentos-reais" },
+  { label: "Blog", href: "/blog" },
+];
+
+const cidadesLinks = [
+  { label: "Cerimonialista em Pará de Minas", href: "/cerimonial-para-de-minas" },
+  { label: "Cerimonialista em Divinópolis", href: "/cerimonial-divinopolis" },
+  { label: "Cerimonialista em Nova Serrana", href: "/cerimonial-nova-serrana" },
+  { label: "Cerimonialista em Itaúna", href: "/cerimonial-itauna" },
 ];
 
 const Footer = () => {
@@ -185,7 +192,7 @@ const Footer = () => {
             </p>
             <ul className="space-y-2.5">
               {[
-                { label: "Início", href: "#inicio" },
+                { label: "Início", href: "/" },
                 { label: "Sobre", href: "#sobre" },
                 { label: "Serviços", href: "#servicos" },
                 { label: "Portfólio", href: "#portfolio" },
