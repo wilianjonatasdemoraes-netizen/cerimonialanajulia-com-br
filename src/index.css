@@ -708,3 +708,35 @@ html {
     transform: none;
   }
 }
+
+/* ---------------------------------------------
+   Tipografia das páginas de conteúdo (SEO pages)
+   --------------------------------------------- */
+.seo-prose h2 {
+  @apply font-serif text-3xl md:text-4xl font-light text-foreground mt-14 mb-4 first:mt-0;
+}
+.seo-prose h3 {
+  @apply font-serif text-2xl font-light text-foreground mt-10 mb-3;
+}
+.seo-prose p {
+  @apply text-muted-foreground text-base font-light leading-relaxed mb-4;
+}
+.seo-prose ul {
+  @apply list-disc pl-5 space-y-2 mb-6 text-muted-foreground text-base font-light;
+}
+.seo-prose li::marker {
+  color: hsl(var(--gold));
+}
+.seo-prose a {
+  @apply text-foreground underline underline-offset-4 decoration-gold/50 hover:decoration-gold transition-colors;
+}
+.seo-prose strong {
+  @apply text-foreground font-normal;
+}
+.seo-prose .not-prose h2,
+.seo-prose .not-prose h3,
+.seo-prose .not-prose p,
+.seo-prose .not-prose ul,
+.seo-prose .not-prose a {
+  all: revert-layer;
+}

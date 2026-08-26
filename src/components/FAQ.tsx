@@ -8,8 +8,24 @@ import {
 
 const faqs = [
   {
+    q: "O que faz um cerimonialista?",
+    a: "O cerimonialista organiza o cronograma do evento, alinha e coordena os fornecedores, conduz a cerimônia e o protocolo da festa e resolve imprevistos nos bastidores, para que os noivos e a família aproveitem a celebração.",
+  },
+  {
     q: "Com quanto tempo de antecedência devo contratar o cerimonial?",
     a: "O ideal é contratar entre 6 e 12 meses antes do evento, principalmente para datas concorridas. Também atendemos prazos menores conforme disponibilidade.",
+  },
+  {
+    q: "Vocês fazem festas de 15 anos?",
+    a: "Sim. Fazemos cerimonial e organização de festas de debutantes, incluindo protocolo de entrada, valsa, homenagens, cronograma da noite e coordenação dos fornecedores.",
+  },
+  {
+    q: "Quanto custa um cerimonial?",
+    a: "O valor depende do formato contratado (assessoria do dia, parcial ou cerimonial completo), do número de convidados, da cidade e da duração do evento. Por isso, o orçamento é montado sob medida após uma conversa inicial.",
+  },
+  {
+    q: "Como solicitar orçamento?",
+    a: "Basta enviar uma mensagem pelo WhatsApp (37) 99926-5472 ou preencher o formulário do site com data, cidade, tipo de evento e número aproximado de convidados. Retornamos com uma proposta personalizada.",
   },
   {
     q: "Qual a diferença entre assessoria do dia e organização completa?",
