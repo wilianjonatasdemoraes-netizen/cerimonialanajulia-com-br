@@ -8,7 +8,7 @@ const Storytelling = () => {
       <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <img
           src={storyImage}
-          alt="Momento do casamento"
+          alt="Casamento com cerimonial premium em Pará de Minas conduzido por Ana Júlia"
           className="w-full h-full object-cover"
           loading="lazy"
         />
@@ -42,7 +42,7 @@ const Storytelling = () => {
       <div className="py-20 bg-background">
         <div className="container max-w-4xl mx-auto px-6 text-center">
           <div className="premium-img-frame w-24 h-24 rounded-full overflow-hidden mx-auto mb-8 p-[3px]">
-            <img src={anjuImage} alt="Ana Júlia" className="w-full h-full object-cover rounded-full" />
+            <img src={anjuImage} alt="Ana Júlia, cerimonialista de casamentos em Pará de Minas, MG" className="w-full h-full object-cover rounded-full" loading="lazy" decoding="async" />
           </div>
           <h3 className="font-serif text-3xl font-light text-foreground mb-6">
             Sua Tranquilidade é Minha Prioridade
