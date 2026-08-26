@@ -35,7 +35,7 @@ const Navbar = () => {
       <UrgencyBar />
       <nav className="glass-dark border-b border-champagne/10">
       <div className="container max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#inicio" className="font-serif text-xl md:text-2xl tracking-wider">
+        <a href="/" className="font-serif text-xl md:text-2xl tracking-wider">
           <span className="text-shimmer">Ana Júlia</span>
         </a>
         <div className="hidden lg:flex items-center gap-7">

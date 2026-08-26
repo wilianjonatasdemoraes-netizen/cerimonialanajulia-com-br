@@ -58,10 +58,10 @@ const Footer = () => {
   const footerJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://ana.cerimonialcasamentos.com.br/#footer-business",
+    "@id": "https://cerimonialcasamentos.com.br/#footer-business",
     name: "Ana Júlia Cerimonial",
-    image: "https://ana.cerimonialcasamentos.com.br/og.jpg",
-    url: "https://ana.cerimonialcasamentos.com.br/",
+    image: "https://cerimonialcasamentos.com.br/og.jpg",
+    url: "https://cerimonialcasamentos.com.br/",
     telephone: "+55-37-99926-5472",
     priceRange: "$$$",
     address: {
