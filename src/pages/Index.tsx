@@ -26,19 +26,20 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Ana Júlia Cerimonial | Casamentos em Pará de Minas e Região MG</title>
+        <title>Cerimonialista em Pará de Minas | Ana Júlia Cerimonial</title>
         <meta
           name="description"
-          content="Cerimonial premium para casamentos e eventos em Pará de Minas e região. +127 casamentos realizados, 5.0★ no Google e 8 anos de experiência. Garante sua data agora!"
+          content="Cerimonial e assessoria premium de casamentos, debutantes e eventos em Pará de Minas e região. +127 casamentos, 5.0★ no Google e 8 anos de experiência."
         />
         <meta
           name="keywords"
           content="cerimonialista Pará de Minas, assessoria de casamento MG, organização de casamento interior MG, cerimonial premium Pará de Minas, assessoria para debutante MG"
         />
         <link rel="canonical" href="https://ana.cerimonialcasamentos.com.br/" />
-        <meta property="og:title" content="Ana Júlia Cerimonial — Casamentos Inesquecíveis em Pará de Minas" />
-        <meta property="og:description" content="+127 casamentos realizados. Organização, elegância e tranquilidade para o seu grande dia." />
+        <meta property="og:title" content="Cerimonialista em Pará de Minas | Ana Júlia Cerimonial" />
+        <meta property="og:description" content="Cerimonial e assessoria premium para casamentos e eventos em Pará de Minas e região. +127 casamentos realizados." />
         <meta property="og:url" content="https://ana.cerimonialcasamentos.com.br/" />
+
       </Helmet>
 
       <Navbar />
