@@ -17,6 +17,7 @@ const Testimonials = lazy(() => import("@/components/Testimonials"));
 const VideoShowcase = lazy(() => import("@/components/VideoShowcase"));
 const WhyChoose = lazy(() => import("@/components/WhyChoose"));
 const FAQ = lazy(() => import("@/components/FAQ"));
+const Regioes = lazy(() => import("@/components/Regioes"));
 const FinalCTA = lazy(() => import("@/components/FinalCTA"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
@@ -26,20 +27,17 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Cerimonialista em Pará de Minas | Ana Júlia Cerimonial</title>
+        <title>Cerimonial de Casamento em Pará de Minas | Ana Júlia Cerimonial</title>
         <meta
           name="description"
-          content="Cerimonial e assessoria premium de casamentos, debutantes e eventos em Pará de Minas e região. +127 casamentos, 5.0★ no Google e 8 anos de experiência."
+          content="Cerimonial de casamento e assessoria para eventos em Pará de Minas e região. Planejamento, organização e execução de casamentos e festas de 15 anos com cuidado em cada detalhe."
         />
-        <meta
-          name="keywords"
-          content="cerimonialista Pará de Minas, assessoria de casamento MG, organização de casamento interior MG, cerimonial premium Pará de Minas, assessoria para debutante MG"
-        />
-        <link rel="canonical" href="https://ana.cerimonialcasamentos.com.br/" />
-        <meta property="og:title" content="Cerimonialista em Pará de Minas | Ana Júlia Cerimonial" />
-        <meta property="og:description" content="Cerimonial e assessoria premium para casamentos e eventos em Pará de Minas e região. +127 casamentos realizados." />
-        <meta property="og:url" content="https://ana.cerimonialcasamentos.com.br/" />
-
+        <link rel="canonical" href="https://cerimonialcasamentos.com.br/" />
+        <meta property="og:title" content="Cerimonial de Casamento em Pará de Minas | Ana Júlia Cerimonial" />
+        <meta property="og:description" content="Cerimonial de casamento, assessoria e organização de festas de 15 anos em Pará de Minas e região Centro-Oeste de Minas Gerais." />
+        <meta property="og:url" content="https://cerimonialcasamentos.com.br/" />
+        <meta name="twitter:title" content="Cerimonial de Casamento em Pará de Minas | Ana Júlia Cerimonial" />
+        <meta name="twitter:description" content="Cerimonial de casamento, assessoria e organização de festas de 15 anos em Pará de Minas e região." />
       </Helmet>
 
       <Navbar />
