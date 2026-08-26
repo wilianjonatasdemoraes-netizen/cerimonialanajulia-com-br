@@ -5,9 +5,12 @@ import anjuImage from "@/assets/anju-2.jpg";
 const contactSchema = z.object({
   nome: z.string().trim().min(2, "Nome muito curto").max(100),
   whatsapp: z.string().trim().min(8, "WhatsApp inválido").max(20),
+  email: z.string().trim().email("E-mail inválido").max(120).optional().or(z.literal("")),
   tipo: z.string().trim().min(2).max(60),
   data: z.string().trim().max(50).optional().or(z.literal("")),
-  cidade: z.string().trim().min(2).max(100),
+  cidade: z.string().trim().min(2, "Informe a cidade do evento").max(100),
+  convidados: z.string().trim().max(10).optional().or(z.literal("")),
+  orcamento: z.string().trim().max(60).optional().or(z.literal("")),
   mensagem: z.string().trim().max(1000).optional().or(z.literal("")),
 });
 
@@ -15,9 +18,12 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     nome: "",
     whatsapp: "",
+    email: "",
     tipo: "Casamento",
     data: "",
     cidade: "",
+    convidados: "",
+    orcamento: "",
     mensagem: "",
   });
   const [error, setError] = useState<string | null>(null);
@@ -30,7 +36,7 @@ const Contact = () => {
       return;
     }
     setError(null);
-    const message = `Olá Ana Júlia! Me chamo ${formData.nome} (WhatsApp: ${formData.whatsapp}). Quero organizar um(a) ${formData.tipo}${formData.data ? ` na data ${formData.data}` : ""}, na cidade de ${formData.cidade}.${formData.mensagem ? ` ${formData.mensagem}` : ""}`;
+    const message = `Olá Ana Júlia! Me chamo ${formData.nome} (WhatsApp: ${formData.whatsapp}). Quero organizar um(a) ${formData.tipo}${formData.data ? ` na data ${formData.data}` : ""}, na cidade de ${formData.cidade}.${formData.convidados ? ` Cerca de ${formData.convidados} convidados.` : ""}${formData.orcamento ? ` Faixa de orçamento: ${formData.orcamento}.` : ""}${formData.email ? ` E-mail: ${formData.email}.` : ""}${formData.mensagem ? ` ${formData.mensagem}` : ""}`;
     const whatsappUrl = `https://wa.me/5537999265472?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -53,7 +59,7 @@ const Contact = () => {
               <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={anjuImage}
-                  alt="Ana Júlia - Cerimonialista"
+                  alt="Ana Júlia, cerimonialista em Pará de Minas, durante o atendimento a um casal"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -111,6 +117,15 @@ const Contact = () => {
                   <option value="Outro">Outro</option>
                 </select>
               </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail (opcional)"
+                maxLength={120}
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClasses}
+              />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -131,6 +146,33 @@ const Contact = () => {
                   onChange={handleChange}
                   className={inputClasses}
                 />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min={1}
+                  max={5000}
+                  name="convidados"
+                  placeholder="Número de convidados"
+                  value={formData.convidados}
+                  onChange={handleChange}
+                  className={inputClasses}
+                />
+                <select
+                  name="orcamento"
+                  value={formData.orcamento}
+                  onChange={handleChange}
+                  className={inputClasses}
+                  aria-label="Faixa de orçamento"
+                >
+                  <option value="">Faixa de orçamento (opcional)</option>
+                  <option value="Ainda estou definindo">Ainda estou definindo</option>
+                  <option value="Até R$ 30 mil">Até R$ 30 mil</option>
+                  <option value="R$ 30 mil a R$ 60 mil">R$ 30 mil a R$ 60 mil</option>
+                  <option value="R$ 60 mil a R$ 100 mil">R$ 60 mil a R$ 100 mil</option>
+                  <option value="Acima de R$ 100 mil">Acima de R$ 100 mil</option>
+                </select>
               </div>
               <textarea
                 name="mensagem"
@@ -154,7 +196,7 @@ const Contact = () => {
                     <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
                   </svg>
                 </span>
-                Enviar e falar no WhatsApp
+                Solicitar orçamento
               </button>
             </form>
 

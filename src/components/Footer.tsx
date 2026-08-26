@@ -46,22 +46,29 @@ const cidades = [
 ];
 
 const servicos = [
-  { label: "Cerimonial de Casamento", href: "#servicos" },
-  { label: "Assessoria Completa", href: "#servicos" },
-  { label: "Cerimonial 15 Anos", href: "#servicos" },
-  { label: "Day-Off Coordination", href: "#servicos" },
-  { label: "Eventos Corporativos", href: "#servicos" },
-  { label: "Bodas & Aniversários", href: "#servicos" },
+  { label: "Cerimonial de Casamento", href: "/cerimonial-de-casamento" },
+  { label: "Assessoria de Casamento", href: "/assessoria-de-casamento" },
+  { label: "Cerimonial de Debutantes", href: "/cerimonial-debutantes" },
+  { label: "Festa de 15 Anos", href: "/festa-de-15-anos" },
+  { label: "Casamentos Reais", href: "/casamentos-reais" },
+  { label: "Blog", href: "/blog" },
+];
+
+const cidadesLinks = [
+  { label: "Cerimonialista em Pará de Minas", href: "/cerimonial-para-de-minas" },
+  { label: "Cerimonialista em Divinópolis", href: "/cerimonial-divinopolis" },
+  { label: "Cerimonialista em Nova Serrana", href: "/cerimonial-nova-serrana" },
+  { label: "Cerimonialista em Itaúna", href: "/cerimonial-itauna" },
 ];
 
 const Footer = () => {
   const footerJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://ana.cerimonialcasamentos.com.br/#footer-business",
+    "@id": "https://cerimonialcasamentos.com.br/#footer-business",
     name: "Ana Júlia Cerimonial",
-    image: "https://ana.cerimonialcasamentos.com.br/og.jpg",
-    url: "https://ana.cerimonialcasamentos.com.br/",
+    image: "https://cerimonialcasamentos.com.br/og.jpg",
+    url: "https://cerimonialcasamentos.com.br/",
     telephone: "+55-37-99926-5472",
     priceRange: "$$$",
     address: {
@@ -185,7 +192,7 @@ const Footer = () => {
             </p>
             <ul className="space-y-2.5">
               {[
-                { label: "Início", href: "#inicio" },
+                { label: "Início", href: "/" },
                 { label: "Sobre", href: "#sobre" },
                 { label: "Serviços", href: "#servicos" },
                 { label: "Portfólio", href: "#portfolio" },
@@ -299,6 +306,17 @@ const Footer = () => {
             ))}
             e demais cidades do <span className="text-cream/65">Centro-Oeste de Minas Gerais</span>.
           </p>
+          <div className="mt-5 flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
+            {cidadesLinks.map((c) => (
+              <a
+                key={c.href}
+                href={c.href}
+                className="text-cream/55 hover:text-gold text-xs font-light transition-colors"
+              >
+                {c.label}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="premium-divider mb-6">

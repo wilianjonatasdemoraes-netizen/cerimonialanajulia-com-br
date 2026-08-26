@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ana.cerimonialcasamentos.com.br/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://cerimonialcasamentos.com.br/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <url><loc>https://cerimonialcasamentos.com.br/cerimonial-de-casamento</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/assessoria-de-casamento</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/cerimonial-debutantes</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/festa-de-15-anos</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <url><loc>https://cerimonialcasamentos.com.br/cerimonial-para-de-minas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/cerimonial-divinopolis</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/cerimonial-nova-serrana</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/cerimonial-itauna</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://cerimonialcasamentos.com.br/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/quanto-custa-um-cerimonial-de-casamento</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/o-que-faz-um-cerimonialista</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/quando-contratar-um-cerimonialista</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/checklist-completo-para-organizar-um-casamento</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/como-organizar-um-casamento-com-orcamento-limitado</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/cerimonial-ou-assessoria-de-casamento</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/quanto-custa-uma-festa-de-15-anos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/como-organizar-uma-festa-de-15-anos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/checklist-completo-para-festa-de-15-anos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/como-escolher-o-cerimonialista-da-festa-de-15-anos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/ideias-para-festa-de-15-anos</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cerimonialcasamentos.com.br/blog/cronograma-de-uma-festa-de-debutante</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

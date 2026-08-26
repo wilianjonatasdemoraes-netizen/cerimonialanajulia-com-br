@@ -1,16 +1,9 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 
-Sitemap: https://ana.cerimonialcasamentos.com.br/sitemap.xml
+# Áreas privadas / administrativas (caso venham a existir)
+Disallow: /admin
+Disallow: /login
+Disallow: /painel
+
+Sitemap: https://cerimonialcasamentos.com.br/sitemap.xml
