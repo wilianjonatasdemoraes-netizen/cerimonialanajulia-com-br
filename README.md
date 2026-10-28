@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# Ana Júlia Cerimonial
 
-## Project info
+Crie um site sofisticado e emocional para uma cerimonialista chamada ANA JÚLIA.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+O site deve transmitir elegância, confiança e tranquilidade para noivos que estão organizando seu casamento.
 
-## How can I edit this code?
+Analise todas as imagens anexadas.
 
-There are several ways of editing your application.
+Entre elas existem três fotos da cerimonialista (mulher com cabelos cacheados). Essas imagens devem ser usadas nas seções:
 
-**Use Lovable**
+Hero secundário
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Sobre Ana Júlia
 
-Changes made via Lovable will be committed automatically to this repo.
+Autoridade / Credibilidade
 
-**Use your preferred IDE**
+Contato
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+As demais imagens são casamentos reais e devem ser utilizadas em:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Hero principal
 
-Follow these steps:
+Portfólio
+
+Prova social
+
+Momentos do casamento
+
+Storytelling visual
+
+Estilo visual do site:
+
+Minimalista
+
+Sofisticado
+
+Premium
+
+Elegante
+
+Romântico
+
+Paleta baseada nas fotos:
+
+Branco
+
+Bege
+
+Champagne
+
+Dourado suave
+
+Tons naturais
+
+Tipografia:
+
+Serif elegante para títulos
+
+Sans-serif moderna para textos
+
+Estrutura do site:
+
+1 HERO
+
+Imagem de casamento emocionante.
+
+Headline:
+
+"Enquanto você vive o seu casamento, alguém cuida de tudo."
+
+Subheadline:
+
+Tranquilidade, organização e elegância para o dia mais importante da sua vida.
+
+Botão:
+
+Agendar conversa
+
+2 SOBRE ANA JÚLIA
+
+Usar uma das fotos dela.
+
+Texto storytelling mostrando que ela organiza casamentos para que os noivos vivam o momento sem preocupação.
+
+3 COMO FUNCIONA
+
+Etapas:
+
+Planejamento
+
+Coordenação de fornecedores
+
+Organização do cronograma
+
+Execução do casamento
+
+4 PORTFÓLIO
+
+Galeria elegante com fotos reais de casamentos.
+
+Categorias:
+
+Cerimônia
+
+Recepção
+
+Detalhes
+
+Momentos emocionantes
+
+5 PROVA SOCIAL
+
+Usar o depoimento real:
+
+"Ana é daquelas presenças que a gente confia..."
+
+Mostrar em cards elegantes.
+
+6 SERVIÇOS
+
+Cerimonial do dia
+
+Assessoria completa
+
+Planejamento personalizado
+
+7 CONTATO
+
+Formulário para orçamento:
+
+Nome
+
+Data do casamento
+
+Cidade
+
+Número de convidados
+
+Mensagem
+
+Botão WhatsApp.
+
+Objetivo do site:
+
+Transmitir confiança
+
+Gerar pedidos de orçamento
+
+Mostrar autoridade da cerimonialista
+
+Design deve ser responsivo, elegante e focado em conversão.
+
+This project was built with [Lovable](https://lovable.dev).
+
+**Live app**: https://cerimonialanajulia-com-br.lovable.app
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/73f84d2e-849d-4e3e-ac44-9016869564ad).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+git clone <this-repository-url>
+cd <repository-name>
 npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
