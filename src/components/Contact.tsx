@@ -4,7 +4,14 @@ import anjuImage from "@/assets/anju-2.jpg";
 
 const contactSchema = z.object({
   nome: z.string().trim().min(2, "Nome muito curto").max(100),
-  whatsapp: z\n    .string()\n    .trim()\n    .max(20, "WhatsApp inválido")\n    .refine((value) => {\n      const digits = value.replace(/\\D/g, "");\n      return digits.length >= 10 && digits.length <= 13;\n    }, "Informe um WhatsApp com DDD válido"),
+  whatsapp: z
+    .string()
+    .trim()
+    .max(20, "WhatsApp inválido")
+    .refine((value) => {
+      const digits = value.replace(/\D/g, "");
+      return digits.length >= 10 && digits.length <= 13;
+    }, "Informe um WhatsApp com DDD válido"),
   email: z.string().trim().email("E-mail inválido").max(120).optional().or(z.literal("")),
   tipo: z.string().trim().min(2).max(60),
   data: z.string().trim().max(50).optional().or(z.literal("")),
