@@ -25,7 +25,7 @@ const socialLinks = [
   },
   {
     label: "Google Business",
-    handle: "Avaliações 5★",
+    handle: "Perfil no Google",
     href: "https://www.google.com/search?q=Ana+J%C3%BAlia+Cerimonialista+Par%C3%A1+de+Minas",
     Icon: MapPinned,
     ariaLabel: "Perfil no Google Business da Ana Júlia Cerimonialista",
@@ -65,7 +65,7 @@ const Footer = () => {
   const footerJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://cerimonialcasamentos.com.br/#footer-business",
+    "@id": "https://ana.cerimonialcasamentos.com.br/#business",
     name: "Ana Júlia Cerimonial",
     image: "https://cerimonialcasamentos.com.br/og.jpg",
     url: "https://cerimonialcasamentos.com.br/",
@@ -75,29 +75,10 @@ const Footer = () => {
       "@type": "PostalAddress",
       addressLocality: "Pará de Minas",
       addressRegion: "MG",
-      postalCode: "35660-000",
-      addressCountry: "BR",
+        addressCountry: "BR",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -19.8606,
-      longitude: -44.6083,
-    },
-    areaServed: cidades.map((c) => ({ "@type": "City", name: c })),
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "09:00",
-        closes: "19:00",
-      },
-    ],
+    areaServed: ["Pará de Minas", "Divinópolis", "Nova Serrana", "Itaúna"].map((name) => ({ "@type": "City", name })),
     sameAs: socialLinks.map((s) => s.href),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "47",
-    },
   };
 
   return (
