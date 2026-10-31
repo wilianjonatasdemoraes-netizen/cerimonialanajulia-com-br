@@ -47,9 +47,9 @@ const About = () => {
               className="font-serif italic font-light leading-[1.1] mb-8 text-[34px] md:text-[48px]"
               style={{ color: "hsl(var(--warm-dark))" }}
             >
-              Mais de 8 anos transformando
+              Cuidado em cada detalhe,
               <br />
-              emoção em <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>organização perfeita</span>.
+              emoção em <span className="font-script not-italic" style={{ color: "hsl(var(--gold))" }}>memórias inesquecíveis</span>.
             </h2>
 
             <div className="space-y-5 font-sans font-light text-[16px] leading-[1.75]" style={{ color: "hsl(var(--body-text))" }}>
@@ -59,9 +59,7 @@ const About = () => {
                 e as lágrimas de alegria escorrem naturalmente.
               </p>
               <p>
-                Hoje, com mais de 127 casamentos realizados em Pará de Minas
-                e região, ela e sua equipe são referência em cerimonial premium
-                para quem não abre mão de qualidade e atenção exclusiva.
+                Ana Júlia e sua equipe trabalham para transformar cada evento em uma experiência bem planejada, com atenção às pessoas, aos detalhes e à tranquilidade de quem está celebrando.
               </p>
             </div>
 
@@ -73,8 +71,8 @@ const About = () => {
                 Pará de Minas & região
               </div>
               <div className="text-sm font-sans font-light" style={{ color: "hsl(var(--body-text))" }}>
-                <span className="block text-base mb-1">🏆</span>
-                Certificada em Cerimonial
+                <span className="block text-base mb-1">✦</span>
+                Planejamento personalizado
               </div>
               <div className="text-sm font-sans font-light" style={{ color: "hsl(var(--body-text))" }}>
                 <span className="block text-base mb-1">💬</span>
