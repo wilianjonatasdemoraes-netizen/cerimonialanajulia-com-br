@@ -31,7 +31,7 @@ jobs:
           node-version: 22
           cache: npm
       - name: Apply security updates in the isolated hardening PR
-        if: github.head_ref == 'hardening/ana-release-security'
+        if: startsWith(github.head_ref, 'hardening/')
         run: npm audit fix --force
       - name: Install dependencies
         run: npm ci
