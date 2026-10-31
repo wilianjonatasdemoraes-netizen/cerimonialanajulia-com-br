@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # Supabase SDK atual requer Node.js 22 ou superior.\n          node-version: 22
+          # Supabase SDK atual requer Node.js 22 ou superior.          node-version: 22
           cache: npm
       - name: Install dependencies
         run: npm ci
