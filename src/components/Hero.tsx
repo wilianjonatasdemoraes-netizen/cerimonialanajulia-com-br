@@ -85,7 +85,6 @@ const Hero = () => {
           <span className="px-4 py-2 border border-gold/30 rounded-full">Atendimento próximo</span>
         </div>
       </div>
-      </div>
 
       {/* Scroll indicator */}
       <a
