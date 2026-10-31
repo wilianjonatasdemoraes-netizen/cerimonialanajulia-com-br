@@ -7,7 +7,6 @@ const sectionItems = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
   { label: "Planos", href: "#planos" },
-  { label: "Depoimentos", href: "#depoimentos" },
   { label: "Dúvidas", href: "#duvidas" },
   { label: "Contato", href: "#contato" },
 ];
