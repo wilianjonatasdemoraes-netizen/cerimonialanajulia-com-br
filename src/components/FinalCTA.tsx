@@ -30,7 +30,7 @@ const FinalCTA = () => {
           Quero começar agora
         </a>
         <p className="text-muted-foreground/70 text-[10px] tracking-[0.25em] uppercase mt-6 font-sans">
-          Resposta em poucas horas · Atendimento Seg–Sáb · 09h às 19h
+          Atendimento personalizado para o seu evento
         </p>
       </div>
     </section>
