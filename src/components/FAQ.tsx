@@ -20,6 +20,10 @@ const faqs = [
     a: "Sim. Fazemos cerimonial e organização de festas de debutantes, incluindo protocolo de entrada, valsa, homenagens, cronograma da noite e coordenação dos fornecedores.",
   },
   {
+    q: "Vocês fazem cerimonial para colações de grau?",
+    a: "Sim. A assessoria para colações de grau pode incluir planejamento do roteiro, protocolo da solenidade, alinhamento com a comissão e fornecedores, organização de entradas e homenagens e coordenação da equipe no dia do evento.",
+  },
+  {
     q: "Quanto custa um cerimonial?",
     a: "O valor depende do formato contratado (assessoria do dia, parcial ou cerimonial completo), do número de convidados, da cidade e da duração do evento. Por isso, o orçamento é montado sob medida após uma conversa inicial.",
   },
