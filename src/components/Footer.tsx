@@ -160,11 +160,11 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {[
                 { label: "Início", href: "/" },
-                { label: "Sobre", href: "#sobre" },
-                { label: "Serviços", href: "#servicos" },
-                { label: "Portfólio", href: "#portfolio" },
-                { label: "Dúvidas", href: "#duvidas" },
-                { label: "Contato", href: "#contato" },
+                { label: "Sobre", href: "/#sobre" },
+                { label: "Serviços", href: "/#servicos" },
+                { label: "Portfólio", href: "/#portfolio" },
+                { label: "Dúvidas", href: "/#duvidas" },
+                { label: "Contato", href: "/#contato" },
               ].map((l) => (
                 <li key={l.label}>
                   <a
