@@ -50,6 +50,8 @@ const servicos = [
   { label: "Assessoria de Casamento", href: "/assessoria-de-casamento" },
   { label: "Cerimonial de Debutantes", href: "/cerimonial-debutantes" },
   { label: "Festa de 15 Anos", href: "/festa-de-15-anos" },
+  { label: "Colações de Grau", href: "/#servicos" },
+  { label: "Eventos Corporativos", href: "/#servicos" },
   { label: "Casamentos Reais", href: "/casamentos-reais" },
   { label: "Blog", href: "/blog" },
 ];
@@ -67,10 +69,8 @@ const Footer = () => {
     "@type": "LocalBusiness",
     "@id": "https://ana.cerimonialcasamentos.com.br/#business",
     name: "Ana Júlia Cerimonial",
-    image: "https://cerimonialcasamentos.com.br/og.jpg",
-    url: "https://cerimonialcasamentos.com.br/",
+    url: "https://ana.cerimonialcasamentos.com.br/",
     telephone: "+55-37-99926-5472",
-    priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pará de Minas",
@@ -78,7 +78,7 @@ const Footer = () => {
         addressCountry: "BR",
     },
     areaServed: ["Pará de Minas", "Divinópolis", "Nova Serrana", "Itaúna"].map((name) => ({ "@type": "City", name })),
-    sameAs: socialLinks.map((s) => s.href),
+    sameAs: ["https://www.instagram.com/Anajuliacerimonialista"],
   };
 
   return (
