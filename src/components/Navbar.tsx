@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import UrgencyBar from "./UrgencyBar";
+import logoImage from "@/assets/ana-julia-wordmark.svg";
 
 const sectionItems = [
   { label: "Início", href: "#inicio" },
@@ -34,8 +35,16 @@ const Navbar = () => {
       <UrgencyBar />
       <nav className="glass-dark border-b border-champagne/10">
       <div className="container max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="font-serif text-xl md:text-2xl tracking-wider">
-          <span className="text-shimmer">Ana Júlia</span>
+        <a href="/" className="inline-flex items-center shrink-0" aria-label="Ana Júlia Cerimonial — página inicial">
+          <img
+            src={logoImage}
+            alt="Ana Júlia Cerimonial e Eventos"
+            width={420}
+            height={144}
+            loading="eager"
+            decoding="async"
+            className="w-[112px] md:w-[148px] h-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.28)]"
+          />
         </a>
         <div className="hidden lg:flex items-center gap-7">
           {navItems.map((item) => (

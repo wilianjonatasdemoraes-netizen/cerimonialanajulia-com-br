@@ -7,32 +7,32 @@
 @layer base {
   :root {
     /* Editorial navy + champagne palette: #F5F1E9, #101C33, #C6A76A */
-    --background: 39 33% 94%;
-    --foreground: 220 11% 15%;
+    --background: 220 52% 13%;
+    --foreground: 39 33% 94%;
 
-    --card: 40 25% 97%;
-    --card-foreground: 220 11% 15%;
+    --card: 220 43% 17%;
+    --card-foreground: 39 33% 94%;
 
-    --popover: 39 33% 94%;
-    --popover-foreground: 220 11% 15%;
+    --popover: 220 43% 17%;
+    --popover-foreground: 39 33% 94%;
 
     --primary: 220 52% 13%;
     --primary-foreground: 39 33% 94%;
 
-    --secondary: 220 24% 91%;
-    --secondary-foreground: 220 52% 13%;
+    --secondary: 220 43% 17%;
+    --secondary-foreground: 39 33% 94%;
 
-    --muted: 220 20% 91%;
-    --muted-foreground: 220 10% 35%;
+    --muted: 220 35% 21%;
+    --muted-foreground: 39 18% 76%;
 
-    --accent: 220 24% 91%;
-    --accent-foreground: 220 52% 13%;
+    --accent: 220 35% 21%;
+    --accent-foreground: 39 33% 94%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 82%;
-    --input: 220 15% 82%;
+    --border: 220 25% 30%;
+    --input: 220 25% 30%;
     --ring: 40 44% 60%;
 
     --radius: 0.125rem;
@@ -43,7 +43,7 @@
     --bronze: 38 34% 43%;
     --cream: 39 33% 94%;
     --warm-dark: 220 52% 13%;
-    --body-text: 220 10% 35%;
+    --body-text: 39 18% 76%;
 
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Jost', system-ui, sans-serif;
@@ -859,4 +859,41 @@ html {
   #galeria figure > div, #portfolio .group > div:first-child,
   #galeria figure img, #portfolio .group img { transition: none; }
   #galeria figure:hover > div, #portfolio .group:hover > div:first-child { transform: none; }
+}
+
+
+/* SITE-WIDE NAVY IDENTITY — applied consistently to every route and subpage */
+html, body, #root {
+  min-height: 100%;
+  background: #101c33;
+}
+body {
+  color: #f5f1e9;
+}
+.bg-cream,
+.bg-champagne,
+.bg-white {
+  background-color: #101c33 !important;
+}
+.bg-cream\/,
+.bg-champagne\/ {
+  background-color: rgba(16, 28, 51, .88) !important;
+}
+.seo-prose {
+  color: #e9e2d5;
+}
+.seo-prose h2,
+.seo-prose h3,
+.seo-prose strong {
+  color: #f5f1e9;
+}
+.seo-prose p,
+.seo-prose ul {
+  color: rgba(245, 241, 233, .78);
+}
+.seo-prose a {
+  color: #e3c58f;
+}
+.seo-prose a:hover {
+  color: #f5e5c5;
 }
