@@ -9,9 +9,10 @@ on:
   pull_request:
     branches:
       - main
+      - "update/**"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -26,8 +27,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # Supabase SDK atual requer Node.js 22 ou superior.          node-version: 22
+          # Supabase SDK atual requer Node.js 22 ou superior.
+          node-version: 22
           cache: npm
+      - name: Apply security updates in the isolated hardening PR
+        if: github.head_ref == 'hardening/ana-release-security'
+        run: npm audit fix --force
       - name: Install dependencies
         run: npm ci
       - name: Security dependency audit (report)
@@ -44,3 +49,15 @@ jobs:
         run: npm run lint
       - name: Run Vitest
         run: npm run test -- --passWithNoTests
+      - name: Commit validated dependency updates
+        if: github.head_ref == 'hardening/ana-release-security'
+        run: |
+          if ! git diff --quiet -- package.json package-lock.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package.json package-lock.json
+            git commit -m "fix: remediate dependency security advisories"
+            git push origin hardening/ana-release-security
+          else
+            echo "No dependency manifest changes were produced."
+          fi
