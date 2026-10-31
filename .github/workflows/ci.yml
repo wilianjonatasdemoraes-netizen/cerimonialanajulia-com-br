@@ -30,7 +30,10 @@ jobs:
           # Supabase SDK atual requer Node.js 22 ou superior.
           node-version: 22
           cache: npm
-      - name: Apply security updates in the isolated hardening PR
+      - name: Apply non-breaking security updates to the release branch
+        if: startsWith(github.head_ref, 'update/')
+        run: npm audit fix
+      - name: Apply major security updates in the isolated hardening PR
         if: startsWith(github.head_ref, 'hardening/')
         run: npm audit fix --force
       - name: Install dependencies
