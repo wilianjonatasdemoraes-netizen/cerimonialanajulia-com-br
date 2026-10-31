@@ -731,3 +731,132 @@ html {
 .seo-prose strong {
   @apply text-foreground font-normal;
 }
+
+
+/* CINEMATIC EXPERIENCE — oceanic navy, champagne light and restrained depth */
+.cinema-hero {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(190, 157, 105, .18), transparent 48%),
+    #071426;
+}
+.cinema-hero__video,
+.cinema-hero__veil,
+.cinema-hero__glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.cinema-hero__video {
+  z-index: -3;
+  object-fit: cover;
+  object-position: center 48%;
+  opacity: .48;
+  filter: saturate(.72) contrast(1.08);
+  transform: scale(1.035);
+  animation: cinema-drift 24s ease-in-out infinite alternate;
+}
+.cinema-hero__veil {
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(5, 16, 31, .55) 0%, rgba(7, 20, 38, .48) 42%, rgba(7, 20, 38, .92) 100%),
+    linear-gradient(90deg, rgba(7, 20, 38, .62), rgba(7, 20, 38, .12) 50%, rgba(7, 20, 38, .62));
+}
+.cinema-hero__glow {
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 42%, rgba(220, 190, 139, .16), transparent 42%);
+  mix-blend-mode: screen;
+}
+.cinema-hero__content { animation: cinema-arrive 1.25s cubic-bezier(.2,.7,.2,1) both; }
+.cinema-logo { filter: drop-shadow(0 12px 34px rgba(0,0,0,.36)); }
+.cinema-kicker {
+  color: #e4cfaa;
+  font: 400 10px/1.6 var(--font-sans);
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgba(0,0,0,.6);
+}
+.cinema-title { text-shadow: 0 5px 32px rgba(0,0,0,.5); }
+.cinema-pill {
+  padding: .65rem 1rem;
+  border: 1px solid rgba(222, 193, 145, .42);
+  border-radius: 999px;
+  background: rgba(7, 20, 38, .34);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px rgba(255,255,255,.08), 0 8px 28px rgba(0,0,0,.12);
+}
+.cinema-outline {
+  color: #f5f1e9 !important;
+  border-color: rgba(235, 215, 180, .68) !important;
+  background: rgba(7, 20, 38, .25);
+  backdrop-filter: blur(8px);
+}
+.cinema-frame-line {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(220, 190, 139, .18);
+  pointer-events: none;
+  z-index: 2;
+}
+.cinema-frame-line::before,
+.cinema-frame-line::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-color: rgba(220, 190, 139, .72);
+}
+.cinema-frame-line::before { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
+.cinema-frame-line::after { right: -1px; bottom: -1px; border-right: 1px solid; border-bottom: 1px solid; }
+@keyframes cinema-drift {
+  from { transform: scale(1.035) translate3d(-.4%, 0, 0); }
+  to { transform: scale(1.11) translate3d(.4%, -1%, 0); }
+}
+@keyframes cinema-arrive {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); filter: blur(5px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+/* Photographs gain a subtle gallery-like 3D plane without moving the layout */
+#galeria figure,
+#portfolio .group {
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+#galeria figure > div,
+#portfolio .group > div:first-child {
+  overflow: hidden;
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+  transform-origin: center;
+  transition: transform .75s cubic-bezier(.2,.75,.2,1), box-shadow .75s ease;
+  box-shadow: 0 12px 30px rgba(16, 28, 51, .10);
+  will-change: transform;
+}
+#galeria figure:hover > div,
+#portfolio .group:hover > div:first-child {
+  transform: rotateX(2deg) rotateY(-2deg) translateY(-7px) translateZ(12px);
+  box-shadow: 0 28px 55px rgba(16, 28, 51, .22);
+}
+#galeria figure img,
+#portfolio .group img {
+  transition: transform 1s cubic-bezier(.2,.75,.2,1), filter .75s ease;
+}
+#galeria figure:hover img,
+#portfolio .group:hover img {
+  transform: scale(1.075);
+  filter: saturate(1.08) contrast(1.03);
+}
+@media (max-width: 767px) {
+  .cinema-hero__video { opacity: .34; }
+  .cinema-frame-line { inset: 9px; }
+  .cinema-kicker { max-width: 280px; letter-spacing: .2em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinema-hero__video { animation: none; transform: none; }
+  .cinema-hero__content { animation: none; }
+  #galeria figure > div, #portfolio .group > div:first-child,
+  #galeria figure img, #portfolio .group img { transition: none; }
+  #galeria figure:hover > div, #portfolio .group:hover > div:first-child { transform: none; }
+}
