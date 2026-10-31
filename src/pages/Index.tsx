@@ -30,20 +30,19 @@ const Index = () => {
         <title>Cerimonial de Casamento em Pará de Minas | Ana Júlia Cerimonial</title>
         <meta
           name="description"
-          content="Cerimonial de casamento e assessoria para eventos em Pará de Minas e região. Planejamento, organização e execução de casamentos e festas de 15 anos com cuidado em cada detalhe."
+          content="Cerimonial e assessoria para casamentos, colações de grau e eventos corporativos em Pará de Minas, Divinópolis, Nova Serrana e Itaúna."
         />
-        <link rel="canonical" href="https://cerimonialcasamentos.com.br/" />
+        <link rel="canonical" href="https://ana.cerimonialcasamentos.com.br/" />
         <meta property="og:title" content="Cerimonial de Casamento em Pará de Minas | Ana Júlia Cerimonial" />
-        <meta property="og:description" content="Cerimonial de casamento, assessoria e organização de festas de 15 anos em Pará de Minas e região Centro-Oeste de Minas Gerais." />
-        <meta property="og:url" content="https://cerimonialcasamentos.com.br/" />
+        <meta property="og:description" content="Cerimonial e assessoria para casamentos, colações de grau e eventos corporativos em Pará de Minas e região." />
+        <meta property="og:url" content="https://ana.cerimonialcasamentos.com.br/" />
         <meta name="twitter:title" content="Cerimonial de Casamento em Pará de Minas | Ana Júlia Cerimonial" />
-        <meta name="twitter:description" content="Cerimonial de casamento, assessoria e organização de festas de 15 anos em Pará de Minas e região." />
+        <meta name="twitter:description" content="Cerimonial e assessoria para casamentos, colações de grau e eventos corporativos em Pará de Minas e região." />
       </Helmet>
 
       <Navbar />
       <Hero />
       <Suspense fallback={<div style={{ minHeight: 400 }} />}>
-        <Stats />
         <PainDesire />
         <About />
         <Gallery />
@@ -53,10 +52,6 @@ const Index = () => {
         <Portfolio />
         <Storytelling />
         <VideoShowcase />
-        <Testimonials />
-        <div className="text-center pb-8 text-[11px] font-sans" style={{ color: "hsl(var(--body-text) / 0.6)" }}>
-          🟢 12 noivas visualizaram este site hoje
-        </div>
         <WhyChoose />
         <Regioes />
         <FAQ />
