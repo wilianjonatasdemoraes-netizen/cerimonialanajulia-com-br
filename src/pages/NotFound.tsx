@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { canonical } from "@/lib/site";
 
 const NotFound = () => {
   const location = useLocation();
@@ -15,10 +16,10 @@ const NotFound = () => {
         <title>Página Não Encontrada | Ana Júlia Cerimonial</title>
         <meta name="description" content="A página que você procura não existe. Volte para o início e conheça os serviços de cerimonial da Ana Júlia." />
         <meta name="robots" content="noindex" />
-        <link rel="canonical" href={`https://cerimonialcasamentos.com.br${location.pathname}`} />
+        <link rel="canonical" href={canonical(location.pathname)} />
         <meta property="og:title" content="Página Não Encontrada | Ana Júlia Cerimonial" />
         <meta property="og:description" content="A página que você procura não existe." />
-        <meta property="og:url" content={`https://cerimonialcasamentos.com.br${location.pathname}`} />
+        <meta property="og:url" content={canonical(location.pathname)} />
       </Helmet>
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold text-foreground">404</h1>
