@@ -11,7 +11,7 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   validate:
@@ -28,18 +28,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      # Regenerates the lockfile so npm ci is reproducible for the declared package.json.
-      - name: Synchronize npm lockfile
-        run: npm install --package-lock-only --ignore-scripts
-      - name: Commit lockfile changes when needed
-        run: |
-          if ! git diff --quiet -- package-lock.json; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add package-lock.json
-            git commit -m "chore: synchronize npm lockfile"
-            git push
-          fi
       - name: Install dependencies
         run: npm ci
       - name: Build production bundle
