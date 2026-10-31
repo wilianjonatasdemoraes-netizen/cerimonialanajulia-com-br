@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      # Regenerates the lockfile so npm ci is reproducible for the declared package.json.
       - name: Synchronize npm lockfile
         run: npm install --package-lock-only --ignore-scripts
       - name: Commit lockfile changes when needed
