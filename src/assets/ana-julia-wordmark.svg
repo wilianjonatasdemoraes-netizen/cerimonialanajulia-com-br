@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-labelledby="title desc">
+  <title id="title">Ana Júlia Cerimonial</title>
+  <desc id="desc">Identidade tipográfica Ana Júlia Cerimonial e Eventos em champagne e dourado.</desc>
+  <g fill="none" stroke="#C6A76A" stroke-width="1.5">
+    <path d="M105 50 H255 M505 50 H655" />
+    <path d="M380 27 l12 12 -12 12 -12 -12 z" />
+    <path d="M380 215 l9 9 -9 9 -9 -9 z" />
+    <path d="M105 224 H255 M505 224 H655" />
+  </g>
+  <text x="380" y="137" text-anchor="middle" fill="#F5F1E9" font-family="Cormorant Garamond, Georgia, serif" font-size="91" font-weight="400" letter-spacing="9">ANA JÚLIA</text>
+  <text x="380" y="184" text-anchor="middle" fill="#C6A76A" font-family="Jost, Arial, sans-serif" font-size="21" letter-spacing="12">CERIMONIAL &amp; EVENTOS</text>
+</svg>

@@ -6,46 +6,44 @@
 
 @layer base {
   :root {
-    /* Luxury Bridal Editorial Palette
-       #FAF7F4 bg, #1A1410 primary, #C9A96E gold, #E8DDD4 nude,
-       #3D3530 body text, #8B6F47 bronze hover */
-    --background: 30 27% 97%;
-    --foreground: 24 22% 8%;
+    /* Editorial navy + champagne palette: #F5F1E9, #101C33, #C6A76A */
+    --background: 39 33% 94%;
+    --foreground: 220 11% 15%;
 
-    --card: 27 31% 92%;
-    --card-foreground: 24 22% 8%;
+    --card: 40 25% 97%;
+    --card-foreground: 220 11% 15%;
 
-    --popover: 30 27% 97%;
-    --popover-foreground: 24 22% 8%;
+    --popover: 39 33% 94%;
+    --popover-foreground: 220 11% 15%;
 
-    --primary: 24 22% 8%;
-    --primary-foreground: 30 27% 97%;
+    --primary: 220 52% 13%;
+    --primary-foreground: 39 33% 94%;
 
-    --secondary: 27 31% 87%;
-    --secondary-foreground: 24 22% 8%;
+    --secondary: 220 24% 91%;
+    --secondary-foreground: 220 52% 13%;
 
-    --muted: 27 25% 90%;
-    --muted-foreground: 26 13% 21%;
+    --muted: 220 20% 91%;
+    --muted-foreground: 220 10% 35%;
 
-    --accent: 27 31% 87%;
-    --accent-foreground: 24 22% 8%;
+    --accent: 220 24% 91%;
+    --accent-foreground: 220 52% 13%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 27 25% 82%;
-    --input: 27 25% 82%;
-    --ring: 36 47% 61%;
+    --border: 220 15% 82%;
+    --input: 220 15% 82%;
+    --ring: 40 44% 60%;
 
     --radius: 0.125rem;
 
-    --champagne: 27 31% 87%;
-    --gold: 36 47% 61%;
-    --gold-light: 36 35% 70%;
-    --bronze: 31 32% 41%;
-    --cream: 30 27% 97%;
-    --warm-dark: 24 22% 8%;
-    --body-text: 26 13% 21%;
+    --champagne: 39 33% 91%;
+    --gold: 40 44% 60%;
+    --gold-light: 40 35% 72%;
+    --bronze: 38 34% 43%;
+    --cream: 39 33% 94%;
+    --warm-dark: 220 52% 13%;
+    --body-text: 220 10% 35%;
 
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Jost', system-ui, sans-serif;

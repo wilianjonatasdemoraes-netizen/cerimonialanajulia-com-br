@@ -28,6 +28,19 @@ const services = [
     msg: "Olá Ana Júlia! Quero o cerimonial para a festa de 15 anos.",
   },
   {
+    tag: "✦ Formaturas",
+    title: "Cerimonial para Colações de Grau",
+    bullets: [
+      "Planejamento do roteiro e protocolo da solenidade",
+      "Coordenação de entradas, homenagens e pronunciamentos",
+      "Alinhamento com comissão, instituição e fornecedores",
+      "Organização de palco, convidados e equipe de apoio",
+      "Acompanhamento da cerimônia do início ao encerramento",
+    ],
+    cta: "Quero organizar minha colação",
+    msg: "Olá Ana Júlia! Quero informações sobre cerimonial para colação de grau.",
+  },
+  {
     tag: "✦ Sob medida",
     title: "Eventos Sociais & Corporativos",
     bullets: [
@@ -60,7 +73,7 @@ const Services = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
           {services.map((s) => (
             <article
               key={s.title}

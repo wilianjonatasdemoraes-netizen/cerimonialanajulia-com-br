@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Instagram, MessageCircle, Phone, MapPin, Clock, Mail, Star, Facebook, MapPinned } from "lucide-react";
+import { Instagram, MessageCircle, Phone, MapPin, Mail, Facebook, MapPinned } from "lucide-react";
 
 const socialLinks = [
   {
@@ -25,7 +25,7 @@ const socialLinks = [
   },
   {
     label: "Google Business",
-    handle: "Avaliações 5★",
+    handle: "Perfil no Google",
     href: "https://www.google.com/search?q=Ana+J%C3%BAlia+Cerimonialista+Par%C3%A1+de+Minas",
     Icon: MapPinned,
     ariaLabel: "Perfil no Google Business da Ana Júlia Cerimonialista",
@@ -37,12 +37,6 @@ const cidades = [
   "Divinópolis",
   "Itaúna",
   "Nova Serrana",
-  "Carmo do Cajuru",
-  "Pitangui",
-  "Belo Horizonte",
-  "São José da Varginha",
-  "Onça de Pitangui",
-  "Conceição do Pará",
 ];
 
 const servicos = [
@@ -50,6 +44,8 @@ const servicos = [
   { label: "Assessoria de Casamento", href: "/assessoria-de-casamento" },
   { label: "Cerimonial de Debutantes", href: "/cerimonial-debutantes" },
   { label: "Festa de 15 Anos", href: "/festa-de-15-anos" },
+  { label: "Colações de Grau", href: "/#servicos" },
+  { label: "Eventos Corporativos", href: "/#servicos" },
   { label: "Casamentos Reais", href: "/casamentos-reais" },
   { label: "Blog", href: "/blog" },
 ];
@@ -65,39 +61,18 @@ const Footer = () => {
   const footerJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://cerimonialcasamentos.com.br/#footer-business",
+    "@id": "https://ana.cerimonialcasamentos.com.br/#business",
     name: "Ana Júlia Cerimonial",
-    image: "https://cerimonialcasamentos.com.br/og.jpg",
-    url: "https://cerimonialcasamentos.com.br/",
+    url: "https://ana.cerimonialcasamentos.com.br/",
     telephone: "+55-37-99926-5472",
-    priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pará de Minas",
       addressRegion: "MG",
-      postalCode: "35660-000",
-      addressCountry: "BR",
+        addressCountry: "BR",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -19.8606,
-      longitude: -44.6083,
-    },
-    areaServed: cidades.map((c) => ({ "@type": "City", name: c })),
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "09:00",
-        closes: "19:00",
-      },
-    ],
-    sameAs: socialLinks.map((s) => s.href),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "47",
-    },
+    areaServed: ["Pará de Minas", "Divinópolis", "Nova Serrana", "Itaúna"].map((name) => ({ "@type": "City", name })),
+    sameAs: ["https://www.instagram.com/Anajuliacerimonialista"],
   };
 
   return (
@@ -175,14 +150,6 @@ const Footer = () => {
               especializada em casamentos sofisticados, debutantes e eventos premium em
               toda a região centro-oeste de Minas Gerais.
             </p>
-            <div className="flex items-center justify-center md:justify-start gap-1 text-gold">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-current" strokeWidth={0} />
-              ))}
-              <span className="text-cream/60 text-xs ml-2 font-light">
-                5.0 · 47 avaliações no Google
-              </span>
-            </div>
           </div>
 
           {/* Navegação */}
@@ -193,12 +160,11 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {[
                 { label: "Início", href: "/" },
-                { label: "Sobre", href: "#sobre" },
-                { label: "Serviços", href: "#servicos" },
-                { label: "Portfólio", href: "#portfolio" },
-                { label: "Depoimentos", href: "#depoimentos" },
-                { label: "Dúvidas", href: "#duvidas" },
-                { label: "Contato", href: "#contato" },
+                { label: "Sobre", href: "/#sobre" },
+                { label: "Serviços", href: "/#servicos" },
+                { label: "Portfólio", href: "/#portfolio" },
+                { label: "Dúvidas", href: "/#duvidas" },
+                { label: "Contato", href: "/#contato" },
               ].map((l) => (
                 <li key={l.label}>
                   <a
@@ -277,14 +243,6 @@ const Footer = () => {
                   Pará de Minas — MG
                   <br />
                   <span className="text-cream/40 text-xs">e toda a região</span>
-                </span>
-              </li>
-              <li className="inline-flex items-start gap-2 text-cream/65 text-sm font-light">
-                <Clock className="w-4 h-4 mt-0.5 flex-shrink-0 text-gold/70" strokeWidth={1.2} />
-                <span>
-                  Seg. a Sáb. · 09h às 19h
-                  <br />
-                  <span className="text-cream/40 text-xs">Resposta em até 1h útil</span>
                 </span>
               </li>
             </ul>
