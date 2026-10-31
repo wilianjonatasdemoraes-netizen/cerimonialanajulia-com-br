@@ -1,3 +1,5 @@
+import logoImage from "@/assets/ana-julia-wordmark.svg";
+
 
 const WHATSAPP_URL =
   "https://wa.me/5537999265472?text=" +
@@ -14,11 +16,16 @@ const Hero = () => {
     >
       {/* Logo central — destaque principal */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-8">
-        <div className="mb-10 flex flex-col items-center" aria-label="Ana Júlia Cerimonial">
-          <span className="font-serif text-5xl md:text-7xl font-light tracking-[0.12em] text-cream">ANA JÚLIA</span>
-          <span className="mt-3 text-[10px] md:text-xs tracking-[0.48em] uppercase text-gold">Cerimonial & Eventos</span>
-          <span className="mt-5 h-px w-24 bg-gold/70" />
-        </div>
+        <img
+          src={logoImage}
+          alt="Ana Júlia Cerimonial e Eventos"
+          width={760}
+          height={260}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          className="w-[280px] md:w-[440px] lg:w-[560px] h-auto object-contain mb-10"
+        />
 
         {/* Tag */}
         <div className="flex items-center justify-center gap-3 mb-6">
