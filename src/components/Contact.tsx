@@ -4,7 +4,7 @@ import anjuImage from "@/assets/anju-2.jpg";
 
 const contactSchema = z.object({
   nome: z.string().trim().min(2, "Nome muito curto").max(100),
-  whatsapp: z.string().trim().min(8, "WhatsApp inválido").max(20),
+  whatsapp: z\n    .string()\n    .trim()\n    .max(20, "WhatsApp inválido")\n    .refine((value) => {\n      const digits = value.replace(/\\D/g, "");\n      return digits.length >= 10 && digits.length <= 13;\n    }, "Informe um WhatsApp com DDD válido"),
   email: z.string().trim().email("E-mail inválido").max(120).optional().or(z.literal("")),
   tipo: z.string().trim().min(2).max(60),
   data: z.string().trim().max(50).optional().or(z.literal("")),
@@ -38,7 +38,7 @@ const Contact = () => {
     setError(null);
     const message = `Olá Ana Júlia! Me chamo ${formData.nome} (WhatsApp: ${formData.whatsapp}). Quero organizar um(a) ${formData.tipo}${formData.data ? ` na data ${formData.data}` : ""}, na cidade de ${formData.cidade}.${formData.convidados ? ` Cerca de ${formData.convidados} convidados.` : ""}${formData.orcamento ? ` Faixa de orçamento: ${formData.orcamento}.` : ""}${formData.email ? ` E-mail: ${formData.email}.` : ""}${formData.mensagem ? ` ${formData.mensagem}` : ""}`;
     const whatsappUrl = `https://wa.me/5537999265472?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleChange = (
