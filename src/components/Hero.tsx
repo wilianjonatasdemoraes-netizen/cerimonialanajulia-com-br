@@ -1,5 +1,3 @@
-import logoImage from "@/assets/anaju-logo-fundo-verde.png.asset.json";
-const logoUrl = logoImage.url;
 
 const WHATSAPP_URL =
   "https://wa.me/5537999265472?text=" +
@@ -12,20 +10,15 @@ const Hero = () => {
     <section
       id="inicio"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundColor: "#1B3A2F" }}
+      style={{ backgroundColor: "#101C33" }}
     >
       {/* Logo central — destaque principal */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-8">
-        <img
-          src={logoUrl}
-          alt="Logo Ana Júlia Cerimonialista"
-          width={400}
-          height={400}
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          className="w-[220px] md:w-[320px] lg:w-[400px] h-auto object-contain mb-10"
-        />
+        <div className="mb-10 flex flex-col items-center" aria-label="Ana Júlia Cerimonial">
+          <span className="font-serif text-5xl md:text-7xl font-light tracking-[0.12em] text-cream">ANA JÚLIA</span>
+          <span className="mt-3 text-[10px] md:text-xs tracking-[0.48em] uppercase text-gold">Cerimonial & Eventos</span>
+          <span className="mt-5 h-px w-24 bg-gold/70" />
+        </div>
 
         {/* Tag */}
         <div className="flex items-center justify-center gap-3 mb-6">
@@ -34,7 +27,7 @@ const Hero = () => {
             className="font-sans text-[10px] md:text-[11px] tracking-[0.35em] uppercase"
             style={{ color: "hsl(var(--gold))" }}
           >
-            ✦ Cerimonial Premium · Pará de Minas & Região ✦
+            ✦ Cerimonial Premium · Pará de Minas · Divinópolis · Nova Serrana · Itaúna ✦
           </p>
           <span className="h-px w-10 bg-gold/70" />
         </div>
@@ -49,7 +42,7 @@ const Hero = () => {
         {/* Subhead */}
         <p className="font-sans font-light text-cream/85 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
           Cerimonialista em Pará de Minas e região: planejamento, organização e execução de
-          casamentos, festas de 15 anos e eventos — para que você viva o seu grande dia com
+          casamentos, festas de 15 anos, colações de grau e eventos corporativos — para que você viva o seu grande dia com
           tranquilidade e segurança.
         </p>
 
@@ -79,29 +72,12 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Trust badges strip */}
-        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-cream/90 text-[11px] md:text-xs font-sans font-light max-w-3xl">
-          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
-            <span style={{ color: "hsl(var(--gold))" }}>♡</span> +127 Casamentos Realizados
-          </span>
-          <a
-            href="https://www.google.com/search?q=Ana+J%C3%BAlia+Cerimonial+Par%C3%A1+de+Minas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full hover:border-gold/60 transition-colors"
-          >
-            <span style={{ color: "hsl(var(--gold))" }}>★</span> 5.0 no Google
-          </a>
-          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
-            <span style={{ color: "hsl(var(--gold))" }}>✦</span> 8 Anos de Experiência
-          </span>
-          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
-            <span style={{ color: "hsl(var(--gold))" }}>🏆</span> Cerimonialista Certificada
-          </span>
-          <span className="flex items-center gap-2 px-3 py-1.5 border border-gold/30 rounded-full">
-            <span style={{ color: "hsl(var(--gold))" }}>💬</span> Atendimento Humanizado
-          </span>
+        <div className="flex flex-wrap items-center justify-center gap-3 text-cream/90 text-[11px] md:text-xs font-sans max-w-3xl">
+          <span className="px-4 py-2 border border-gold/30 rounded-full">Planejamento personalizado</span>
+          <span className="px-4 py-2 border border-gold/30 rounded-full">Coordenação profissional</span>
+          <span className="px-4 py-2 border border-gold/30 rounded-full">Atendimento próximo</span>
         </div>
+      </div>
       </div>
 
       {/* Scroll indicator */}
