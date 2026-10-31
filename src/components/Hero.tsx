@@ -89,7 +89,7 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <a
-        href="#prova"
+        href="#sobre"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition"
         aria-label="Rolar para baixo"
       >
