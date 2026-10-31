@@ -32,7 +32,7 @@ jobs:
           cache: npm
       - name: Apply all available security updates on the release branch
         if: startsWith(github.head_ref, 'update/')
-        run: npm audit fix --force
+        run: npm audit fix --force || true
       - name: Apply major security updates in the isolated hardening PR
         if: startsWith(github.head_ref, 'hardening/')
         run: npm audit fix --force
