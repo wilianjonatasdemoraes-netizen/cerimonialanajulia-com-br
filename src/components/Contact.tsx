@@ -113,6 +113,7 @@ const Contact = () => {
                   <option value="Casamento">Casamento</option>
                   <option value="15 Anos">15 Anos</option>
                   <option value="Evento Social">Evento Social</option>
+                  <option value="Colação de Grau">Colação de Grau</option>
                   <option value="Evento Corporativo">Evento Corporativo</option>
                   <option value="Outro">Outro</option>
                 </select>
