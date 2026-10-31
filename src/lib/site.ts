@@ -1,9 +1,7 @@
-// Domínio principal definitivo (usado em canonical, og:url, sitemap e JSON-LD).
-// O endereço ana.cerimonialcasamentos.com.br permanece ativo como endereço
-// secundário durante a transição — ver DOMAIN-MIGRATION-GUIDE.md.
-export const SITE_URL = "https://cerimonialcasamentos.com.br";
+// Domínio oficial confirmado: ana.cerimonialcasamentos.com.br.
+export const SITE_URL = "https://ana.cerimonialcasamentos.com.br";
 export const SITE_NAME = "Ana Júlia Cerimonial";
-export const LEGACY_URL = "https://ana.cerimonialcasamentos.com.br";
+export const LEGACY_URL = "https://cerimonialcasamentos.com.br";
 
 export const WHATSAPP_NUMBER = "5537999265472";
 export const PHONE_DISPLAY = "(37) 99926-5472";
